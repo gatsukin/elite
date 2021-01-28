@@ -53,7 +53,7 @@ for (let i = 0; i < pageEvents.length; i++) {
   window.addEventListener(event, function () {
     setTimeout(() => {
       gridFunc()
-    }, 100);
+    }, 1000);
   })
 }
 // Добавляем возможность открытия карточек посредством клика
