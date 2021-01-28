@@ -1,0 +1,107 @@
+.form {
+    display: flex;
+    max-width: 700px !important;
+    height: fit-content;
+    padding: 40px 25px;
+
+    @media screen and (max-height: 560px) {
+        padding: 20px 10px;
+    }
+
+    input, textarea {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 15px 20px;
+        resize: none;
+        transition: .3s;
+        color: #303030;
+        border: none;
+        border: 1px solid #E2E2E2;
+        border-radius: 5px;
+        outline: none;
+        background: #F4F5F8;
+        font: .8rem/115% @FFRRegular;
+
+        &::placeholder {
+            transition: .2s;
+            color: #9F9F9F;
+        }
+
+        &:hover, &:focus {
+            border: 1px solid #AEAEAE;
+        }
+
+        &:focus::placeholder {
+            opacity: 0;
+        }
+    }
+
+    button {
+        display: inline-block;
+        margin: 10px auto 0;
+        padding: 5px 0;
+        color: #3DAAE8;
+        font: 1.2rem/115% @FFRRegular;
+
+        &::before {
+            background: #3DAAE8;
+        }
+
+        &:active {
+            transform: scale(.98);
+        }
+    }
+
+    .checkbox {
+        position: relative;
+        margin: 15px 0;
+        cursor: pointer;
+
+        span {
+            display: flex;
+            padding-left: 40px;
+            font: .9rem/115% @FFRLight;
+
+            &::before {
+                position: absolute;
+                top: 3px;
+                left: 0;
+                display: flex;
+                width: 20px;
+                height: 20px;
+                content: "";
+                transition: .3s;
+                background: #EEE;
+            }
+
+            &::after {
+                position: absolute;
+                top: 3px;
+                left: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 20px;
+                content: "\2713";
+                transition: .2s;
+                opacity: 0;
+                font-size: 18px;
+            }
+
+            @media screen and (max-width: 1300px) {
+                font-size: .75rem;
+            }
+        }
+
+        input:checked ~ span::after {
+            opacity: 1;
+        }
+
+        &:hover {
+            &::before {
+                box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+            }
+        }
+    }
+}

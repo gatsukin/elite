@@ -1,0 +1,93 @@
+.map {
+    display: flex;
+    flex-direction: column;
+
+    .scroll-top {
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 100);
+        max-height: 100vh;
+
+        *[class*="-ground-pane"] {
+            filter: url(#mapFilter) brightness(1) grayscale(.53) contrast(1.35);
+        }
+    }
+
+    .point {
+        width: 20px;
+        height: 20px;
+        border: 4px solid #585858;
+        border-radius: 50%;
+        background: #FFF;
+
+        &.open {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            border: 4px solid #2096D4;
+
+            &::before {
+                position: absolute;
+                top: calc(50% - 5px / 2);
+                left: calc(50% - 5px / 2);
+                width: 5px;
+                height: 5px;
+                content: "";
+                border-radius: 50%;
+                background-color: #2096D4;
+            }
+        }
+    }
+
+    .card__info {
+        display: flex;
+        justify-content: center;
+        width: auto;
+
+
+        .card {
+            @media screen and (min-width: 1751px) and (min-height: 940px),
+            screen and (min-width: 1601px) and (min-height: 915px) and (max-width: 1750px),
+            screen and (max-width: 1600px) and (min-height: 875px), screen and (min-width: 476px) and (min-height:820px), screen and (min-height: 820px) {
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                max-width: 320px;
+            }
+
+            @media screen and (max-width: 1750px) {
+                max-width: 300px;
+            }
+
+            @media screen and (max-width: 1600px) {
+                max-width: 280px;
+
+                &__main {
+                    &--title {
+                        font-size: .9rem;
+                    }
+
+                    &--price {
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 1750px) and (max-height: 839px),
+        screen and (min-width: 1601px) and (max-height: 915px) and (max-width: 1750px),
+        screen and (min-width: 1601px) and (max-height: 874px), screen and (max-width: 476px) and (max-height:820px) {
+            &.scrolled ~ .scroll-top {
+                display: flex;
+                margin: 30px auto 15px;
+            }
+        }
+    }
+}

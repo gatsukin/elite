@@ -1,0 +1,28 @@
+<div id="modal" class="modal" style="display: none;">
+	<div class="modal__content">
+		<div class="modal__header">
+			<div class="modal__header--title">
+				Напишите нам!
+			</div>
+			<button class="modal--close" id="modal-close">
+				<svg>
+					<use xlink:href="#close"/>
+				</svg>
+			</button>
+		</div>
+		<div class="modal__body">
+			<form action="#" class="form">
+				<input type="text" placeholder="Имя" required>
+				<input id="modal-tel" type="text" placeholder="Телефон" required pattern=".{15,16}">
+				<textarea required placeholder="Сообщение" cols="30" rows="6"></textarea>
+				<label class="checkbox">
+					<input type="checkbox" hidden>
+					<span>Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в
+						соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на
+						условиях и для целей, определенных в Согласии на обработку персональных данных *</span>
+				</label>
+				<button class="link" type="submit">Отправить</button>
+			</form>
+		</div>
+	</div>
+</div>
