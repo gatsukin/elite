@@ -46,15 +46,16 @@ function gridFunc() {
     PreviouslyViewedMsnry.layout();
   }
 }
+// Исправляем баги с grid сеткой при загрузке стилей
 let pageEvents = ['load', 'DOMContentLoaded']
 for (let i = 0; i < pageEvents.length; i++) {
   const event = pageEvents[i];
   window.addEventListener(event, function () {
-    gridFunc()
+    setTimeout(() => {
+      gridFunc()
+    }, 100);
   })
 }
-// Исправляем баги с grid сеткой при загрузке стилей
-
 // Добавляем возможность открытия карточек посредством клика
 let cardMassive = document.querySelectorAll('.card')
 for (let i = 0; i < cardMassive.length; i++) {
