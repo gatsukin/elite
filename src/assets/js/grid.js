@@ -50,10 +50,11 @@ function gridFunc() {
 let pageEvents = ['load', 'DOMContentLoaded']
 for (let i = 0; i < pageEvents.length; i++) {
   const event = pageEvents[i];
+  gridFunc()
   window.addEventListener(event, function () {
     setTimeout(() => {
       gridFunc()
-    }, 1000);
+    }, 500);
   })
 }
 // Добавляем возможность открытия карточек посредством клика
