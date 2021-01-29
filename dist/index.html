@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Elite Russia</title>
 	<link rel="stylesheet" href="/assets/css/style.css">
+	<!-- <link rel="stylesheet" href="/assets/css/virtual-select.min.css" /> -->
 </head>
 
 <body>
@@ -346,26 +347,26 @@
 					</a>
 					<form action="#" class="filter__checkbox-btn">
 						<div>
-							<input type="radio" hidden name="type" id="type1">
+							<input type="checkbox" hidden onchange="checkboxListener(this)" name="type" id="type1">
 							<label for="type1" class="filter--checkbox box">
 								Дома
 							</label>
 						</div>
 						<div>
-							<input type="radio" hidden  name="type" id="type2">
+							<input type="checkbox" hidden onchange="checkboxListener(this)" name="type" id="type2">
 							<label for="type2" class="filter--checkbox box">
 								Квартиры
 							</label>
 						</div>
 						<div>
-							<input type="radio" hidden  name="type" id="type3">
+							<input type="checkbox" hidden onchange="checkboxListener(this)" name="type" id="type3">
 							<label for="type3" class="filter--checkbox box">
 								Земельные
 								участки
 							</label>
 						</div>
 						<div>
-							<input type="radio" hidden name="type" id="type4">
+							<input type="checkbox" hidden onchange="checkboxListener(this)" name="type" id="type4">
 							<label for="type4" class="filter--checkbox box">
 								Коммерческая недвижимость
 							</label>
@@ -373,72 +374,16 @@
 					</form>
 					<div class="filter__select--wrap">
 						<div class="filter__select">
-							<select onchange="listener(city, cityReset)"  id="city">
-								<option value="">Город</option>
-								<option value="1">Красноярск</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-							</select>
-							<button id="cityReset" onclick="reset(city); listener(city, cityReset)">
-								<svg>
-									<use xlink:href="#close"/>
-								</svg>
-							</button>
+							<div id="city"></div>
 						</div>
 						<div class="filter__select">
-							<select onchange="listener(cost, costReset)"  id="cost">
-								<option value="">Стоимость</option>
-								<option value="1">Красноярск</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-							</select>
-							<button id="costReset" onclick="reset(cost); listener(cost, costReset)">
-								<svg>
-									<use xlink:href="#close"/>
-								</svg>
-							</button>
+							<div id="cost"></div>
 						</div>
 						<div class="filter__select">
-							<select onchange="listener(dist, distReset)"  id="dist">
-								<option value="">Район</option>
-								<option value="1">Красноярск</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-							</select>
-							<button id="distReset" onclick="reset(dist); listener(dist, distReset)">
-								<svg>
-									<use xlink:href="#close"/>
-								</svg>
-							</button>
+							<div id="dist"></div>
 						</div>
 						<div class="filter__select">
-							<select onchange="listener(sq, sqReset)"  id="sq">
-								<option value="">Площадь</option>
-								<option value="1">Красноярск</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-								<option value="1">das</option>
-							</select>
-							<button id="sqReset" onclick="reset(sq); listener(sq, sqReset)">
-								<svg>
-									<use xlink:href="#close"/>
-								</svg>
-							</button>
+							<div id="sq"></div>
 						</div>
 					</div>
 				</div>
@@ -987,8 +932,11 @@
 	<script src="/assets/js/grid.js"></script>
 	<!-- маска для полей ввода -->
 	<script src="/assets/js/imask.min.js"></script>
+	<!-- Фильтр select -->
+	<script src="/assets/js/virtual-select.min.js"></script>
 	<!-- общие скрипты -->
 	<script src="/assets/js/common.js"></script>
+
 </body>
 
 </html>

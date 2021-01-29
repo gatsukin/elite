@@ -1,0 +1,287 @@
+.vscomp {
+    &-ele {
+        display: inline-block;
+        width: 100%;
+        // max-width: 260px;
+        padding: 0 40px 0 0;
+        font-family: sans-serif;
+    }
+
+    &-arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 100%;
+
+        &::after {
+            margin-bottom: -6px;
+            content: "";
+            border: 6px solid transparent;
+            border-top-color: #111;
+        }
+    }
+
+    &-wrapper {
+        position: relative;
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        color: #333;
+        outline: none;
+        font-size: 14px;
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        .checkbox-icon {
+            position: relative;
+            display: inline-flex;
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            background: #EEE;
+
+            &::after {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                content: "\2713";
+                transition: .2s;
+                opacity: 0;
+                font-size: 18px;
+            }
+
+            &.checked::after {
+                opacity: 1;
+            }
+        }
+
+        &.position-top .vscomp-dropbox {
+            top: auto;
+            bottom: calc(100% + 4px);
+            transform: translate3d(0, 30px, 0);
+        }
+
+        .position-left .vscomp-dropbox {
+            right: 0;
+            left: auto;
+        }
+
+        &.selected {
+            .checkbox-icon::after {
+                opacity: 1;
+            }
+        }
+
+        &.multiple {
+            .toggle-all-options {
+                cursor: pointer;
+            }
+
+            .vscomp-search-input {
+                width: calc(100% - 55px);
+            }
+
+            .vscomp-option.selected .checkbox-icon::after {
+                opacity: 1;
+            }
+        }
+
+        &.opened {
+            .vscomp-toggle-button {
+                border: 1px solid #AEAEAE;
+            }
+
+            .vscomp-dropbox {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
+
+        &.closed .vscomp-dropbox {
+            display: none;
+        }
+
+        &:not(.has-value) .vscomp-value {
+            color: #AEAEAE;
+        }
+
+        &.has-value .vscomp-value {
+            color: #303030;
+            font-family: @FFRBold;
+        }
+
+        &.has-clear-button.has-value .vscomp-clear-button {
+            cursor: pointer;
+            pointer-events: unset;
+
+            &::before, &::after {
+                background: #000;
+            }
+
+            &:hover {
+                &::before, &::after {
+                    filter: drop-shadow(0 0 2px rgba(black, 45%));
+                }
+            }
+        }
+    }
+
+    &-toggle-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 7px 30px 7px 20px;
+        cursor: pointer;
+        transition: .3s;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        background-color: #FFF;
+
+        &:hover, &:focus {
+            border: 1px solid #AEAEAE;
+        }
+    }
+
+    &-value {
+        overflow: hidden;
+        width: 100%;
+        height: 20px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 20px;
+
+        &-tag {
+            white-space: nowrap;
+        }
+    }
+
+    &-clear-button {
+        position: absolute;
+        top: 50%;
+        right: -35px;
+        display: flex;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        margin-top: -12px;
+        cursor: default;
+        pointer-events: none;
+        border-radius: 50%;
+
+        &::before, &::after {
+            position: absolute;
+            top: 25%;
+            width: 2px;
+            height: 27px;
+            margin-top: -6px;
+            content: "";
+            transition: all .3s;
+            background: #E5E5E5;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &-dropbox {
+        position: absolute;
+        z-index: 1;
+        top: calc(100% + 4px);
+        left: 0;
+        width: 100%;
+        transition-duration: 250ms;
+        transform: translate3d(0, -30px, 0);
+        opacity: 0;
+        background-color: #FFF;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .3);
+    }
+
+    &-options-container {
+        position: relative;
+        overflow: auto;
+        max-height: 210px;
+    }
+
+    &-option {
+        display: flex;
+        align-items: center;
+        align-items: center;
+        height: 40px;
+        padding: 10px 15px;
+        cursor: pointer;
+
+        &.selected {
+            font-family: @FFRBold;
+        }
+
+        &.disabled {
+            cursor: default;
+            opacity: .5;
+        }
+
+        &-text {
+            overflow: hidden;
+            width: calc(100% - 25px);
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &-search {
+        &-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 5px 0 15px;
+            border-bottom: 1px solid #DDD;
+        }
+
+        &-input {
+            width: calc(100% - 30px);
+            height: 38px;
+            padding: 10px 0;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        &-clear {
+            display: flex;
+            visibility: hidden;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            user-select: none;
+            color: #999;
+            font-size: 25px;
+
+            &:hover {
+                color: #333;
+            }
+        }
+    }
+
+    &-no-options, &-no-search-results {
+        display: none;
+        padding: 20px 10px;
+        text-align: center;
+    }
+}

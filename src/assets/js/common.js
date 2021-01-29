@@ -39,7 +39,7 @@ if (document.getElementById('modal')) {
 
   for (let i = 0; i < button.length; i++) {
     const el = button[i];
-    
+
     // Открытие
     el.addEventListener("click", function () {
       modal.style.display = 'flex'
@@ -75,18 +75,83 @@ if (document.getElementById('lightgallery')) {
   });
 }
 
-if(document.getElementsByClassName('filter')) {
-  function listener(id, btnId) {
-    if (id.value !== '') {
-      btnId.classList.add('active')
-      id.classList.add('active')
-    } else {
-      btnId.classList.remove('active')
-      id.classList.remove('active')
+if (document.getElementsByClassName('filter')) {
+  let chkboxArr = document.querySelectorAll('.filter__checkbox-btn input')
+
+  chkboxArr.forEach(el => {
+    el.checked = true
+  });
+
+
+  function checkboxListener(e) {
+    e.checked = true
+    // Создаем массив без выбранного элемента
+    let elArr = [];
+    for (let i = 0; i < chkboxArr.length; i++) {
+      const el = chkboxArr[i];
+      if (el !== e) {
+        elArr.push(el)
+      }
     }
+    // выключаем у массива флажки
+    elArr.forEach(element => {
+      element.checked = !element.checked
+      console.log(element.checked, element.id)
+    });
   }
-  
-  function reset(id) {
-    id.value = ''
-  }
+
+  let cityOpt = [{
+      label: 'Красноярск',
+      value: 'krasnoyarsk'
+    },
+    {
+      label: 'Москва',
+      value: 'Moscow'
+    },
+    {
+      label: 'Саратов',
+      value: 'Saratov'
+    },
+    {
+      label: 'Another one',
+      value: 'etc'
+    }
+  ];
+
+  VirtualSelect.init({
+    ele: '#city',
+    options: cityOpt,
+    placeholder: 'Город'
+  });
+
+  VirtualSelect.init({
+    ele: '#cost',
+    options: cityOpt,
+    multiple: true,
+    placeholder: 'Стоимость',
+    search: false
+  });
+
+  VirtualSelect.init({
+    ele: '#dist',
+    options: cityOpt,
+    multiple: true,
+    placeholder: 'Район',
+    search: false
+  });
+
+  VirtualSelect.init({
+    ele: '#sq',
+    options: cityOpt,
+    multiple: true,
+    placeholder: 'Площадь',
+    search: false
+  });
+
+  // https://sa-si-dev.github.io/virtual-select/#/methods
+  // ПОЛУЧЕНИЕ ИНФОРМАЦИИ ИЗ СЕЛЕКТОВ
+  // document.querySelector('#city').value;
+  // document.querySelector('#cost').value;
+  // document.querySelector('#dist').value;
+  // document.querySelector('#sq').value;
 }
