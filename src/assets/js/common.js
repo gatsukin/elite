@@ -118,6 +118,61 @@ if (document.getElementsByClassName('filter')) {
       value: 'etc'
     }
   ];
+  let costOpt = [{
+      label: '1млн. - 10млн.',
+      value: '12'
+    },
+    {
+      label: '10млн. - 20млн.',
+      value: 'Moscow'
+    },
+    {
+      label: '20млн. - 30млн.',
+      value: 'Saratov'
+    },
+    {
+      label: '30млн. - 50млн.',
+      value: 'etc'
+    },
+    {
+      label: '50млн. - 100млн.',
+      value: 'etc'
+    }
+  ];
+  let distOpt = [{
+      label: 'Центральный р-н',
+      value: 'krasnoyarsk'
+    },
+    {
+      label: 'Ленинский р-н',
+      value: 'Moscow'
+    },
+    {
+      label: 'Косой переулок',
+      value: 'Saratov'
+    },
+    {
+      label: 'Октябрьский',
+      value: 'etc'
+    }
+  ];
+  let sqOpt = [{
+      label: '30кв.м - 50кв.м',
+      value: 'krasnoyarsk'
+    },
+    {
+      label: '50кв.м - 150кв.м',
+      value: 'Moscow'
+    },
+    {
+      label: '150кв.м - 300кв.м',
+      value: 'Saratov'
+    },
+    {
+      label: 'больше 300кв.м',
+      value: 'etc'
+    }
+  ];
 
   // Инициализация выпадашек
   VirtualSelect.init({
@@ -128,7 +183,7 @@ if (document.getElementsByClassName('filter')) {
 
   VirtualSelect.init({
     ele: '#cost',
-    options: cityOpt,
+    options: costOpt,
     multiple: true,
     placeholder: 'Стоимость',
     search: false
@@ -136,7 +191,7 @@ if (document.getElementsByClassName('filter')) {
 
   VirtualSelect.init({
     ele: '#dist',
-    options: cityOpt,
+    options: distOpt,
     multiple: true,
     placeholder: 'Район',
     search: false
@@ -144,7 +199,7 @@ if (document.getElementsByClassName('filter')) {
 
   VirtualSelect.init({
     ele: '#sq',
-    options: cityOpt,
+    options: sqOpt,
     multiple: true,
     placeholder: 'Площадь',
     search: false
