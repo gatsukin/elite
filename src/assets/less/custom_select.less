@@ -10,18 +10,22 @@
     &-arrow {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 30px;
         height: 100%;
+        transition: .3s;
 
         &::after {
+            width: 15px;
+            height: 15px;
             margin-bottom: -6px;
             content: "";
-            border: 6px solid transparent;
-            border-top-color: #111;
+            transition: .3s;
+            background-image: url(/assets/img/icons/arrow-down.svg);
+            background-size: cover;
         }
     }
 
@@ -96,13 +100,23 @@
         }
 
         &.opened {
-            .vscomp-toggle-button {
-                border: 1px solid #AEAEAE;
-            }
+            .vscomp {
+                &-arrow {
+                    transform: rotateX(180deg);
 
-            .vscomp-dropbox {
-                transform: translate3d(0, 0, 0);
-                opacity: 1;
+                    &:after {
+                        margin-bottom: 6px;
+                    }
+                }
+
+                &-toggle-button {
+                    border: 1px solid #AEAEAE;
+                }
+
+                &-dropbox {
+                    transform: translate3d(0, 0, 0);
+                    opacity: 1;
+                }
             }
         }
 
@@ -181,7 +195,7 @@
         &::before, &::after {
             position: absolute;
             top: 25%;
-            width: 2px;
+            width: 3px;
             height: 27px;
             margin-top: -6px;
             content: "";
@@ -207,8 +221,10 @@
         transition-duration: 250ms;
         transform: translate3d(0, -30px, 0);
         opacity: 0;
+        border: 1px solid #AEAEAE;
+        border-radius: 5px;
         background-color: #FFF;
-        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .3);
+        box-shadow: 0 0px 5px 3px rgba(0, 0, 0, .15);
     }
 
     &-options-container {

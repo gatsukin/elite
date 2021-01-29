@@ -82,24 +82,25 @@ if (document.getElementsByClassName('filter')) {
     el.checked = true
   });
 
+  let elArr = [];
+  let lastEl = undefined;
 
   function checkboxListener(e) {
-    e.checked = true
-    // Создаем массив без выбранного элемента
-    let elArr = [];
-    for (let i = 0; i < chkboxArr.length; i++) {
-      const el = chkboxArr[i];
-      if (el !== e) {
-        elArr.push(el)
-      }
+    if (lastEl == undefined || lastEl !== e) {
+      lastEl = e
+      chkboxArr.forEach(el => {
+        el.checked = false
+      });
+      e.checked = true
+    } else if (lastEl == e) {
+      chkboxArr.forEach(el => {
+        el.checked = true
+      });
+      lastEl = undefined
     }
-    // выключаем у массива флажки
-    elArr.forEach(element => {
-      element.checked = !element.checked
-      console.log(element.checked, element.id)
-    });
   }
 
+  // Массив вариантов выпадашки
   let cityOpt = [{
       label: 'Красноярск',
       value: 'krasnoyarsk'
@@ -118,6 +119,7 @@ if (document.getElementsByClassName('filter')) {
     }
   ];
 
+  // Инициализация выпадашек
   VirtualSelect.init({
     ele: '#city',
     options: cityOpt,
