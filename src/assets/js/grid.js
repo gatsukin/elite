@@ -52,9 +52,9 @@ for (let i = 0; i < pageEvents.length; i++) {
   const event = pageEvents[i];
   gridFunc()
   window.addEventListener(event, function () {
-    setTimeout(() => {
+    setIntervalX(function () {
       gridFunc()
-    }, 500);
+    }, 300, 3);
   })
 }
 // Добавляем возможность открытия карточек посредством клика
