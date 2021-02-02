@@ -1,4 +1,4 @@
-<div class="filter">
+<form class="filter">
 	<div class="container">
 		<input hidden type="checkbox" id="dropDownFilter" class="dropdown--input">
 		<label for="dropDownFilter" class="dropdown--head">
@@ -8,7 +8,7 @@
 			<a href="/" class="link-to-index box">
 				Элитная Россия
 			</a>
-			<form action="#" class="filter__checkbox-btn">
+			<div class="filter__checkbox-btn" id="type">
 				<div>
 					<input type="checkbox" hidden onchange="checkboxListener(this)" name="type" id="type1">
 					<label for="type1" class="filter--checkbox box">
@@ -34,7 +34,21 @@
 						Коммерческая недвижимость
 					</label>
 				</div>
-			</form>
+			</div>
+			<div class="filter__checkbox-btn column" id="status">
+				<div>
+					<input type="checkbox" hidden onchange="" name="saler" id="arenda">
+					<label for="arenda" class="filter--checkbox box">
+						Аренда
+					</label>
+				</div>
+				<div>
+					<input type="checkbox" hidden onchange="" name="saler" id="sale">
+					<label for="sale" class="filter--checkbox box">
+						Продажа
+					</label>
+				</div>
+			</div>
 			<div class="filter__select--wrap">
 				<div class="filter__select">
 					<div id="city"></div>
@@ -50,5 +64,8 @@
 				</div>
 			</div>
 		</div>
+		<button type="submit" class="filter--checkbox submit">
+			Сохранить поиск
+		</button>
 	</div>
-</div>
+</form>

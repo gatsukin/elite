@@ -1,4 +1,13 @@
 .filter {
+    .container {
+        display: flex;
+        flex-direction: row;
+
+        @media screen and (max-width: 974px) {
+            flex-direction: column;
+        }
+    }
+
     .dropdown {
         &--head {
             position: relative;
@@ -34,9 +43,10 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            width: 100%;
         }
 
-        @media screen and (max-width: 829px) {
+        @media screen and (max-width: 974px) {
             &--head {
                 display: block;
             }
@@ -44,10 +54,10 @@
             &--body {
                 visibility: hidden;
                 flex-wrap: wrap;
+                justify-content: center;
                 max-height: 0;
                 padding: 0;
                 transition: .3s ease-in-out;
-                // overflow: hidden;
                 opacity: 0;
             }
 
@@ -76,53 +86,86 @@
     &__checkbox-btn {
         display: flex;
         flex-direction: row;
-        width: 100%;
-        max-width: 520px;
+        // width: 100%;
+        // max-width: 520px;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: calc((125px + 4px * 2) *2);
         margin: 0 20px;
 
-        @media screen and (max-width: 1200px) and (min-width: 830px) {
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: calc(128px * 2 + 10px);
-            margin: 0 10px;
-        }
-
-        @media screen and (max-width: 829px) {
-            justify-content: center;
-            width: calc(100% - 124px - 20px);
-            margin: 0 0 0 20px;
-        }
-
-        @media screen and (max-width: 690px) {
-            flex-wrap: wrap;
-
+        &:not(.column) {
             > div {
                 width: 50%;
-                margin-bottom: 5px;
             }
         }
 
-        @media screen and (max-width: 525px) {
+        > div {
+            margin-bottom: 5px;
+        }
+
+        &.column {
+            flex-direction: column;
+            margin-left: 0;
+        }
+
+        @media screen and (max-width: 1400px) and (min-width: 975px) {
+            margin: 0 5px;
+        }
+
+        @media screen and (max-width: 974px) {
+            justify-content: center;
+            margin: 0 0 0 20px;
+        }
+
+        @media screen and (max-width: 575px) {
+            margin: 0;
+        }
+
+        @media screen and (max-width: 425px) {
             width: 100%;
+            max-width: unset;
             margin: 0 auto;
+
+            &.column {
+                flex-direction: row;
+                margin: 10px auto 0;
+
+                > div {
+                    width: 50%;
+                }
+            }
         }
     }
 
-    @media screen and (max-width: 525px) {
+    @media screen and (max-width: 575px) {
         .link-to-index {
             display: none;
         }
     }
 
-    input:checked ~ .filter--checkbox {
-        color: #4C4C51;
-        background-color: white;
-        font-family: @FFRMedium;
+    input:checked {
+        ~ .filter--checkbox {
+            color: #4C4C51;
+            background-color: white;
+
+            &:not(.submit) {
+                font-family: @FFRMedium;
+            }
+
+            &.submit {
+                margin-top: 0;
+            }
+        }
     }
 
     &--checkbox {
         align-items: center;
         justify-content: center;
+        min-width: 115px;
+        max-width: unset;
+        max-width: 125px;
+        min-height: 60px;
+        max-height: 60px;
         margin: 0 2px;
         padding: 10px;
         cursor: pointer;
@@ -138,14 +181,20 @@
             border: 1px solid rgba(#4C4C51, 15%);
         }
 
-        @media screen and (max-width: 1200px) and (min-width: 830px),
-        screen and (max-width: 690px) {
-            min-height: 60px;
-            max-height: 60px;
+        &.submit {
+            max-width: unset;
+            color: #4C4C51;
+            background-color: white;
+            font-size: 14px;
+
+            @media screen and (max-width: 974px) {
+                min-height: 40px;
+                margin: 10px 0;
+            }
         }
 
-        @media screen and (max-width: 690px) {
-            max-width: 100%;
+        @media screen and (max-width: 425px) {
+            max-width: unset;
         }
     }
 
@@ -163,7 +212,12 @@
             justify-content: space-between;
             width: 100%;
             max-width: 650px;
+
+            @media screen and (max-width: 1250px) and (min-width: 975px) {
+                width: 80%;
+            }
         }
+
 
         > div {
             display: flex;
@@ -185,7 +239,7 @@
         }
 
 
-        @media screen and (max-width: 829px) {
+        @media screen and (max-width: 974px) {
             margin-bottom: 5px;
 
             &--wrap {

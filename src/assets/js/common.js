@@ -76,7 +76,7 @@ if (document.getElementById('lightgallery')) {
 }
 
 if (document.getElementsByClassName('filter')) {
-  let chkboxArr = document.querySelectorAll('.filter__checkbox-btn input')
+  let chkboxArr = document.querySelectorAll('#type input')
 
   chkboxArr.forEach(el => {
     el.checked = true

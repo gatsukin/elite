@@ -1,0 +1,58 @@
+.cookies {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: flex;
+    visibility: hidden;
+    overflow: hidden;
+    align-items: center;
+    max-height: 0;
+    padding: 0 30px;
+    transition: .3s ease-in-out;
+    opacity: 0;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+    font: .9rem/115% @FFRLight;
+
+    &.open {
+        visibility: visible;
+        max-height: 100px;
+        padding: 23px 30px;
+        opacity: 1;
+    }
+
+    @media screen and (max-width: 850px) {
+        right: 10px;
+        bottom: 10px;
+        left: 10;
+    }
+
+    @media screen and (max-width: 575px) {
+        flex-direction: column;
+        text-align: center;
+
+        .btn-blue {
+            margin: 10px auto 0;
+        }
+    }
+}
+
+.btn-blue {
+    min-width: 170px;
+    margin-left: 20px;
+    padding: 13px 20px;
+    transition: .3s;
+    color: white;
+    border-radius: 5px;
+    background: #0088EA;
+    font: .9rem/115% @FFRBold;
+
+    &:hover, &:focus {
+        background: #0070C0;
+    }
+
+    &:active {
+        transform: scale(.95);
+    }
+}

@@ -5,6 +5,10 @@
         // max-width: 260px;
         padding: 0 40px 0 0;
         font-family: sans-serif;
+
+        @media screen and (max-width: 1250px) and (min-width: 975px) {
+            padding: 0 30px 0 0;
+        }
     }
 
     &-arrow {
@@ -23,9 +27,14 @@
             height: 15px;
             margin-bottom: -6px;
             content: "";
-            transition: .3s;
+            transition: .2s;
             background-image: url(/assets/img/icons/arrow-down.svg);
             background-size: cover;
+        }
+
+        @media screen and (max-width: 1250px) and (min-width: 975px) {
+            right: 0;
+            background-color: white;
         }
     }
 
@@ -37,7 +46,7 @@
         text-align: left;
         color: #333;
         outline: none;
-        font-size: 14px;
+        font-size: .7rem;
 
         *, *::before, *::after {
             box-sizing: border-box;
@@ -163,6 +172,10 @@
 
         &:hover, &:focus {
             border: 1px solid #AEAEAE;
+        }
+
+        @media screen and (max-width: 1250px) and (min-width: 975px) {
+            padding: 7px 20px 7px 10px;
         }
     }
 

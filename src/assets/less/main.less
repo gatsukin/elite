@@ -71,8 +71,22 @@ button {
     background: none;
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #F4F5F8;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: rgba(0, 0, 0, 1);
+    }
+}
+
+
 html {
-    background: #F4F5F8;
+    background: var(--bg);
+    // #F4F5F8
     font-family: @FFRRegular;
     // scroll-behavior: smooth;
 
@@ -121,6 +135,7 @@ main {}
     max-width: 124px;
     min-height: 124px;
     max-height: 124px;
+
 
     @media screen and (max-width: 1440px) and (min-width: 1024px) and (max-height: 750px) {
         min-width: 105px;

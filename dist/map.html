@@ -239,6 +239,10 @@
 					d="M28.4941 26.2931L21.9689 21.5753V10.25C21.9689 10.0486 21.8042 9.88391 21.6028 9.88391H19.4018C19.2005 9.88391 19.0358 10.0486 19.0358 10.25V22.852C19.0358 22.971 19.0907 23.0808 19.1868 23.1494L26.7553 28.6679C26.92 28.7869 27.1488 28.7503 27.2678 28.5902L28.5765 26.8056C28.6955 26.6363 28.6589 26.4075 28.4941 26.2931V26.2931Z" />
 
 			</symbol>
+			<symbol id="star" viewBox="0 0 27 25">
+				<path
+					d="M17.142 8.11605L17.3781 8.58018L17.8937 8.65285L25.9755 9.7917L20.1485 15.3002L19.7568 15.6705L19.8507 16.2012L21.2304 23.9964C21.2282 23.9971 21.2255 23.9978 21.222 23.9983L21.2206 23.9986C21.2159 23.9994 21.2102 23.9995 21.2049 23.9987C21.2004 23.998 21.1982 23.997 21.1982 23.997L21.194 23.9948L13.9542 20.3042L13.5001 20.0726L13.0459 20.3042L5.80617 23.9948L5.80465 23.9956C5.7993 23.9983 5.79099 24.0005 5.78132 23.9999C5.77667 23.9996 5.77272 23.9986 5.76954 23.9976L7.14941 16.2012L7.24334 15.6705L6.85167 15.3002L1.02458 9.7917L9.10641 8.65285L9.62205 8.58018L9.85817 8.11605L13.4736 1.00911C13.4737 1.00908 13.4737 1.00904 13.4738 1.009C13.4752 1.00779 13.4792 1.00502 13.4861 1.00278C13.5006 0.998012 13.5125 0.999921 13.521 1.00401L13.5221 1.00455C13.5234 1.00517 13.5244 1.00572 13.525 1.00614L17.142 8.11605Z" />
+			</symbol>
 		</defs>
 	</svg>
 	<!-- SVG Icons -->
@@ -248,6 +252,12 @@
 			<div class="header__contact">
 				<a class="link" href="tel:+79082042680">+7 (908) 204-26-80</a>
 				<a class="link" href="mailto:snabgenie@stmkr.ru">snabgenie@stmkr.ru</a>
+				<div class="toggle normal">
+					<span>Темная тема</span>
+					<input type="checkbox" hidden id="normal">
+					<label for="normal" class="toggle-item"></label>
+				</div>
+				<button class="btn-blue">Личный кабинет</button>
 			</div>
 			<div class="header__main">
 				<a href="/" class="link-to-index box">
@@ -256,7 +266,7 @@
 				<div class="header__main--col">
 					<a href="#" class="header__main--call modalOpen">
 						<svg>
-							<use xlink:href="#call-phone"/>
+							<use xlink:href="#call-phone" />
 						</svg>
 						<span>Заказать звонок</span>
 					</a>
@@ -269,25 +279,25 @@
 							<!-- viber -->
 							<a href="#">
 								<svg>
-									<use xlink:href="#viber-icon"/>
+									<use xlink:href="#viber-icon" />
 								</svg>
 							</a>
 							<!-- whatsApp -->
 							<a href="#">
 								<svg>
-									<use xlink:href="#whatsapp-icon"/>
+									<use xlink:href="#whatsapp-icon" />
 								</svg>
 							</a>
 							<!-- telegram -->
 							<a href="#">
 								<svg>
-									<use xlink:href="#telegram-icon"/>
+									<use xlink:href="#telegram-icon" />
 								</svg>
 							</a>
 							<!-- skype -->
 							<a href="#">
 								<svg>
-									<use xlink:href="#skype-icon"/>
+									<use xlink:href="#skype-icon" />
 								</svg>
 							</a>
 						</div>
@@ -296,37 +306,37 @@
 							<!-- facebook -->
 							<a href="#">
 								<svg>
-									<use xlink:href="#facebook-icon"/>
+									<use xlink:href="#facebook-icon" />
 								</svg>
 							</a>
 							<!-- youtube -->
 							<a href="#">
 								<svg>
-									<use xlink:href="#youtube-icon"/>
+									<use xlink:href="#youtube-icon" />
 								</svg>
 							</a>
 							<!-- instagram -->
 							<a href="#">
 								<svg>
-									<use xlink:href="#instagram-icon"/>
+									<use xlink:href="#instagram-icon" />
 								</svg>
 							</a>
 							<!-- Linkedin  -->
 							<a href="#">
 								<svg>
-									<use xlink:href="#linkedin-icon"/>
+									<use xlink:href="#linkedin-icon" />
 								</svg>
 							</a>
 							<!-- vk -->
 							<a href="#">
 								<svg>
-									<use xlink:href="#vk-icon"/>
+									<use xlink:href="#vk-icon" />
 								</svg>
 							</a>
 							<!-- odnoklassniki -->
 							<a href="#">
 								<svg>
-									<use xlink:href="#odnoklassniki-icon"/>
+									<use xlink:href="#odnoklassniki-icon" />
 								</svg>
 							</a>
 						</div>
@@ -336,7 +346,7 @@
 			</div>
 		</div>
 
-		<div class="filter">
+		<form class="filter">
 			<div class="container">
 				<input hidden type="checkbox" id="dropDownFilter" class="dropdown--input">
 				<label for="dropDownFilter" class="dropdown--head">
@@ -346,7 +356,7 @@
 					<a href="/" class="link-to-index box">
 						Элитная Россия
 					</a>
-					<form action="#" class="filter__checkbox-btn">
+					<div class="filter__checkbox-btn" id="type">
 						<div>
 							<input type="checkbox" hidden onchange="checkboxListener(this)" name="type" id="type1">
 							<label for="type1" class="filter--checkbox box">
@@ -372,7 +382,21 @@
 								Коммерческая недвижимость
 							</label>
 						</div>
-					</form>
+					</div>
+					<div class="filter__checkbox-btn column" id="status">
+						<div>
+							<input type="checkbox" hidden onchange="" name="saler" id="arenda">
+							<label for="arenda" class="filter--checkbox box">
+								Аренда
+							</label>
+						</div>
+						<div>
+							<input type="checkbox" hidden onchange="" name="saler" id="sale">
+							<label for="sale" class="filter--checkbox box">
+								Продажа
+							</label>
+						</div>
+					</div>
 					<div class="filter__select--wrap">
 						<div class="filter__select">
 							<div id="city"></div>
@@ -388,8 +412,11 @@
 						</div>
 					</div>
 				</div>
+				<button type="submit" class="filter--checkbox submit">
+					Сохранить поиск
+				</button>
 			</div>
-		</div>
+		</form>
 
 	</header>
 

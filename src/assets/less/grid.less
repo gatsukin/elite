@@ -76,6 +76,45 @@
         }
     }
 
+    .mark {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        svg {
+            width: 30px;
+            height: 30px;
+            transition: .2s;
+
+            fill: transparent;
+            stroke: #CCC;
+            stroke-width: 2;
+        }
+
+        &:hover {
+            svg {
+                filter: drop-shadow(0 0 1px rgba(black, 50%));
+                stroke: #999;
+            }
+        }
+
+        @media screen and (max-width: 575px) {
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &.saved {
+        .mark {
+            svg {
+                fill: #FFC909;
+                stroke: none;
+            }
+        }
+    }
+
     &--img {
         display: flex;
         align-items: center;
@@ -94,10 +133,13 @@
         color: #4C4C51;
 
         &--title {
+            position: relative;
             margin-bottom: 10px;
+            padding-right: 35px;
             font: 1.1rem/115% @FFRRegular;
 
             @media screen and (max-width: 575px) {
+                padding-right: 25px;
                 font-size: .9rem;
             }
         }
