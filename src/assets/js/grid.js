@@ -61,9 +61,8 @@ for (let i = 0; i < pageEvents.length; i++) {
 let cardMassive = document.querySelectorAll('.card')
 for (let i = 0; i < cardMassive.length; i++) {
   const el = cardMassive[i];
-  el.addEventListener('click', function (event) {
-    // change size of item via class
-    // if (non links item)
+
+  function openCard() {
     if (!el.classList.contains('nonopen')) {
       el.classList.toggle('opened');
       // resize grid layout
@@ -71,5 +70,14 @@ for (let i = 0; i < cardMassive.length; i++) {
         gridFunc()
       }, 100, 3);
     }
-  })
+  };
+
+  if (el.querySelector('.card--img')) {
+    let openImgCard = el.querySelector('.card--img')
+    openImgCard.addEventListener('click', openCard);
+  }
+  if (el.querySelector('.card__main--title')) {
+    let openTitleCard = el.querySelector('.card__main--title')
+    openTitleCard.addEventListener('click', openCard);
+  }
 }

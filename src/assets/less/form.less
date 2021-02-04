@@ -19,7 +19,7 @@
         border: 1px solid #E2E2E2;
         border-radius: 5px;
         outline: none;
-        background: #F4F5F8;
+        background: white;
         font: .8rem/115% @FFRRegular;
 
         &::placeholder {
@@ -38,7 +38,7 @@
 
     button {
         display: inline-block;
-        margin: 10px auto 0;
+        margin: 10px auto 20px;
         padding: 5px 0;
         color: #3DAAE8;
         font: 1.2rem/115% @FFRRegular;
@@ -60,7 +60,7 @@
         span {
             display: flex;
             padding-left: 40px;
-            font: .9rem/115% @FFRLight;
+            font: .75rem/115% @FFRLight;
 
             &::before {
                 position: absolute;
@@ -71,7 +71,8 @@
                 height: 20px;
                 content: "";
                 transition: .3s;
-                background: #EEE;
+                border: 1px solid black;
+                background: white;
             }
 
             &::after {
@@ -89,8 +90,8 @@
                 font-size: 18px;
             }
 
-            @media screen and (max-width: 1300px) {
-                font-size: .75rem;
+            @media screen and (max-width: 575px) {
+                font-size: .8rem;
             }
         }
 

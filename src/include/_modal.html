@@ -1,4 +1,4 @@
-<div id="modal" class="modal" style="display: none;">
+<div id="offerModal" class="modal" style="display: none;">
 	<div class="modal__content">
 		<div class="modal__header">
 			<div class="modal__header--title">
@@ -6,22 +6,91 @@
 			</div>
 			<button class="modal--close" id="modal-close">
 				<svg>
-					<use xlink:href="#close"/>
+					<use xlink:href="#close" />
 				</svg>
 			</button>
 		</div>
 		<div class="modal__body">
 			<form action="#" class="form">
 				<input type="text" placeholder="Имя" required>
-				<input id="modal-tel" type="text" placeholder="Телефон" required pattern=".{15,16}">
+				<input type="text" placeholder="Телефон" required class="tel" pattern=".{15,16}">
 				<textarea required placeholder="Сообщение" cols="30" rows="6"></textarea>
 				<label class="checkbox">
-					<input type="checkbox" hidden>
+					<input type="checkbox" hidden required>
 					<span>Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в
 						соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на
 						условиях и для целей, определенных в Согласии на обработку персональных данных *</span>
 				</label>
 				<button class="link" type="submit">Отправить</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div id="loginModal" class="modal auth" style="display: none;">
+	<div class="modal__content">
+		<div class="modal__header">
+			<button class="modal--close">
+				<svg>
+					<use xlink:href="#close" />
+				</svg>
+			</button>
+		</div>
+		<div class="modal__body login_form">
+			<input id="reg-auth-modal" type="checkbox" hidden>
+			<form action="#" class="form auth">
+				<div class="modal__header--title">
+					Войти
+					<label for="reg-auth-modal" class="link" id="reg">Регистрация</label>
+				</div>
+				<input type="text" placeholder="Ваш эл. адрес" required>
+				<input type="text" placeholder="Пароль" required>
+				<div class="row">
+					<div class="form__social">
+						<a href="#">
+							<svg>
+								<use xlink:href="#vk-icon" />
+							</svg>
+						</a>
+						<a href="#">
+							<svg>
+								<use xlink:href="#facebook-icon" />
+							</svg>
+						</a>
+					</div>
+					<a href="#" class="link">Восстановить пароль</a>
+				</div>
+				<button type="submit" class="btn-style blue">Войти</button>
+			</form>
+			<form action="#" class="form reg">
+				<div class="modal__header--title">
+					Регистрация
+					<label for="reg-auth-modal" class="link" id="auth">Уже зарегестрированы?</label>
+				</div>
+				<input type="text" placeholder="Ваш эл. адрес" required>
+				<input type="text" placeholder="Ваше имя" required>
+				<input type="text" class="tel" placeholder="Сотовый" pattern=".{15,16}" required>
+				<input type="text" placeholder="Пароль" required>
+				<input type="text" placeholder="Пароль еще раз" required>
+				<div class="form__social">
+					<a href="#">
+						<svg>
+							<use xlink:href="#vk-icon" />
+						</svg>
+					</a>
+					<a href="#">
+						<svg>
+							<use xlink:href="#facebook-icon" />
+						</svg>
+					</a>
+				</div>
+				<label class="checkbox">
+					<input type="checkbox" hidden required>
+					<span>Нажимая кнопку "Регистрация", я даю свое согласие на обработку моих персональных данных, в
+						соответствии с Федеральным законом</span>
+				</label>
+				<button type="submit" class="btn-style blue">Регистрация</button>
+
 			</form>
 		</div>
 	</div>

@@ -14,13 +14,13 @@
 						<img src="/assets/img/temp/temp1.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж в стиле Hi-tech в Сочи
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -40,7 +40,9 @@
 								Перейти
 							</a>
 						</div>
-
+						<!-- <div class="card__main--note">
+							Оставить заметку
+						</div> -->
 						<div class="info">
 							<div class="square">
 								<span>654</span> м<sup>2</sup>
@@ -61,13 +63,13 @@
 						<img src="/assets/img/temp/temp3.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж в стиле Hi-tech в Сочи
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -108,13 +110,13 @@
 						<img src="/assets/img/temp/temp4.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -153,13 +155,13 @@
 						<img src="/assets/img/temp/temp2.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Hi-tech в Сочи
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -200,13 +202,13 @@
 						<img src="/assets/img/temp/temp1.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж в стиле Hi-tech в Сочи
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -247,13 +249,13 @@
 						<img src="/assets/img/temp/temp2.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж в стиле Hi-tech в Сочи
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -294,13 +296,13 @@
 						<img src="/assets/img/temp/temp2.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж в стиле Hi-tech в Сочи
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -342,13 +344,13 @@
 						<img src="/assets/img/temp/temp4.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Жилой квартал «Prime Park»
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
 						</div>
 						<div class="card__main--city">
 							г. Москва
@@ -434,7 +436,7 @@
 				<div class="card--wrap">
 					<form class="card__main" action="#">
 						<div class="card__main--title">Появился вопрос?</div>
-						<input type="text" id="tel" required value="+7" pattern=".{15,16}">
+						<input type="text" class="tel" required value="+7" pattern=".{15,16}">
 						<button class="card__main--link link" type="submit">Заказать звонок</button>
 					</form>
 				</div>
@@ -444,7 +446,7 @@
 			</div>
 
 			<!-- Карточка с предложением добавления объекта -->
-			<div class="card nonopen offer modalOpen" id="offer">
+			<div class="card nonopen offer" id="offer" onclick="openModal(offerModal)">
 				<a class="card--wrap">
 					<div class="offer__icon">
 						<svg>

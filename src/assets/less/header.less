@@ -6,7 +6,7 @@ header {
         top: 0;
         width: 100%;
 
-        @media screen and (max-width: 525px) {
+        @media screen and (max-width: 575px) {
             .header__main .link-to-index {
                 min-height: 62px;
                 max-height: 62px;
@@ -39,10 +39,9 @@ header {
         cursor: pointer;
         transition: all .3s ease;
         transform-origin: 20% center;
-        border: .5px solid rgba(117, 117, 117, .31);
         border-radius: 50px;
-        background: #AF4C4C;
-        box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, .2), 0 -3px 4px rgba(0, 0, 0, .15);
+        background: #E7E7E7;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, .12), inset 0px 4px 4px rgba(0, 0, 0, .25);
 
         &::before {
             position: absolute;
@@ -55,21 +54,20 @@ header {
             border: none;
             border-radius: 100%;
             background: #FFF;
-            box-shadow: inset .5px -1px 1px rgba(0, 0, 0, .35);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
         }
     }
 
-    input:checked + label {
-        background: #4CAF50;
+    &.true {
+        .toggle-item {
+            background: #6BCF6F;
 
-        &::before {
-            left: 73px;
+            &::before {
+                left: 73px;
+            }
         }
     }
 }
-
-
-
 
 .header {
     display: flex;
@@ -96,8 +94,65 @@ header {
             }
         }
 
-        @media screen and (max-width: 725px) {
+        @media screen and (max-width: 955px) {
+            > a {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 575px) {
             display: none;
+        }
+    }
+
+    .user {
+        &--info {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin-left: 10px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+
+        &--name {
+            color: #545454;
+            font: .9rem/115% @FFRRegular;
+        }
+
+        .link {
+            margin: 5px 0 0 auto;
+            color: #0088EA;
+
+            &::before {
+                background: #0088EA;
+            }
+        }
+
+        &--photo {
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+                object-fit: cover;
+            }
+        }
+
+        &--logout {
+            color: #BEBEBE;
+            font: .9rem/115% @FFRMedium;
         }
     }
 
@@ -115,7 +170,7 @@ header {
             width: 100%;
         }
 
-        @media screen and (max-width: 525px) {
+        @media screen and (max-width: 575px) {
             align-items: unset;
 
             &--col {
@@ -133,6 +188,7 @@ header {
             width: 100%;
             max-width: 230px;
             margin: 0 8px 0 40px;
+            cursor: pointer;
 
             svg {
                 width: 23px;
@@ -177,23 +233,16 @@ header {
                 }
             }
 
-            @media screen and (max-width: 975px) {
+            @media screen and (max-width: 1100px) {
                 margin: 0 8px;
-            }
-
-            @media screen and (max-width: 525px) {
-                justify-content: flex-end;
-                margin: auto 5px;
 
                 span {
-                    margin-left: 15px;
+                    margin-left: 10px;
                 }
             }
 
-            @media screen and (max-width: 375px) {
-                span {
-                    font-size: .85rem;
-                }
+            @media screen and (max-width: 975px) {
+                display: none;
             }
         }
 
@@ -223,7 +272,8 @@ header {
                 text-shadow: 0 0 3px rgba(#303030, 65%);
             }
 
-            @media screen and (max-width: 525px) {
+            @media screen and (max-width: 575px) {
+                max-width: unset;
                 margin: 0;
             }
         }
@@ -292,23 +342,23 @@ header {
                 }
             }
 
-            @media screen and (max-width: 585px) and (min-width: 526px) {
+            @media screen and (max-width: 585px) and (min-width: 576px) {
                 > div {
                     margin: 3px 5px;
                 }
             }
 
-            @media screen and (max-width: 525px) {
+            @media screen and (max-width: 575px) {
                 display: none;
             }
         }
 
         .link-to-index {
-            @media screen and (max-width: 525px) {
+            @media screen and (max-width: 575px) {
                 display: flex;
             }
 
-            @media screen and (min-width: 526px) {
+            @media screen and (min-width: 576px) {
                 display: none;
             }
         }

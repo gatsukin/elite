@@ -251,24 +251,193 @@
 			<div class="header__contact">
 				<a class="link" href="tel:+79082042680">+7 (908) 204-26-80</a>
 				<a class="link" href="mailto:snabgenie@stmkr.ru">snabgenie@stmkr.ru</a>
-				<div class="toggle normal">
+				<div class="toggle">
 					<span>Темная тема</span>
-					<input type="checkbox" hidden id="normal">
-					<label for="normal" class="toggle-item"></label>
+					<div class="toggle-item"></div>
 				</div>
-				<button class="btn-blue">Личный кабинет</button>
+				<div class="user">
+					<!-- Кнопка входа -->
+					<!-- <button class="btn-style blue" onclick="openModal(loginModal)">Личный кабинет</button> -->
+					<!-- Информация о юзере -->
+					<div class="user--info">
+						<div class="column">
+							<div class="user--name">Маргарита Ивановна</div>
+							<a href="#" class="link">
+								Личный кабинет
+							</a>
+						</div>
+						<a href="#" class="user--photo">
+							<img src="/assets/img/temp/man.jpg" alt="">
+						</a>
+						<a href="#" class="user--logout">Выйти</a>
+					</div>
+				</div>
 			</div>
 			<div class="header__main">
 				<a href="/" class="link-to-index box">
 					Элитная Россия
 				</a>
 				<div class="header__main--col">
-					<a href="#" class="header__main--call modalOpen">
+					<div class="burger" id="burger">
+						<button id="burgerBtn" class="burger--toggle">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+
+						<div class="burger__menu">
+							<!-- Если не зашел -->
+							<div class="login_form">
+								<input id="reg-auth" type="checkbox" hidden>
+								<form action="#" class="form auth">
+									<h4>Войти</h4>
+									<input type="text" placeholder="Ваш эл. адрес" required>
+									<input type="text" placeholder="Пароль" required>
+									<div class="form__social">
+										<a href="#">
+											<svg>
+												<use xlink:href="#vk-icon" />
+											</svg>
+										</a>
+										<a href="#">
+											<svg>
+												<use xlink:href="#facebook-icon" />
+											</svg>
+										</a>
+									</div>
+									<button type="submit" class="btn-style white">Войти</button>
+									<div class="form__link">
+										<a href="#" class="link">Восстановить пароль</a>
+										<label for="reg-auth" class="link" id="reg">Регистрация</label>
+									</div>
+								</form>
+								<form action="#" class="form reg">
+									<h4>Регистрация</h4>
+									<input type="text" placeholder="Ваш эл. адрес" required>
+									<input type="text" placeholder="Ваше имя" required>
+									<input type="text" class="tel" pattern=".{15,16}" placeholder="Сотовый" required>
+									<input type="text" placeholder="Пароль" required>
+									<input type="text" placeholder="Пароль еще раз" required>
+
+									<div class="form__social">
+										<a href="#">
+											<svg>
+												<use xlink:href="#vk-icon" />
+											</svg>
+										</a>
+										<a href="#">
+											<svg>
+												<use xlink:href="#facebook-icon" />
+											</svg>
+										</a>
+									</div>
+									<label class="checkbox">
+										<input type="checkbox" hidden required>
+										<span>Нажимая кнопку "Регистрация", я даю свое согласие на обработку моих персональных данных, в
+											соответствии с Федеральным законом</span>
+									</label>
+									<button type="submit" class="btn-style white">Регистрация</button>
+									<div class="form__link">
+										<label for="reg-auth" class="link" id="auth">Вход</label>
+									</div>
+								</form>
+							</div>
+
+							<!-- Если зашел -->
+
+							<div class="burger__user" style="display: none;">
+								<div class="burger__user--photo">
+									<img src="/assets/img/temp/man.jpg" alt="">
+								</div>
+								<div class="burger__user--name">
+									Маргарита Ивановна
+								</div>
+								<a href="#" class="link">Личный кабинет</a>
+								<a href="#" class="link burger__user--logout">Выйти</a>
+
+								<div class="header__main--social">
+									<!-- связь -->
+									<div>
+										<!-- viber -->
+										<a href="#">
+											<svg>
+												<use xlink:href="#viber-icon" />
+											</svg>
+										</a>
+										<!-- whatsApp -->
+										<a href="#">
+											<svg>
+												<use xlink:href="#whatsapp-icon" />
+											</svg>
+										</a>
+										<!-- telegram -->
+										<a href="#">
+											<svg>
+												<use xlink:href="#telegram-icon" />
+											</svg>
+										</a>
+										<!-- skype -->
+										<a href="#">
+											<svg>
+												<use xlink:href="#skype-icon" />
+											</svg>
+										</a>
+									</div>
+									<!-- социальные сети -->
+									<div>
+										<!-- facebook -->
+										<a href="#">
+											<svg>
+												<use xlink:href="#facebook-icon" />
+											</svg>
+										</a>
+										<!-- youtube -->
+										<a href="#">
+											<svg>
+												<use xlink:href="#youtube-icon" />
+											</svg>
+										</a>
+										<!-- instagram -->
+										<a href="#">
+											<svg>
+												<use xlink:href="#instagram-icon" />
+											</svg>
+										</a>
+										<!-- Linkedin  -->
+										<a href="#">
+											<svg>
+												<use xlink:href="#linkedin-icon" />
+											</svg>
+										</a>
+										<!-- vk -->
+										<a href="#">
+											<svg>
+												<use xlink:href="#vk-icon" />
+											</svg>
+										</a>
+										<!-- odnoklassniki -->
+										<a href="#">
+											<svg>
+												<use xlink:href="#odnoklassniki-icon" />
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="toggle">
+								<span>Темная тема</span>
+								<label for="mode" class="toggle-item"></label>
+							</div>
+						</div>
+
+					</div>
+					<div class="header__main--call" onclick="openModal(offerModal)">
 						<svg>
 							<use xlink:href="#call-phone" />
 						</svg>
 						<span>Заказать звонок</span>
-					</a>
+					</div>
 					<a href="/map.html" class="header__main--map">
 						Карта объектов
 					</a>
@@ -436,13 +605,13 @@
 								<img src="/assets/img/temp/temp1.jpg" alt="">
 							</div>
 							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
 								<div class="card__main--title">
 									Ультрасовременный коттедж в стиле Hi-tech в Сочи
-									<button class="mark">
-										<svg>
-											<use xlink:href="#star" />
-										</svg>
-									</button>
 								</div>
 								<div class="card__main--city">
 									г. Сочи
@@ -462,7 +631,9 @@
 										Перейти
 									</a>
 								</div>
-
+								<!-- <div class="card__main--note">
+									Оставить заметку
+								</div> -->
 								<div class="info">
 									<div class="square">
 										<span>654</span> м<sup>2</sup>
@@ -483,13 +654,13 @@
 								<img src="/assets/img/temp/temp3.jpg" alt="">
 							</div>
 							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
 								<div class="card__main--title">
 									Ультрасовременный коттедж в стиле Hi-tech в Сочи
-									<button class="mark">
-										<svg>
-											<use xlink:href="#star" />
-										</svg>
-									</button>
 								</div>
 								<div class="card__main--city">
 									г. Сочи
@@ -530,13 +701,13 @@
 								<img src="/assets/img/temp/temp4.jpg" alt="">
 							</div>
 							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
 								<div class="card__main--title">
 									Ультрасовременный коттедж
-									<button class="mark">
-										<svg>
-											<use xlink:href="#star" />
-										</svg>
-									</button>
 								</div>
 								<div class="card__main--city">
 									г. Сочи
@@ -575,13 +746,13 @@
 								<img src="/assets/img/temp/temp2.jpg" alt="">
 							</div>
 							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
 								<div class="card__main--title">
 									Hi-tech в Сочи
-									<button class="mark">
-										<svg>
-											<use xlink:href="#star" />
-										</svg>
-									</button>
 								</div>
 								<div class="card__main--city">
 									г. Сочи
@@ -622,13 +793,13 @@
 								<img src="/assets/img/temp/temp1.jpg" alt="">
 							</div>
 							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
 								<div class="card__main--title">
 									Ультрасовременный коттедж в стиле Hi-tech в Сочи
-									<button class="mark">
-										<svg>
-											<use xlink:href="#star" />
-										</svg>
-									</button>
 								</div>
 								<div class="card__main--city">
 									г. Сочи
@@ -669,13 +840,13 @@
 								<img src="/assets/img/temp/temp2.jpg" alt="">
 							</div>
 							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
 								<div class="card__main--title">
 									Ультрасовременный коттедж в стиле Hi-tech в Сочи
-									<button class="mark">
-										<svg>
-											<use xlink:href="#star" />
-										</svg>
-									</button>
 								</div>
 								<div class="card__main--city">
 									г. Сочи
@@ -716,13 +887,13 @@
 								<img src="/assets/img/temp/temp2.jpg" alt="">
 							</div>
 							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
 								<div class="card__main--title">
 									Ультрасовременный коттедж в стиле Hi-tech в Сочи
-									<button class="mark">
-										<svg>
-											<use xlink:href="#star" />
-										</svg>
-									</button>
 								</div>
 								<div class="card__main--city">
 									г. Сочи
@@ -764,13 +935,13 @@
 								<img src="/assets/img/temp/temp4.jpg" alt="">
 							</div>
 							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
 								<div class="card__main--title">
 									Жилой квартал «Prime Park»
-									<button class="mark">
-										<svg>
-											<use xlink:href="#star" />
-										</svg>
-									</button>
 								</div>
 								<div class="card__main--city">
 									г. Москва
@@ -856,7 +1027,7 @@
 						<div class="card--wrap">
 							<form class="card__main" action="#">
 								<div class="card__main--title">Появился вопрос?</div>
-								<input type="text" id="tel" required value="+7" pattern=".{15,16}">
+								<input type="text" class="tel" required value="+7" pattern=".{15,16}">
 								<button class="card__main--link link" type="submit">Заказать звонок</button>
 							</form>
 						</div>
@@ -866,7 +1037,7 @@
 					</div>
 
 					<!-- Карточка с предложением добавления объекта -->
-					<div class="card nonopen offer modalOpen" id="offer">
+					<div class="card nonopen offer" id="offer" onclick="openModal(offerModal)">
 						<a class="card--wrap">
 							<div class="offer__icon">
 								<svg>
@@ -987,7 +1158,7 @@
 		</div>
 	</footer>
 
-	<div id="modal" class="modal" style="display: none;">
+	<div id="offerModal" class="modal" style="display: none;">
 		<div class="modal__content">
 			<div class="modal__header">
 				<div class="modal__header--title">
@@ -995,17 +1166,17 @@
 				</div>
 				<button class="modal--close" id="modal-close">
 					<svg>
-						<use xlink:href="#close"/>
+						<use xlink:href="#close" />
 					</svg>
 				</button>
 			</div>
 			<div class="modal__body">
 				<form action="#" class="form">
 					<input type="text" placeholder="Имя" required>
-					<input id="modal-tel" type="text" placeholder="Телефон" required pattern=".{15,16}">
+					<input type="text" placeholder="Телефон" required class="tel" pattern=".{15,16}">
 					<textarea required placeholder="Сообщение" cols="30" rows="6"></textarea>
 					<label class="checkbox">
-						<input type="checkbox" hidden>
+						<input type="checkbox" hidden required>
 						<span>Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в
 							соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на
 							условиях и для целей, определенных в Согласии на обработку персональных данных *</span>
@@ -1016,11 +1187,80 @@
 		</div>
 	</div>
 
+	<div id="loginModal" class="modal auth" style="display: none;">
+		<div class="modal__content">
+			<div class="modal__header">
+				<button class="modal--close">
+					<svg>
+						<use xlink:href="#close" />
+					</svg>
+				</button>
+			</div>
+			<div class="modal__body login_form">
+				<input id="reg-auth-modal" type="checkbox" hidden>
+				<form action="#" class="form auth">
+					<div class="modal__header--title">
+						Войти
+						<label for="reg-auth-modal" class="link" id="reg">Регистрация</label>
+					</div>
+					<input type="text" placeholder="Ваш эл. адрес" required>
+					<input type="text" placeholder="Пароль" required>
+					<div class="row">
+						<div class="form__social">
+							<a href="#">
+								<svg>
+									<use xlink:href="#vk-icon" />
+								</svg>
+							</a>
+							<a href="#">
+								<svg>
+									<use xlink:href="#facebook-icon" />
+								</svg>
+							</a>
+						</div>
+						<a href="#" class="link">Восстановить пароль</a>
+					</div>
+					<button type="submit" class="btn-style blue">Войти</button>
+				</form>
+				<form action="#" class="form reg">
+					<div class="modal__header--title">
+						Регистрация
+						<label for="reg-auth-modal" class="link" id="auth">Уже зарегестрированы?</label>
+					</div>
+					<input type="text" placeholder="Ваш эл. адрес" required>
+					<input type="text" placeholder="Ваше имя" required>
+					<input type="text" class="tel" placeholder="Сотовый" pattern=".{15,16}" required>
+					<input type="text" placeholder="Пароль" required>
+					<input type="text" placeholder="Пароль еще раз" required>
+					<div class="form__social">
+						<a href="#">
+							<svg>
+								<use xlink:href="#vk-icon" />
+							</svg>
+						</a>
+						<a href="#">
+							<svg>
+								<use xlink:href="#facebook-icon" />
+							</svg>
+						</a>
+					</div>
+					<label class="checkbox">
+						<input type="checkbox" hidden required>
+						<span>Нажимая кнопку "Регистрация", я даю свое согласие на обработку моих персональных данных, в
+							соответствии с Федеральным законом</span>
+					</label>
+					<button type="submit" class="btn-style blue">Регистрация</button>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<div class="cookies open">
 		<span>
-			Мы сипользуем файлы cookie, что бы улучшить сайт для вас
+			Мы используем файлы cookie, что бы улучшить сайт для вас
 		</span>
-		<button class="btn-blue">Согласен</button>
+		<button class="btn-style blue">Согласен</button>
 	</div>
 
 	<!-- фикс скрола для сафари -->

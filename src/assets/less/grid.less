@@ -40,10 +40,6 @@
     font-size: .9rem;
     line-height: 115%;
 
-    &:not(.nonopen) {
-        cursor: pointer;
-    }
-
     &--wrap {
         position: relative;
         transition: .3s;
@@ -56,6 +52,11 @@
             right: 20px;
 
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .14));
+
+            @media screen and (max-width: 575px) {
+                top: 10px;
+                right: 10px;
+            }
         }
     }
 
@@ -78,8 +79,8 @@
 
     .mark {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 15px;
+        right: 10px;
 
         svg {
             width: 30px;
@@ -99,6 +100,8 @@
         }
 
         @media screen and (max-width: 575px) {
+            right: 10px;
+
             svg {
                 width: 20px;
                 height: 20px;
@@ -120,6 +123,7 @@
         align-items: center;
         flex-shrink: 0;
         max-width: 100%;
+        cursor: pointer;
 
         img {
             width: 100%;
@@ -129,17 +133,23 @@
     }
 
     &__main {
+        position: relative;
         padding: 20px 25px;
         color: #4C4C51;
 
+        @media screen and (max-width: 450px) {
+            padding: 10px 15px;
+        }
+
         &--title {
             position: relative;
+            margin-right: 35px;
             margin-bottom: 10px;
-            padding-right: 35px;
-            font: 1.1rem/115% @FFRRegular;
+            cursor: pointer;
+            font: 1rem/115% @FFRRegular;
 
             @media screen and (max-width: 575px) {
-                padding-right: 25px;
+                margin-right: 25px;
                 font-size: .9rem;
             }
         }

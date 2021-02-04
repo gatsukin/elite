@@ -1,0 +1,145 @@
+<div class="burger__menu">
+	<!-- Если не зашел -->
+	<div class="login_form">
+		<input id="reg-auth" type="checkbox" hidden>
+		<form action="#" class="form auth">
+			<h4>Войти</h4>
+			<input type="text" placeholder="Ваш эл. адрес" required>
+			<input type="text" placeholder="Пароль" required>
+			<div class="form__social">
+				<a href="#">
+					<svg>
+						<use xlink:href="#vk-icon" />
+					</svg>
+				</a>
+				<a href="#">
+					<svg>
+						<use xlink:href="#facebook-icon" />
+					</svg>
+				</a>
+			</div>
+			<button type="submit" class="btn-style white">Войти</button>
+			<div class="form__link">
+				<a href="#" class="link">Восстановить пароль</a>
+				<label for="reg-auth" class="link" id="reg">Регистрация</label>
+			</div>
+		</form>
+		<form action="#" class="form reg">
+			<h4>Регистрация</h4>
+			<input type="text" placeholder="Ваш эл. адрес" required>
+			<input type="text" placeholder="Ваше имя" required>
+			<input type="text" class="tel" pattern=".{15,16}" placeholder="Сотовый" required>
+			<input type="text" placeholder="Пароль" required>
+			<input type="text" placeholder="Пароль еще раз" required>
+
+			<div class="form__social">
+				<a href="#">
+					<svg>
+						<use xlink:href="#vk-icon" />
+					</svg>
+				</a>
+				<a href="#">
+					<svg>
+						<use xlink:href="#facebook-icon" />
+					</svg>
+				</a>
+			</div>
+			<label class="checkbox">
+				<input type="checkbox" hidden required>
+				<span>Нажимая кнопку "Регистрация", я даю свое согласие на обработку моих персональных данных, в
+					соответствии с Федеральным законом</span>
+			</label>
+			<button type="submit" class="btn-style white">Регистрация</button>
+			<div class="form__link">
+				<label for="reg-auth" class="link" id="auth">Вход</label>
+			</div>
+		</form>
+	</div>
+
+	<!-- Если зашел -->
+
+	<div class="burger__user" style="display: none;">
+		<div class="burger__user--photo">
+			<img src="/assets/img/temp/man.jpg" alt="">
+		</div>
+		<div class="burger__user--name">
+			Маргарита Ивановна
+		</div>
+		<a href="#" class="link">Личный кабинет</a>
+		<a href="#" class="link burger__user--logout">Выйти</a>
+
+		<div class="header__main--social">
+			<!-- связь -->
+			<div>
+				<!-- viber -->
+				<a href="#">
+					<svg>
+						<use xlink:href="#viber-icon" />
+					</svg>
+				</a>
+				<!-- whatsApp -->
+				<a href="#">
+					<svg>
+						<use xlink:href="#whatsapp-icon" />
+					</svg>
+				</a>
+				<!-- telegram -->
+				<a href="#">
+					<svg>
+						<use xlink:href="#telegram-icon" />
+					</svg>
+				</a>
+				<!-- skype -->
+				<a href="#">
+					<svg>
+						<use xlink:href="#skype-icon" />
+					</svg>
+				</a>
+			</div>
+			<!-- социальные сети -->
+			<div>
+				<!-- facebook -->
+				<a href="#">
+					<svg>
+						<use xlink:href="#facebook-icon" />
+					</svg>
+				</a>
+				<!-- youtube -->
+				<a href="#">
+					<svg>
+						<use xlink:href="#youtube-icon" />
+					</svg>
+				</a>
+				<!-- instagram -->
+				<a href="#">
+					<svg>
+						<use xlink:href="#instagram-icon" />
+					</svg>
+				</a>
+				<!-- Linkedin  -->
+				<a href="#">
+					<svg>
+						<use xlink:href="#linkedin-icon" />
+					</svg>
+				</a>
+				<!-- vk -->
+				<a href="#">
+					<svg>
+						<use xlink:href="#vk-icon" />
+					</svg>
+				</a>
+				<!-- odnoklassniki -->
+				<a href="#">
+					<svg>
+						<use xlink:href="#odnoklassniki-icon" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="toggle">
+		<span>Темная тема</span>
+		<label for="mode" class="toggle-item"></label>
+	</div>
+</div>

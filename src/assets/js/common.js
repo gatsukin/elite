@@ -1,3 +1,55 @@
+// Burger menu
+let burgerBtn = document.getElementById('burgerBtn')
+let burger = document.getElementById('burger')
+
+function overflowBody() {
+  if (burger.classList.contains('open')) {
+    if (document.documentElement.clientWidth <= 575) {
+      document.body.style.overflow = "hidden"
+    }
+    let events = ['load', 'resize']
+    events.forEach(event => {
+      window.addEventListener(event, function () {
+        if (document.documentElement.clientWidth <= 575) {
+          document.body.style.overflow = "hidden"
+        } else {
+          document.body.style.overflow = ""
+        }
+      })
+    });
+  } else {
+    document.body.style.overflow = ""
+  }
+}
+overflowBody()
+burgerBtn.addEventListener('click', function () {
+  burger.classList.toggle('open');
+  if (burger.classList.contains('open')) {
+    document.getElementById('reg-auth').checked = false
+  }
+  overflowBody()
+})
+
+// Темный режим
+let mode = false
+let toggleArr = document.querySelectorAll('.toggle')
+
+function checkToggle() {
+  toggleArr.forEach(el => {
+    if (mode) {
+      el.classList.add('true')
+    } else {
+      el.classList.remove('true')
+    }
+  })
+}
+toggleArr.forEach(el => {
+  el.addEventListener('click', function () {
+    mode = !mode;
+    checkToggle();
+  })
+});
+
 // Фиксированная шапка
 const header = document.getElementById('header')
 const headerMap = document.querySelector('.header__main--map')
@@ -8,19 +60,12 @@ if (document.getElementById('map')) {
   header.classList.remove("fixed");
 }
 // Добавление маски телефона на карточку
-if (document.getElementById('tel')) {
-  var phoneMask = IMask(
-    document.getElementById('tel'), {
-      mask: '+{7}(000)000-00-00'
-    });
-}
-// Добавление маски телефона в модалке
-if (document.getElementById('modal-tel')) {
-  var phoneMask = IMask(
-    document.getElementById('modal-tel'), {
-      mask: '+{7}(000)000-00-00'
-    });
-}
+let telArr = document.querySelectorAll('.tel')
+telArr.forEach(element => {
+  var phoneMask = IMask(element, {
+    mask: '+{7}(000)000-00-00'
+  });
+});
 // Нужно для корректного выявления высоты экрана
 let events = ['load', 'resize']
 for (var i = 0; i < events.length; i++) {
@@ -32,31 +77,20 @@ for (var i = 0; i < events.length; i++) {
   })
 }
 // М0Д@Ло4КА
-if (document.getElementById('modal')) {
-  const modal = document.getElementById('modal')
-  const button = document.querySelectorAll('.modalOpen')
-  const buttonClose = document.getElementById('modal-close')
-
-  for (let i = 0; i < button.length; i++) {
-    const el = button[i];
-
-    // Открытие
-    el.addEventListener("click", function () {
-      modal.style.display = 'flex'
-      setTimeout(() => {
-        modal.classList.toggle('open')
-      }, 10);
-    });
-  }
+function openModal(element) {
+  const buttonClose = element.querySelector('.modal--close')
+  element.style.display = 'flex'
+  setTimeout(() => {
+    element.classList.toggle('open')
+  }, 10);
   // Закрытие
   buttonClose.addEventListener("click", function () {
-    modal.classList.remove('open')
+    element.classList.remove('open')
     setTimeout(() => {
-      modal.style.display = 'none'
+      element.style.display = 'none'
     }, 300);
   });
 }
-
 // Кнопка скрола Наверх на странице с картой
 if (document.getElementById('scroll-top')) {
   let scrollbtn = document.getElementById('scroll-top')

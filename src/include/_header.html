@@ -3,24 +3,48 @@
 		<div class="header__contact">
 			<a class="link" href="tel:+79082042680">+7 (908) 204-26-80</a>
 			<a class="link" href="mailto:snabgenie@stmkr.ru">snabgenie@stmkr.ru</a>
-			<div class="toggle normal">
+			<div class="toggle">
 				<span>Темная тема</span>
-				<input type="checkbox" hidden id="normal">
-				<label for="normal" class="toggle-item"></label>
+				<div class="toggle-item"></div>
 			</div>
-			<button class="btn-blue">Личный кабинет</button>
+			<div class="user">
+				<!-- Кнопка входа -->
+				<!-- <button class="btn-style blue" onclick="openModal(loginModal)">Личный кабинет</button> -->
+				<!-- Информация о юзере -->
+				<div class="user--info">
+					<div class="column">
+						<div class="user--name">Маргарита Ивановна</div>
+						<a href="#" class="link">
+							Личный кабинет
+						</a>
+					</div>
+					<a href="#" class="user--photo">
+						<img src="/assets/img/temp/man.jpg" alt="">
+					</a>
+					<a href="#" class="user--logout">Выйти</a>
+				</div>
+			</div>
 		</div>
 		<div class="header__main">
 			<a href="/" class="link-to-index box">
 				Элитная Россия
 			</a>
 			<div class="header__main--col">
-				<a href="#" class="header__main--call modalOpen">
+				<div class="burger" id="burger">
+					<button id="burgerBtn" class="burger--toggle">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+
+					@@include('_burger.html')
+				</div>
+				<div class="header__main--call" onclick="openModal(offerModal)">
 					<svg>
 						<use xlink:href="#call-phone" />
 					</svg>
 					<span>Заказать звонок</span>
-				</a>
+				</div>
 				<a href="/map.html" class="header__main--map">
 					Карта объектов
 				</a>

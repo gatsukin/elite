@@ -38,6 +38,8 @@ a {
 
 .link {
     position: relative;
+    cursor: pointer;
+    transition: .3s;
 
     &:before {
         content: '';
@@ -71,22 +73,8 @@ button {
     background: none;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg: #F4F5F8;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: rgba(0, 0, 0, 1);
-    }
-}
-
-
 html {
-    background: var(--bg);
-    // #F4F5F8
+    background: #F4F5F8;
     font-family: @FFRRegular;
     // scroll-behavior: smooth;
 
@@ -109,6 +97,7 @@ html {
 
 body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 main {}
