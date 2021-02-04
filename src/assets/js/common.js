@@ -1,3 +1,8 @@
+if (document.getElementById('cookies')) {
+  document.getElementById('cookies-close').addEventListener('click', function () {
+    document.getElementById('cookies').classList.remove('open')
+  })
+}
 // Burger menu
 let burgerBtn = document.getElementById('burgerBtn')
 let burger = document.getElementById('burger')
