@@ -1,6 +1,6 @@
 .modal {
     position: fixed;
-    z-index: 1000;
+    z-index: 3000;
     top: 0;
     right: 0;
     bottom: 0;
@@ -64,7 +64,7 @@
 
     &__header {
         position: relative;
-        padding: 40px 40px 10px;
+        padding: 40px 40px 10px 25px;
 
         &--title {
             color: @greymain;
@@ -117,8 +117,12 @@
         overflow: auto;
         align-items: flex-start;
 
+        &__content {
+            margin: auto;
+        }
+
         &__header {
-            padding: 20px 40px 10px;
+            padding: 20px 40px 10px 15px;
         }
     }
 
@@ -130,10 +134,10 @@
             align-items: center;
             flex-direction: column;
             justify-content: center;
-            padding: 10px 25px;
+            padding: 10px 15px;
 
             @media screen and (max-width: 485px) {
-                padding: 15px;
+                padding: 5px;
             }
         }
     }
@@ -215,6 +219,11 @@
             display: block;
             margin: 20px auto;
             padding: 12px;
+
+            @media screen and (max-width: 450px) {
+                margin: 15px auto;
+                font-size: .9rem;
+            }
         }
 
         &__link {

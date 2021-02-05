@@ -9,32 +9,12 @@ if (document.getElementById('cookies')) {
 let burgerBtn = document.getElementById('burgerBtn')
 let burger = document.getElementById('burger')
 
-function overflowBody() {
-  if (burger.classList.contains('open')) {
-    if (document.documentElement.clientWidth <= 575) {
-      document.body.style.overflow = "hidden"
-    }
-    let events = ['load', 'resize']
-    events.forEach(event => {
-      window.addEventListener(event, function () {
-        if (document.documentElement.clientWidth <= 575) {
-          document.body.style.overflow = "hidden"
-        } else {
-          document.body.style.overflow = ""
-        }
-      })
-    });
-  } else {
-    document.body.style.overflow = ""
-  }
-}
-overflowBody()
+
 burgerBtn.addEventListener('click', function () {
   burger.classList.toggle('open');
   if (burger.classList.contains('open')) {
     document.getElementById('reg-auth').checked = false
   }
-  overflowBody()
 })
 
 // Темный режим
