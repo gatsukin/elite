@@ -1,8 +1,15 @@
 <section class="detail">
 	<div class="container">
-		<h2>
+		<div class="detail__title">
 			Двухуровневая квартира на Красной Армии.
-		</h2>
+
+			<!-- Добавляется .saved , если добавлено в избранное  -->
+			<button class="mark saved">
+				<svg>
+					<use xlink:href="#star" />
+				</svg>
+			</button>
+		</div>
 		<h4>
 			г. Москва
 		</h4>
@@ -53,6 +60,9 @@
 		</div>
 		<div class="detail__price">
 			Стоимость: 17,8 млн.
+			<a href="#" class="link">
+				Подписаться на изменение стоимости
+			</a>
 		</div>
 		<div class="detail__info">
 			<div class="detail__info--descr">
@@ -82,15 +92,34 @@
 				<p>
 					Все объекты сайта ЭлитныйКрасноярск продаются без оплаты услуг покупателем.
 				</p>
+				<a href="/map.html" class="btn-style blue">Получить консультацию специалиста</a>
 			</div>
-			<a href="/map.html" class="detail__info--map">
-				<!-- масштаб проставляется после z, -->
-				<!-- координаты проставляются после ll -->
-				<!-- Подробнее https://yandex.com/dev/maps/staticapi/ -->
-				<img src="https://static-maps.yandex.ru/1.x/?lang=en_US&ll=32.810152,39.889847&spn=0.016457,0.00619&l=map&size=650,250"
-					alt="">
-			</a>
+			<div class="detail__info--map-cont">
+				<div href="/map.html" class="detail__info--map">
+					<!-- масштаб проставляется после z, -->
+					<!-- координаты проставляются после ll -->
+					<!-- Подробнее https://yandex.com/dev/maps/staticapi/ -->
+					<img src="https://static-maps.yandex.ru/1.x/?lang=en_US&ll=32.810152,39.889847&spn=0.016457,0.00619&l=map&size=650,400"
+						alt="">
+				</div>
+				<a href="/map.html" class="btn-style blue">Уточнить расположение</a>
+			</div>
 		</div>
+		<!-- только зарегестрированыым пользователям -->
+		<div class="detail__note">
+			<h3>Ваша заметка</h3>
+			<h5>Заметку видите только вы</h5>
+			<form action="#">
+				<div class="detail__note--textarea">
+					<textarea name="" id=""></textarea>
+					<div>
+						<input class="detail__note--btn" type="reset" value="Удалить">
+						<input class="detail__note--btn" type="submit" value="Сохранить">
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- ./только зарегестрированыым пользователям  -->
 		<h3>
 			Контакты
 		</h3>
@@ -162,13 +191,14 @@
 						<img src="/assets/img/temp/temp1.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж в стиле Hi-tech в Сочи
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
+
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -209,13 +239,14 @@
 						<img src="/assets/img/temp/temp3.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж в стиле Hi-tech в Сочи
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
+
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -256,13 +287,14 @@
 						<img src="/assets/img/temp/temp4.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
+
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -301,13 +333,14 @@
 						<img src="/assets/img/temp/temp2.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Hi-tech в Сочи
-							<button class="mark">
-								<svg>
-									<use xlink:href="#star" />
-								</svg>
-							</button>
+
 						</div>
 						<div class="card__main--city">
 							г. Сочи
@@ -343,6 +376,7 @@
 				</div>
 			</div>
 		</div>
+		<button class="btn-style blue detail__often-btn">Подобрать похожие варианты</button>
 		<h3>
 			Ранее Вы смотрели
 		</h3>
@@ -354,6 +388,11 @@
 						<img src="/assets/img/temp/temp1.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж в стиле Hi-tech в Сочи
 						</div>
@@ -396,6 +435,11 @@
 						<img src="/assets/img/temp/temp3.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж в стиле Hi-tech в Сочи
 						</div>
@@ -438,6 +482,11 @@
 						<img src="/assets/img/temp/temp4.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Ультрасовременный коттедж
 						</div>
@@ -478,6 +527,11 @@
 						<img src="/assets/img/temp/temp2.jpg" alt="">
 					</div>
 					<div class="card__main">
+						<button class="mark">
+							<svg>
+								<use xlink:href="#star" />
+							</svg>
+						</button>
 						<div class="card__main--title">
 							Hi-tech в Сочи
 						</div>

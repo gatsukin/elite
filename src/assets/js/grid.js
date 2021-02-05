@@ -57,6 +57,46 @@ for (let i = 0; i < pageEvents.length; i++) {
     }, 300, 3);
   })
 }
+
+// скрол до элемента
+function niceJoing(selection) {
+  var events = ['load', 'scroll', 'resize']
+  var show = true;
+  var selector = document.querySelector(selection, events);
+  for (var i = 0; i < events.length; i++) {
+
+    window.addEventListener(events[i],
+      function () {
+        if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
+        var scrollHeight = Math.max(
+          document.body.scrollHeight, document.documentElement.scrollHeight,
+          document.body.offsetHeight, document.documentElement.offsetHeight,
+          document.body.clientHeight, document.documentElement.clientHeight
+        );
+        var elRect = selector.getBoundingClientRect()
+        var w_top = window.pageYOffset; // Количество пикселей на которое была прокручена страница
+        var e_top = elRect.top + window.pageYOffset // Расстояние от блока со счетчиками до верха всего документа
+        var w_height = document.documentElement.clientHeight // Высота окна браузера
+        var d_height = scrollHeight // Высота всего документа
+        var e_height = selector.offsetHeight; // Полная высота блока со счетчиками
+
+        if (w_top + w_height >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+          show = false
+          console.log('asdas')
+          gridFunc()
+        }
+      })
+  }
+}
+if (document.getElementById('IndexGrid')) {
+  niceJoing('#IndexGrid')
+}
+if (document.getElementById('OftenViewed')) {
+  niceJoing('#OftenViewed')
+}
+if (document.getElementById('PreviouslyViewed')) {
+  niceJoing('#PreviouslyViewed')
+}
 // Добавляем возможность открытия карточек посредством клика
 let cardMassive = document.querySelectorAll('.card')
 for (let i = 0; i < cardMassive.length; i++) {

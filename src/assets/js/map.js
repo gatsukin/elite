@@ -42,7 +42,7 @@ function init() {
       price: '23 млн. руб',
       link: '/detail.html',
       city: 'г. Сочи',
-      image: '/assets/img/temp/temp2.jpg', 
+      image: '/assets/img/temp/temp2.jpg',
       sq: '23',
       views: '100'
     }
@@ -112,6 +112,11 @@ function init() {
               <img src="${el.info.image}" alt="">
             </div>
             <div class="card__main">
+              <button class="mark">
+                <svg>
+                  <use xlink:href="#star" />
+                </svg>
+              </button>
               <div class="card__main--title">
                 ${el.info.name}
               </div>

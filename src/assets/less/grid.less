@@ -107,6 +107,10 @@
                 height: 20px;
             }
         }
+
+        @media screen and (max-width: 350px) {
+            right: 5px;
+        }
     }
 
     &.saved {
@@ -192,6 +196,44 @@
                 border-radius: 15px;
 
                 object-fit: cover;
+            }
+        }
+    }
+
+    &__note {
+        margin: 10px 0;
+
+        form {
+            overflow: hidden;
+            max-height: 0;
+            transition: .3s;
+        }
+
+        &.detail__note textarea {
+            min-height: 80px;
+        }
+
+        span {
+            display: block;
+            cursor: pointer;
+            transition: .3s;
+            color: #AAA;
+            font: .8rem/115% @FFRLight;
+
+            &:hover {
+                color: #414141;
+            }
+        }
+
+        input:checked {
+            ~ span {
+                overflow: hidden;
+                max-height: 0;
+                opacity: 0;
+            }
+
+            ~ form {
+                max-height: 1000px;
             }
         }
     }
