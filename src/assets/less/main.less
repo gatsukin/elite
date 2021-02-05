@@ -7,7 +7,7 @@
 }
 
 * {
-    scrollbar-color: #494949 #918c8c;
+    scrollbar-color: @greymain @grey7;
     scrollbar-width: thin;
     -webkit-tap-highlight-color: transparent;
 }
@@ -18,17 +18,17 @@
 }
 
 *::-webkit-scrollbar-track {
-    background: #918c8c;
-    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background: @grey7;
+    // -webkit-box-shadow: inset 0 0 6px rgba(@black, .3);
 }
 
 *::-webkit-scrollbar-thumb {
-    background: #494949;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .5);
+    background: @greymain;
+    -webkit-box-shadow: inset 0 0 6px rgba(@black, .5);
 }
 
 *::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(#494949, 60%);
+    background: rgba(@greymain, 60%);
 }
 
 a {
@@ -49,7 +49,7 @@ a {
         bottom: 0px;
         width: 100%;
         height: 1px;
-        background: #303030;
+        background: @grey1;
         transform: scaleX(0);
     }
 
@@ -74,7 +74,7 @@ button {
 }
 
 html {
-    background: #F4F5F8;
+    background: @whitegrey;
     font-family: @FFRRegular;
     // scroll-behavior: smooth;
 
@@ -135,10 +135,10 @@ main {}
 }
 
 .link-to-index {
-    background: #3F3F44;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: @grey5;
+    box-shadow: 0px 4px 4px rgba(@black, 0.25);
     border-radius: 15px;
-    color: white;
+    color: @white;
     text-align: center;
     padding: 20px;
     align-items: center;
@@ -147,7 +147,46 @@ main {}
     font: .9rem/1rem @FFRMedium;
 
     &:hover {
-        box-shadow: 0px 0 6px 2px rgba(0, 0, 0, 0.45);
+        box-shadow: 0px 0 6px 2px rgba(@black, 0.45);
+    }
+}
+
+.btn-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    min-height: 50px;
+    margin-left: 20px;
+    padding: 13px 20px;
+    transition: .3s;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(@black, .25);
+    font: .9rem/115% @FFRBold;
+
+    &:active {
+        transform: scale(.95);
+    }
+
+    &.blue {
+        color: @white;
+        background: @blue1;
+
+        &:hover,
+        &:focus {
+            background: @blue4;
+        }
+    }
+
+    &.white {
+        color: @greymain;
+        background: @white;
+
+        &:hover,
+        &:focus {
+            background: rgb(204, 204, 204);
+        }
     }
 }
 

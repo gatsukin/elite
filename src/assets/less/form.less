@@ -14,21 +14,21 @@
         padding: 15px 20px;
         resize: none;
         transition: .3s;
-        color: #303030;
+        color: @grey1;
         border: none;
-        border: 1px solid #E2E2E2;
+        border: 1px solid @grey9;
         border-radius: 5px;
         outline: none;
-        background: white;
+        background: @white;
         font: .8rem/115% @FFRRegular;
 
         &::placeholder {
             transition: .2s;
-            color: #9F9F9F;
+            color: @grey8;
         }
 
         &:hover, &:focus {
-            border: 1px solid #AEAEAE;
+            border: 1px solid @grey2;
         }
 
         &:focus::placeholder {
@@ -40,11 +40,11 @@
         display: inline-block;
         margin: 10px auto 20px;
         padding: 5px 0;
-        color: #3DAAE8;
+        color: @blue2;
         font: 1.2rem/115% @FFRRegular;
 
         &::before {
-            background: #3DAAE8;
+            background: @blue2;
         }
 
         &:active {
@@ -71,8 +71,8 @@
                 height: 20px;
                 content: "";
                 transition: .3s;
-                border: 1px solid black;
-                background: white;
+                border: 1px solid @black;
+                background: @white;
             }
 
             &::after {
@@ -101,7 +101,7 @@
 
         &:hover {
             &::before {
-                box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+                box-shadow: 0 4px 4px rgba(@black, .25);
             }
         }
     }

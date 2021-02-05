@@ -11,7 +11,7 @@
     padding: 20px 10px;
     transition: opacity .3s;
     opacity: 0;
-    background-color: rgba(black, 50%);
+    background-color: rgba(@black, 50%);
 
     &.open {
         display: flex;
@@ -36,12 +36,12 @@
             height: 20px;
             transition: .3s;
 
-            fill: #AEAEAE;
+            fill: @grey2;
         }
 
         &:hover, &:focus {
             svg {
-                fill: #303030;
+                fill: @grey1;
             }
         }
 
@@ -56,10 +56,10 @@
         max-width: 700px;
         transition: .3s;
         transform: scale(0);
-        border: 1px solid #333;
+        border: 1px solid @grey3;
         border-radius: 15px;
-        background-color: #F4F5F8;
-        box-shadow: 0 0 10px 2px rgba(black, 20%);
+        background-color: @grey4;
+        box-shadow: 0 0 10px 2px rgba(@black, 20%);
     }
 
     &__header {
@@ -67,7 +67,7 @@
         padding: 40px 40px 10px;
 
         &--title {
-            color: #4C4C51;
+            color: @greymain;
             font: 1.8rem/115% @FFRMedium;
         }
     }
@@ -91,10 +91,10 @@
 
         .login_form {
             .link {
-                color: #0088EA;
+                color: @blue1;
 
                 &::before {
-                    background: #0088EA;
+                    background: @blue1;
                 }
             }
 
@@ -206,7 +206,7 @@
                 justify-content: center;
 
                 &:hover svg {
-                    border: 1px solid white;
+                    border: 1px solid @white;
                 }
             }
         }

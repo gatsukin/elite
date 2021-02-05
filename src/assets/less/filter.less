@@ -15,10 +15,10 @@
             padding: 10px 25px;
             cursor: pointer;
             transition: .3s;
-            color: #848484;
+            color: @grey7;
             border: 1px solid transparent;
             border-radius: 15px;
-            background-color: white;
+            background-color: @white;
 
             &::after {
                 position: absolute;
@@ -29,13 +29,13 @@
                 content: "";
                 transition: .3s;
                 transform: rotate(45deg);
-                border: solid black;
+                border: solid @black;
                 border-width: 0 3px 3px 0;
             }
 
             &:hover, &:focus {
-                color: #4C4C51;
-                border: 1px solid rgba(#4C4C51, 15%);
+                color: @greymain;
+                border: 1px solid rgba(@greymain, 15%);
             }
         }
 
@@ -64,7 +64,7 @@
             &--input:checked {
                 ~ .dropdown {
                     &--head {
-                        color: #4C4C51;
+                        color: @greymain;
 
                         &::after {
                             top: calc(50% - 13px / 4);
@@ -145,8 +145,8 @@
 
     input:checked {
         ~ .filter--checkbox {
-            color: #4C4C51;
-            background-color: white;
+            color: @greymain;
+            background-color: @white;
 
             &:not(.submit) {
                 font-family: @FFRMedium;
@@ -171,20 +171,20 @@
         cursor: pointer;
         transition: border .3s, background-color .3s;
         text-align: center;
-        color: #AEAEAE;
+        color: @grey2;
         border: 1px solid transparent;
         border-radius: 5px;
-        background-color: rgba(white, 30%);
+        background-color: rgba(@white, 30%);
         font: .7rem/115% @FFRRegular;
 
         &:hover, &:focus {
-            border: 1px solid rgba(#4C4C51, 15%);
+            border: 1px solid rgba(@greymain, 15%);
         }
 
         &.submit {
             max-width: unset;
-            color: #4C4C51;
-            background-color: white;
+            color: @greymain;
+            background-color: @white;
             font-size: 14px;
 
             @media screen and (max-width: 974px) {
@@ -224,7 +224,7 @@
             align-items: center;
             width: 100%;
             min-height: 60px;
-            color: #AEAEAE;
+            color: @grey2;
             border-radius: 5px;
             font: .7rem/115% @FFRRegular;
         }

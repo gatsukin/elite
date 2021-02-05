@@ -21,8 +21,8 @@ header {
     margin: 0 15px;
     padding: 9px 15px;
     border-radius: 15px;
-    background: #3F3F44;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+    background: @grey5;
+    box-shadow: 0px 4px 4px rgba(@black, .25);
 
     span {
         display: inline-flex;
@@ -40,8 +40,8 @@ header {
         transition: all .3s ease;
         transform-origin: 20% center;
         border-radius: 50px;
-        background: #E7E7E7;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, .12), inset 0px 4px 4px rgba(0, 0, 0, .25);
+        background: @grey4;
+        box-shadow: 0px 4px 6px rgba(@black, .12), inset 0px 4px 4px rgba(@black, .25);
 
         &::before {
             position: absolute;
@@ -53,14 +53,14 @@ header {
             transition: .3s ease-in-out;
             border: none;
             border-radius: 100%;
-            background: #FFF;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+            background: @white;
+            box-shadow: 0px 4px 4px rgba(@black, .25);
         }
     }
 
     &.true {
         .toggle-item {
-            background: #6BCF6F;
+            background: @green;
 
             &::before {
                 left: 73px;
@@ -79,7 +79,7 @@ header {
         align-items: center;
         justify-content: flex-end;
         margin: 5px 0;
-        color: #545454;
+        color: @greymain;
         font-size: .7rem;
 
         a {
@@ -87,10 +87,10 @@ header {
             margin: 0 15px;
             transition: .3s;
             color: inherit;
-            color: #303030;
+            color: @grey1;
 
             &:hover {
-                color: #303030;
+                color: @grey1;
             }
         }
 
@@ -120,16 +120,16 @@ header {
         }
 
         &--name {
-            color: #545454;
+            color: @greymain;
             font: .9rem/115% @FFRRegular;
         }
 
         .link {
             margin: 5px 0 0 auto;
-            color: #0088EA;
+            color: @blue1;
 
             &::before {
-                background: #0088EA;
+                background: @blue1;
             }
         }
 
@@ -151,7 +151,7 @@ header {
         }
 
         &--logout {
-            color: #BEBEBE;
+            color: @grey2;
             font: .9rem/115% @FFRMedium;
         }
     }
@@ -197,7 +197,7 @@ header {
                 transition: .3s;
                 animation: rotate 3s infinite;
 
-                fill: #545454;
+                fill: @greymain;
             }
 
             span {
@@ -215,7 +215,7 @@ header {
                     content: "";
                     transition: transform .5s ease;
                     transform: scaleX(0);
-                    background: #303030;
+                    background: @grey1;
                 }
             }
 
@@ -225,7 +225,7 @@ header {
                 }
 
                 span {
-                    color: #303030;
+                    color: @grey1;
 
                     &::before {
                         transform: scaleX(1);
@@ -264,12 +264,12 @@ header {
             background-image: url(../../assets/img/background/map-btn.jpg);
             background-position: 75% 30%;
             background-size: cover;
-            text-shadow: 0 0 3px rgba(#303030, 35%);
+            text-shadow: 0 0 3px rgba(@grey1, 35%);
             font: 1.1rem/100% @FFRMedium;
 
             &:hover {
-                border: 1px solid rgba(#303030, 20%);
-                text-shadow: 0 0 3px rgba(#303030, 65%);
+                border: 1px solid rgba(@grey1, 20%);
+                text-shadow: 0 0 3px rgba(@grey1, 65%);
             }
 
             @media screen and (max-width: 575px) {
@@ -304,9 +304,9 @@ header {
 
                 &:hover {
                     svg {
-                        border: 1px solid rgba(#303030, 25%);
+                        border: 1px solid rgba(@grey1, 25%);
 
-                        filter: drop-shadow(0 0 3px rgba(#303030, 20%));
+                        filter: drop-shadow(0 0 3px rgba(@grey1, 20%));
                     }
                 }
             }

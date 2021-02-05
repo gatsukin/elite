@@ -1,6 +1,5 @@
 .grid {
     &--wrap {
-        // margin-bottom: 100px;
         padding: 20px 0;
         transition: .3s;
 
@@ -17,7 +16,6 @@
 
 // Размеры
 .card {
-    // display: flex;
     width: calc(100% / 4);
 
     @media screen and (max-width: 1420px) {
@@ -44,14 +42,14 @@
         position: relative;
         transition: .3s;
         border-radius: 15px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+        box-shadow: 0px 4px 4px rgba(@black, .25);
 
         &::after {
             position: absolute;
             top: 20px;
             right: 20px;
 
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .14));
+            filter: drop-shadow(0px 4px 4px rgba(@black, .14));
 
             @media screen and (max-width: 575px) {
                 top: 10px;
@@ -62,13 +60,13 @@
 
     &:hover {
         .card--wrap {
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, .35);
+            box-shadow: 0px 4px 4px rgba(@black, .35);
         }
     }
 
     &.opened {
         .card--wrap {
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, .45);
+            box-shadow: 0px 4px 4px rgba(@black, .45);
         }
 
         .extra {
@@ -88,14 +86,14 @@
             transition: .2s;
 
             fill: transparent;
-            stroke: #CCC;
+            stroke: @grey4;
             stroke-width: 2;
         }
 
         &:hover {
             svg {
-                filter: drop-shadow(0 0 1px rgba(black, 50%));
-                stroke: #999;
+                filter: drop-shadow(0 0 1px rgba(@black, 50%));
+                stroke: @grey6;
             }
         }
 
@@ -114,7 +112,7 @@
 
         &.saved {
             svg {
-                fill: #FFC909;
+                fill: @yellow1;
                 stroke: none;
             }
         }
@@ -138,7 +136,7 @@
     &__main {
         position: relative;
         padding: 20px 25px;
-        color: #4C4C51;
+        color: @greymain;
 
         @media screen and (max-width: 450px) {
             padding: 10px 15px;
@@ -159,7 +157,7 @@
 
         &--city {
             margin-bottom: 5px;
-            color: #4C4C51;
+            color: @greymain;
             font: .7rem/115% @FFRLight;
         }
 
@@ -176,11 +174,11 @@
         &--link {
             display: inline-block;
             padding: 5px 0;
-            color: #3DAAE8;
+            color: @blue2;
             font: .7rem/115% @FFRRegular;
 
             &::before {
-                background: #3DAAE8;
+                background: @blue2;
             }
         }
 
@@ -191,7 +189,7 @@
                 width: 100%;
                 max-width: 100%;
                 height: 115px;
-                border: 1px solid #9D9D9D;
+                border: 1px solid @grey8;
                 border-radius: 15px;
 
                 object-fit: cover;
@@ -217,7 +215,7 @@
             margin-bottom: 5px;
             cursor: pointer;
             transition: .3s;
-            color: #AAA;
+            color: @grey2;
             font: .8rem/115% @FFRLight;
 
             &.hide {
@@ -225,7 +223,7 @@
             }
 
             &:hover {
-                color: #414141;
+                color: @greymain;
             }
         }
 
@@ -264,7 +262,7 @@
             display: flex;
             align-items: center;
             flex-direction: row;
-            color: #ABABAB;
+            color: @grey2;
             font-size: .7rem;
             line-height: 105%;
 
@@ -273,7 +271,7 @@
                 height: 12px;
                 margin-left: 10px;
 
-                fill: #ABABAB;
+                fill: @grey2;
             }
         }
     }
@@ -295,7 +293,7 @@
             &--title {
                 margin-top: 5px;
                 text-align: center;
-                color: white;
+                color: @white;
                 font: .9rem/115% @FFRRegular;
             }
         }
@@ -304,7 +302,7 @@
     &.whatsapp {
         .card {
             &--wrap {
-                background-color: #1BD741;
+                background-color: @whatsapp;
             }
         }
     }
@@ -312,7 +310,7 @@
     &.telegram {
         .card {
             &--wrap {
-                background-color: #039BE5;
+                background-color: @telegram;
             }
         }
     }
@@ -344,7 +342,7 @@
                 }
 
                 &--title {
-                    text-shadow: 0 0 3px rgba(0, 0, 0, .45);
+                    text-shadow: 0 0 3px rgba(@black, .45);
                 }
             }
         }
@@ -352,7 +350,7 @@
 
     &.house, &.apartment, &.quarter {
         .card--wrap {
-            background-color: white;
+            background-color: @white;
         }
     }
 
@@ -385,13 +383,13 @@
     &.input {
         .card {
             &--wrap {
-                background-color: white;
+                background-color: @white;
             }
 
             &__main {
                 &--title {
                     text-align: center;
-                    color: #4C4C51;
+                    color: @greymain;
                     font: 1.2rem/115% @FFRMedium;
                 }
 
@@ -400,19 +398,19 @@
                         width: 100%;
                         padding: 10px 15px;
                         transition: .3s;
-                        border: 1px solid #E2E2E2;
+                        border: 1px solid@grey4;
                         border-radius: 15px;
                         outline: none;
-                        background: #F4F5F8;
+                        background: @grey4;
                         font: 1rem/115% @FFRRegular;
 
                         &::placeholder {
                             transition: .2s;
-                            color: #9F9F9F;
+                            color: @grey8;
                         }
 
                         &:hover, &:focus {
-                            border: 1px solid #4C4C51;
+                            border: 1px solid @greymain;
                         }
 
                         &:focus::placeholder {
@@ -438,7 +436,7 @@
                 margin-top: 35px;
                 padding: 0 25px;
                 text-align: center;
-                color: black;
+                color: @black;
             }
         }
     }
@@ -465,15 +463,15 @@
                 padding: 60px;
                 transition: .3s;
                 border-radius: 50%;
-                background-color: white;
-                box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+                background-color: @white;
+                box-shadow: 0px 4px 4px rgba(@black, .25);
 
                 svg {
                     width: 108px;
                     height: 108px;
                     transition: .3s;
 
-                    fill: #4C4C51;
+                    fill: @greymain;
                 }
             }
 
@@ -482,7 +480,7 @@
                 padding: 0 25px;
                 transition: .3s;
                 text-align: center;
-                color: #4C4C51;
+                color: @greymain;
                 font: 1.2rem/115% @FFRRegular;
             }
         }
@@ -490,16 +488,16 @@
         &:hover {
             .offer {
                 &__icon {
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, .45);
+                    box-shadow: 0px 4px 4px rgba(@black, .45);
 
                     svg {
-                        fill: #414141;
+                        fill: @greymain;
                     }
                 }
 
                 &__text {
-                    color: #414141;
-                    text-shadow: 0 0 2px rgba(0, 0, 0, .25);
+                    color: @greymain;
+                    text-shadow: 0 0 2px rgba(@black, .25);
                 }
             }
         }
@@ -511,7 +509,7 @@
             align-items: center;
             justify-content: center;
             padding: 70px;
-            color: black;
+            color: @black;
             background: url(/assets/img/background/map-btn.jpg);
             background-position: center;
             background-size: cover;
@@ -519,7 +517,7 @@
             font: 1.1rem/115% @FFRMedium;
 
             &:hover {
-                box-shadow: 0px 2px 4px rgba(0, 0, 0, .15);
+                box-shadow: 0px 2px 4px rgba(@black, .15);
             }
         }
     }
@@ -527,16 +525,16 @@
     &.dzen {
         .card--wrap {
             padding: 15px 20px 20px;
-            background-color: white;
+            background-color: @white;
         }
 
         a {
             display: inline-block;
             padding: 5px;
-            color: #3DAAE8;
+            color: @blue2;
 
             &::before {
-                background-color: #3DAAE8;
+                background-color: @blue2;
             }
         }
 
@@ -576,13 +574,13 @@
                 text-align: center;
 
                 &--title {
-                    color: black;
+                    color: @black;
                     font: 1.1rem/115% @FFRMedium;
                 }
 
                 &--text {
                     margin: 10px auto 10px;
-                    color: #4C4C51;
+                    color: @greymain;
                     font: .7rem/115% @FFRLight;
                 }
             }
@@ -604,17 +602,17 @@
                         height: 15px;
                         margin-right: 5px;
 
-                        fill: #B3B3B3;
+                        fill: @grey2;
                     }
                 }
 
                 &--date {
-                    color: #4D4D4D;
+                    color: @greymain;
                     font-size: .7rem;
                 }
 
                 &--time, &--views {
-                    color: #B3B3B3;
+                    color: @grey2;
                 }
             }
         }

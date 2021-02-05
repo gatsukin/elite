@@ -16,7 +16,7 @@
             height: 3px;
             transition: .3s ease-in-out;
             border-radius: 5px;
-            background: #303030;
+            background: @grey1;
         }
     }
 
@@ -32,7 +32,7 @@
         > div {
             padding: 7px;
             border-radius: 5px;
-            background-color: white;
+            background-color: @white;
         }
     }
 
@@ -50,11 +50,11 @@
         justify-content: space-between;
         padding: 10px 0 0;
         transition: .3s ease-in-out;
-        background-color: #0088EA;
+        background-color: @blue1;
 
         h4 {
             margin-bottom: 20px;
-            color: White;
+            color: @white;
             font: 1.3rem/115% @FFRBold;
         }
 
@@ -81,18 +81,18 @@
 
         .link {
             margin: 5px 0;
-            color: white;
+            color: @white;
             font: 1.1rem/115% @FFRMedium;
 
             &::before {
-                background-color: white;
+                background-color: @white;
             }
 
             &.burger__user--logout {
-                color: rgba(#FFF, 33%);
+                color: rgba(@white, 33%);
 
                 &:hover {
-                    color: #FFF;
+                    color: @white;
                 }
             }
         }
@@ -104,7 +104,7 @@
             justify-content: center;
             width: 75px;
             height: 75px;
-            border: 5px solid white;
+            border: 5px solid @white;
             border-radius: 50%;
 
             img {
@@ -117,7 +117,7 @@
 
         &--name {
             margin: 10px 0 20px;
-            color: white;
+            color: @white;
             font: .9rem/115% @FFRLight;
         }
     }
@@ -129,7 +129,7 @@
                 right: 10px;
 
                 span {
-                    background-color: white;
+                    background-color: @white;
 
                     &:nth-child(1) {
                         transform: rotate(45deg) translate(10px, 10px);

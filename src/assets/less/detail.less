@@ -1,6 +1,6 @@
 .detail {
     padding: 20px 0;
-    color: #4C4C51;
+    color: @greymain;
 
     &__title {
         position: relative;
@@ -23,14 +23,14 @@
                 transition: .2s;
 
                 fill: transparent;
-                stroke: #CCC;
+                stroke: @grey8;
                 stroke-width: 2;
             }
 
             &:hover {
                 svg {
-                    filter: drop-shadow(0 0 1px rgba(black, 50%));
-                    stroke: #999;
+                    filter: drop-shadow(0 0 1px rgba(@black, 50%));
+                    stroke: @grey6;
                 }
             }
 
@@ -54,7 +54,7 @@
 
             &.saved {
                 svg {
-                    fill: #FFC909;
+                    fill: @yellow1;
                     stroke: none;
                 }
             }
@@ -81,7 +81,7 @@
 
     h5 {
         margin-bottom: 15px;
-        color: rgba(#0C0C0C, 67%);
+        color: rgba(@black1, 67%);
         font-size: .8rem/115% @FFRRegular;
     }
 
@@ -95,11 +95,11 @@
         a {
             display: inline-block;
             margin: 10px 0;
-            color: #0088EA;
+            color: @blue1;
             font: 1.1rem/115% @FFRRegular;
 
             &::before {
-                background: #0088EA;
+                background: @blue1;
             }
         }
     }
@@ -214,8 +214,6 @@
         }
     }
 
-
-
     @media screen and (max-width: 975px) {
         h4 {
             font-size: 1rem;
@@ -238,7 +236,7 @@
 
         &--descr {
             width: 100%;
-            color: black;
+            color: @black;
             font: .9rem/115% @FFRRegular;
 
             p {
@@ -263,7 +261,7 @@
             width: 100%;
             transition: ease-in-out .3s;
             border-radius: 15px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+            box-shadow: 0px 4px 4px rgba(@black, .25);
 
             img {
                 width: 100%;
@@ -326,18 +324,19 @@
             padding: 10px 15px;
             resize: none;
             transition: .3s;
-            color: #646464;
+            color: @grey7;
             border: none;
             outline: none;
             background: transparent;
+            text-shadow: 0 0 1px rgba(@black, 30%);
             font: .8rem/115% @FFRLight;
         }
 
         &--textarea {
             overflow: hidden;
-            border: 1px solid #C4C4C4;
+            border: 1px solid @grey8;
             border-radius: 15px;
-            background: #FFE99A;
+            background: @yellow2;
 
             > div {
                 display: flex;
@@ -347,7 +346,7 @@
             }
 
             &:hover, &:focus {
-                border: 1px solid #979797;
+                border: 1px solid @grey7;
             }
         }
 
@@ -360,7 +359,7 @@
             font: .8rem/115% @FFRLight;
 
             &:hover, &:focus {
-                text-shadow: 0 0 2px #979797;
+                text-shadow: 0 0 2px @grey7;
             }
         }
     }
@@ -391,8 +390,8 @@
             max-width: 340px;
             padding: 40px 25px;
             border-radius: 15px;
-            background-color: white;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+            background-color: @white;
+            box-shadow: 0px 4px 4px rgba(@black, .25);
 
             &:not(.form) {
                 margin: 0 20px 0 0;
