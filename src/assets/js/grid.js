@@ -81,7 +81,6 @@ function niceJoing(selection) {
 
         if (w_top + w_height >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
           show = false
-          console.log('asdas')
           gridFunc()
         }
       })
