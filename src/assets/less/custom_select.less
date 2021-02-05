@@ -55,9 +55,11 @@
         .checkbox-icon {
             position: relative;
             display: inline-flex;
-            width: 15px;
-            height: 15px;
-            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            margin-right: 7px;
+            border: 1px solid rgba(@grey7, 50%);
+            border-radius: 3px;
             background: @grey4;
 
             &::after {
@@ -69,7 +71,7 @@
                 content: "\2713";
                 transition: .2s;
                 opacity: 0;
-                font-size: 18px;
+                font-size: 17px;
             }
 
             &.checked::after {
