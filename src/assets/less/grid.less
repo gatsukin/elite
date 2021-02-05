@@ -206,8 +206,25 @@
             transition: .3s;
         }
 
-        &.detail__note textarea {
-            min-height: 80px;
+        &.detail__note {
+            textarea {
+                min-height: 80px;
+                padding: 7px 5px;
+            }
+
+            @media screen and (max-width: 450px) {
+                .detail__note {
+                    &--textarea {
+                        > div {
+                            padding: 5px 3px 8px;
+                        }
+                    }
+
+                    &--btn {
+                        font-size: .7rem;
+                    }
+                }
+            }
         }
 
         span {
