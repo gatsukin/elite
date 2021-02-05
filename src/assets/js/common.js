@@ -1,3 +1,5 @@
+// Окошко куки убирает эта функция
+// Для временного использования
 if (document.getElementById('cookies')) {
   document.getElementById('cookies-close').addEventListener('click', function () {
     document.getElementById('cookies').classList.remove('open')
@@ -36,7 +38,7 @@ burgerBtn.addEventListener('click', function () {
 })
 
 // Темный режим
-let mode = false
+let mode = false;
 let toggleArr = document.querySelectorAll('.toggle')
 
 function checkToggle() {
@@ -55,7 +57,7 @@ toggleArr.forEach(el => {
   })
 });
 
-// Фиксированная шапка
+// Фиксированная шапка на странице карты
 const header = document.getElementById('header')
 const headerMap = document.querySelector('.header__main--map')
 if (document.getElementById('map')) {
@@ -116,11 +118,9 @@ if (document.getElementById('lightgallery')) {
 
 if (document.getElementsByClassName('filter')) {
   let chkboxArr = document.querySelectorAll('#type input')
-
   chkboxArr.forEach(el => {
     el.checked = true
   });
-
   let elArr = [];
   let lastEl = undefined;
 
@@ -138,7 +138,6 @@ if (document.getElementsByClassName('filter')) {
       lastEl = undefined
     }
   }
-
   // Массив вариантов выпадашки
   let cityOpt = [{
       label: 'Красноярск',
@@ -219,7 +218,6 @@ if (document.getElementsByClassName('filter')) {
     options: cityOpt,
     placeholder: 'Город'
   });
-
   VirtualSelect.init({
     ele: '#cost',
     options: costOpt,
@@ -227,7 +225,6 @@ if (document.getElementsByClassName('filter')) {
     placeholder: 'Стоимость',
     search: false
   });
-
   VirtualSelect.init({
     ele: '#dist',
     options: distOpt,
@@ -235,7 +232,6 @@ if (document.getElementsByClassName('filter')) {
     placeholder: 'Район',
     search: false
   });
-
   VirtualSelect.init({
     ele: '#sq',
     options: sqOpt,
@@ -251,3 +247,17 @@ if (document.getElementsByClassName('filter')) {
   // document.querySelector('#dist').value;
   // document.querySelector('#sq').value;
 }
+
+// Добавление в избранное
+let bookmarks = document.querySelectorAll('.mark')
+bookmarks.forEach(element => {
+  let saved = false;
+  element.addEventListener('click', function () {
+    saved = !saved
+    if (saved) {
+      element.classList.add('saved')
+    } else {
+      element.classList.remove('saved')
+    }
+  })
+});

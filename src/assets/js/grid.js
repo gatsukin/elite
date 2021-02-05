@@ -57,7 +57,6 @@ for (let i = 0; i < pageEvents.length; i++) {
     }, 300, 3);
   })
 }
-
 // скрол до элемента
 function niceJoing(selection) {
   var events = ['load', 'scroll', 'resize']
@@ -88,6 +87,7 @@ function niceJoing(selection) {
       })
   }
 }
+// ДОПОЛНИТЕЛЬНЫЙ ФИКС карточек
 if (document.getElementById('IndexGrid')) {
   niceJoing('#IndexGrid')
 }
@@ -111,11 +111,12 @@ for (let i = 0; i < cardMassive.length; i++) {
       }, 100, 3);
     }
   };
-
+  // открытие карточек при клике на картинку
   if (el.querySelector('.card--img')) {
     let openImgCard = el.querySelector('.card--img')
     openImgCard.addEventListener('click', openCard);
   }
+  // открытие карточек при клике на название
   if (el.querySelector('.card__main--title')) {
     let openTitleCard = el.querySelector('.card__main--title')
     openTitleCard.addEventListener('click', openCard);
