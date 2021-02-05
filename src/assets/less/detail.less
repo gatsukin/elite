@@ -444,27 +444,6 @@
             &--time {
                 margin-top: .45rem;
             }
-
-            @media screen and (max-width: 575px) {
-                padding: 20px;
-
-                &--image {
-                    max-width: 150px;
-                    margin-bottom: 10px;
-                }
-
-                &--name {
-                    margin: 10px 0 3px;
-                }
-
-                &--post {
-                    margin: 3px 0 7px;
-                }
-
-                &--tel {
-                    margin: 7px 0;
-                }
-            }
         }
 
         @media screen and (max-width: 1024px) {
@@ -487,20 +466,81 @@
 
         @media screen and (max-width: 665px) {
             &--wrap {
+                margin-bottom: 20px;
+            }
+
+            .detail__card:not(.form) {
+                min-width: 200px;
+                padding: 20px 10px;
+
+                .detail__card {
+                    &--image {
+                        max-width: 90%;
+                        margin-bottom: 10px;
+                    }
+
+                    &--name {
+                        margin-top: 10px;
+                        font: 1rem/115% @FFRBold;
+                    }
+
+                    &--post {
+                        font: .8rem/115% @FFRLight;
+                    }
+
+                    &--tel {
+                        font: 1rem/115% @FFRRegular;
+                    }
+
+                    &--email, &--time {
+                        font: .8rem/115% @FFRLight;
+                    }
+                }
+
+                &:first-child {
+                    margin-right: 5px;
+                }
+
+                &:last-child {
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        @media screen and (max-width: 475px) {
+            &--wrap {
                 align-items: center;
                 flex-direction: column;
                 margin-bottom: 0;
             }
 
             .detail__card {
-                margin: 0 auto 20px !important;
-            }
-        }
+                &:not(.form) {
+                    margin: 0 auto 20px !important;
+                }
 
-        @media screen and (max-width: 450px) {
-            .detail__card.form {
-                max-width: 340px !important;
-                margin: 0 auto;
+                &--image {
+                    max-width: 150px !important;
+                    margin-bottom: 10px;
+                }
+
+                &--name {
+                    margin: 10px 0 3px;
+                }
+
+                &--post {
+                    margin: 3px 0 7px;
+                }
+
+                &--tel {
+                    margin: 7px 0;
+                }
+
+                &.form {
+                    min-width: unset;
+                    max-width: 340px !important;
+                    margin: 0 auto;
+                }
             }
         }
     }
