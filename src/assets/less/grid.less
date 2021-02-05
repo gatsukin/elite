@@ -215,10 +215,15 @@
 
         span {
             display: block;
+            margin-bottom: 5px;
             cursor: pointer;
             transition: .3s;
             color: #AAA;
             font: .8rem/115% @FFRLight;
+
+            &.hide {
+                display: none;
+            }
 
             &:hover {
                 color: #414141;
@@ -227,9 +232,13 @@
 
         input:checked {
             ~ span {
-                overflow: hidden;
-                max-height: 0;
-                opacity: 0;
+                &.hide {
+                    display: block;
+                }
+
+                &.show {
+                    display: none;
+                }
             }
 
             ~ form {
