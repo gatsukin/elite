@@ -1,0 +1,121 @@
+.dzen {
+    &__card {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: 20px 0;
+        padding: 35px 50px 35px 30px;
+        border-radius: 15px;
+        background: @white;
+        box-shadow: 0px 4px 4px rgba(@black, 25%);
+
+        @media screen and (max-width: 825px) {
+            padding: 25px 20px;
+        }
+
+        @media screen and (max-width: 675px) {
+            align-items: center;
+            flex-direction: column;
+            width: 80%;
+            min-width: 400px;
+            margin: 10px auto;
+        }
+
+        @media screen and (max-width: 445px) {
+            width: 100%;
+            min-width: 300px;
+            max-width: 360px;
+        }
+    }
+
+    &__main {
+        width: 300px;
+        min-width: 280px;
+        max-width: 30%;
+        margin-right: 20px;
+
+        @media screen and (max-width: 675px) {
+            margin-right: 0;
+        }
+    }
+
+    &__img {
+        margin-bottom: 5px;
+
+        svg {
+            width: 170px;
+            width: 100%;
+            max-height: 35px;
+        }
+    }
+
+    &__author {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        img {
+            width: 75px;
+            height: 75px;
+            margin: 10px auto;
+            border-radius: 50%;
+
+            object-fit: cover;
+        }
+
+        .link {
+            color: @blue2;
+
+            &::before {
+                background-color: @blue2;
+            }
+        }
+    }
+
+    &__post {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 70%;
+        margin: 0 0 15px 20px;
+
+        &--title {
+            display: block;
+            margin-top: 5px;
+            text-align: center;
+            color: @black;
+            font: 1.1rem/115% @FFRMedium;
+        }
+
+        &--text {
+            margin: 0 auto 10px;
+            color: @greymain;
+            font: .7rem/115% @FFRLight;
+        }
+
+        &--link {
+            display: inline-block;
+            width: max-content;
+            margin-top: auto;
+            padding: 5px;
+            color: @blue2;
+            font-size: .7rem;
+
+            &::before {
+                background-color: @blue2;
+            }
+        }
+
+        @media screen and (max-width: 675px) {
+            align-items: center;
+            width: 100%;
+            margin: 0;
+
+            &--text {
+                margin: 15px 0;
+                text-align: center;
+                font-size: .85rem;
+            }
+        }
+    }
+}

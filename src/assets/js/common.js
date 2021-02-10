@@ -65,18 +65,38 @@ for (var i = 0; i < events.length; i++) {
 }
 // М0Д@Ло4КА
 function openModal(element) {
+  let elementOpen;
   const buttonClose = element.querySelector('.modal--close')
+
   element.style.display = 'flex'
   setTimeout(() => {
     element.classList.toggle('open')
+    elementOpen = true;
   }, 10);
+
   // Закрытие
   buttonClose.addEventListener("click", function () {
     element.classList.remove('open')
     setTimeout(() => {
       element.style.display = 'none'
     }, 300);
+    elementOpen = false;
   });
+
+
+  //I'm using "click" but it works with any event
+  document.addEventListener('click', function (event) {
+    let elementChild = element.querySelector('.modal__content')
+    var isClickInside = elementChild.contains(event.target);
+    if (!isClickInside && elementOpen == true) {
+      element.classList.remove('open')
+      setTimeout(() => {
+        element.style.display = 'none'
+      }, 300);
+      elementOpen = false;
+    }
+  });
+
 }
 // Кнопка скрола Наверх на странице с картой
 if (document.getElementById('scroll-top')) {

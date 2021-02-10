@@ -1,0 +1,576 @@
+<h3>
+	Контакты
+</h3>
+<div class="detail__contacts">
+	<div class="detail__contacts--wrap">
+		<div class="detail__card">
+			<div class="detail__card--image">
+				<img src="/assets/img/temp/person1.jpg" alt="">
+			</div>
+			<div class="detail__card--name">
+				Филипп Мягков
+			</div>
+			<div class="detail__card--post">
+				Представитель собственника
+			</div>
+			<div class="detail__card--tel">
+				<a class="link" href="tel:+79082042680">+7 908 204 26 80</a>
+			</div>
+			<div class="detail__card--email">
+				<a class="link" href="mailto:+sale@eliterussia.com">sale@eliterussia.com</a>
+			</div>
+			<div class="detail__card--time">
+				Пн. - Вс. 9.00 - 21.00
+			</div>
+		</div>
+
+		<div class="detail__card">
+			<div class="detail__card--image">
+				<img src="/assets/img/temp/person2.jpg" alt="">
+			</div>
+			<div class="detail__card--name">
+				Евгений Ронжанин
+			</div>
+			<div class="detail__card--post">
+				качество обслуживания, сотрудничество, нестандартные задачи
+			</div>
+			<div class="detail__card--tel">
+				<a class="link" href="tel:+79082042680">+7 908 204 26 80</a>
+			</div>
+			<div class="detail__card--email">
+				<a class="link" href="mailto:+sale@eliterussia.com">sale@eliterussia.com</a>
+			</div>
+			<div class="detail__card--time">
+				Пн. - Вс. 9.00 - 21.00
+			</div>
+		</div>
+	</div>
+	<form action="#" class="detail__card form">
+		<input type="text" placeholder="Имя" required>
+		<input class="tel" type="text" placeholder="Телефон" required pattern=".{15,16}">
+		<textarea required placeholder="Комментарий" cols="30" rows="6"></textarea>
+		<label class="checkbox">
+			<input type="checkbox" hidden>
+			<span>Даю свое согласие на обработку моих персональных данных в
+				соответствии с Федеральным законом. </span>
+		</label>
+		<button class="link" type="submit">Отправить</button>
+	</form>
+</div>
+<h3>
+	С этим объектом часто смотрят
+</h3>
+<div class="detail__card-wrap" id="OftenViewed">
+	<!-- Карточки как на главной -->
+	<div class="card house ">
+		<div class="card--wrap">
+			<div class="card--img">
+				<img src="/assets/img/temp/temp1.jpg" alt="">
+			</div>
+			<div class="card__main">
+				<button class="mark">
+					<svg>
+						<use xlink:href="#star" />
+					</svg>
+				</button>
+				<div class="card__main--title">
+					Ультрасовременный коттедж в стиле Hi-tech в Сочи
+				</div>
+				<div class="card__main--city">
+					г. Сочи
+				</div>
+				<div class="extra">
+					<div class="card__main--price">
+						32.0 млн.
+					</div>
+					<div class="card__main--desc">
+						Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+						Прилегающий
+						участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени, дорожки
+						вымощены брусчаткой, растут сосны.
+					</div>
+					<div class="detail__note card__note">
+						<input type="checkbox" hidden id="note-1"
+							onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+						<label for="note-1">
+							<span class="show">Оставить заметку</span>
+							<span class="hide">Закрыть</span>
+						</label>
+						<form action="#">
+							<div class="detail__note--textarea">
+								<textarea></textarea>
+								<div>
+									<input class="detail__note--btn" type="reset" value="Удалить">
+									<input class="detail__note--btn" type="submit" value="Сохранить">
+								</div>
+							</div>
+						</form>
+					</div>
+					<a href="/detail.html" class="card__main--link link">
+						Перейти
+					</a>
+				</div>
+				<!-- <div class="card__main--note">
+							Оставить заметку
+						</div> -->
+				<div class="info">
+					<div class="square">
+						<span>654</span> м<sup>2</sup>
+					</div>
+					<div class="review">
+						<span>3000</span>
+						<svg>
+							<use xlink:href="#views" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card apartment">
+		<div class="card--wrap">
+			<div class="card--img">
+				<img src="/assets/img/temp/temp3.jpg" alt="">
+			</div>
+			<div class="card__main">
+				<button class="mark">
+					<svg>
+						<use xlink:href="#star" />
+					</svg>
+				</button>
+				<div class="card__main--title">
+					Ультрасовременный коттедж в стиле Hi-tech в Сочи
+				</div>
+				<div class="card__main--city">
+					г. Сочи
+				</div>
+				<div class="extra">
+					<div class="card__main--price">
+						32.0 млн.
+					</div>
+					<div class="card__main--desc">
+						Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+						Прилегающий
+						участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени, дорожки
+						вымощены брусчаткой, растут сосны.
+					</div>
+					<div class="detail__note card__note">
+						<input type="checkbox" hidden id="note-2"
+							onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+						<label for="note-2">
+							<span class="show">Оставить заметку</span>
+							<span class="hide">Закрыть</span>
+						</label>
+						<form action="#">
+							<div class="detail__note--textarea">
+								<textarea></textarea>
+								<div>
+									<input class="detail__note--btn" type="reset" value="Удалить">
+									<input class="detail__note--btn" type="submit" value="Сохранить">
+								</div>
+							</div>
+						</form>
+					</div>
+					<a href="/detail.html" class="card__main--link link">
+						Перейти
+					</a>
+				</div>
+
+				<div class="info">
+					<div class="square">
+						<span>654</span> м<sup>2</sup>
+					</div>
+					<div class="review">
+						<span>3000</span>
+						<svg>
+							<use xlink:href="#views" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card quarter">
+		<div class="card--wrap">
+			<div class="card--img">
+				<img src="/assets/img/temp/temp4.jpg" alt="">
+			</div>
+			<div class="card__main">
+				<button class="mark">
+					<svg>
+						<use xlink:href="#star" />
+					</svg>
+				</button>
+				<div class="card__main--title">
+					Ультрасовременный коттедж
+				</div>
+				<div class="card__main--city">
+					г. Сочи
+				</div>
+				<div class="extra">
+					<div class="card__main--price">
+						32.0 млн.
+					</div>
+					<div class="card__main--desc">
+						Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+						Прилегающий
+						участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени, дорожки
+						вымощены брусчаткой, растут сосны.
+					</div>
+					<div class="detail__note card__note">
+						<input type="checkbox" hidden id="note-3"
+							onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+						<label for="note-3">
+							<span class="show">Оставить заметку</span>
+							<span class="hide">Закрыть</span>
+						</label>
+						<form action="#">
+							<div class="detail__note--textarea">
+								<textarea></textarea>
+								<div>
+									<input class="detail__note--btn" type="reset" value="Удалить">
+									<input class="detail__note--btn" type="submit" value="Сохранить">
+								</div>
+							</div>
+						</form>
+					</div>
+					<a href="/detail.html" class="card__main--link link">
+						Перейти
+					</a>
+				</div>
+
+				<div class="info">
+
+					<div class="review">
+						<span>3000</span>
+						<svg>
+							<use xlink:href="#views" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card house">
+		<div class="card--wrap">
+			<div class="card--img">
+				<img src="/assets/img/temp/temp2.jpg" alt="">
+			</div>
+			<div class="card__main">
+				<button class="mark">
+					<svg>
+						<use xlink:href="#star" />
+					</svg>
+				</button>
+				<div class="card__main--title">
+					Hi-tech в Сочи
+				</div>
+				<div class="card__main--city">
+					г. Сочи
+				</div>
+				<div class="extra">
+					<div class="card__main--price">
+						32.0 млн.
+					</div>
+					<div class="card__main--desc">
+						Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+						Прилегающий
+						участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени, дорожки
+						вымощены брусчаткой, растут сосны.
+					</div>
+					<div class="detail__note card__note">
+						<input type="checkbox" hidden id="note-4"
+							onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+						<label for="note-4">
+							<span class="show">Оставить заметку</span>
+							<span class="hide">Закрыть</span>
+						</label>
+						<form action="#">
+							<div class="detail__note--textarea">
+								<textarea></textarea>
+								<div>
+									<input class="detail__note--btn" type="reset" value="Удалить">
+									<input class="detail__note--btn" type="submit" value="Сохранить">
+								</div>
+							</div>
+						</form>
+					</div>
+					<a href="/detail.html" class="card__main--link link">
+						Перейти
+					</a>
+				</div>
+
+				<div class="info">
+					<div class="square">
+						<span>654</span> м<sup>2</sup>
+					</div>
+					<div class="review">
+						<span>3000</span>
+						<svg>
+							<use xlink:href="#views" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<a href="#" class="btn-style blue detail__often-btn">Подобрать похожие варианты</a>
+<h3>
+	Ранее Вы смотрели
+</h3>
+<div class="detail__card-wrap" id="PreviouslyViewed">
+	<!-- Карточки как на главной -->
+	<div class="card house ">
+		<div class="card--wrap">
+			<div class="card--img">
+				<img src="/assets/img/temp/temp1.jpg" alt="">
+			</div>
+			<div class="card__main">
+				<button class="mark">
+					<svg>
+						<use xlink:href="#star" />
+					</svg>
+				</button>
+				<div class="card__main--title">
+					Ультрасовременный коттедж в стиле Hi-tech в Сочи
+				</div>
+				<div class="card__main--city">
+					г. Сочи
+				</div>
+				<div class="extra">
+					<div class="card__main--price">
+						32.0 млн.
+					</div>
+					<div class="card__main--desc">
+						Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+						Прилегающий
+						участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени, дорожки
+						вымощены брусчаткой, растут сосны.
+					</div>
+					<div class="detail__note card__note">
+						<input type="checkbox" hidden id="note-11"
+							onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+						<label for="note-11">
+							<span class="show">Оставить заметку</span>
+							<span class="hide">Закрыть</span>
+						</label>
+						<form action="#">
+							<div class="detail__note--textarea">
+								<textarea></textarea>
+								<div>
+									<input class="detail__note--btn" type="reset" value="Удалить">
+									<input class="detail__note--btn" type="submit" value="Сохранить">
+								</div>
+							</div>
+						</form>
+					</div>
+					<a href="/detail.html" class="card__main--link link">
+						Перейти
+					</a>
+				</div>
+				<!-- <div class="card__main--note">
+							Оставить заметку
+						</div> -->
+				<div class="info">
+					<div class="square">
+						<span>654</span> м<sup>2</sup>
+					</div>
+					<div class="review">
+						<span>3000</span>
+						<svg>
+							<use xlink:href="#views" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card apartment">
+		<div class="card--wrap">
+			<div class="card--img">
+				<img src="/assets/img/temp/temp3.jpg" alt="">
+			</div>
+			<div class="card__main">
+				<button class="mark">
+					<svg>
+						<use xlink:href="#star" />
+					</svg>
+				</button>
+				<div class="card__main--title">
+					Ультрасовременный коттедж в стиле Hi-tech в Сочи
+				</div>
+				<div class="card__main--city">
+					г. Сочи
+				</div>
+				<div class="extra">
+					<div class="card__main--price">
+						32.0 млн.
+					</div>
+					<div class="card__main--desc">
+						Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+						Прилегающий
+						участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени, дорожки
+						вымощены брусчаткой, растут сосны.
+					</div>
+					<div class="detail__note card__note">
+						<input type="checkbox" hidden id="note-22"
+							onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+						<label for="note-22">
+							<span class="show">Оставить заметку</span>
+							<span class="hide">Закрыть</span>
+						</label>
+						<form action="#">
+							<div class="detail__note--textarea">
+								<textarea></textarea>
+								<div>
+									<input class="detail__note--btn" type="reset" value="Удалить">
+									<input class="detail__note--btn" type="submit" value="Сохранить">
+								</div>
+							</div>
+						</form>
+					</div>
+					<a href="/detail.html" class="card__main--link link">
+						Перейти
+					</a>
+				</div>
+
+				<div class="info">
+					<div class="square">
+						<span>654</span> м<sup>2</sup>
+					</div>
+					<div class="review">
+						<span>3000</span>
+						<svg>
+							<use xlink:href="#views" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card quarter">
+		<div class="card--wrap">
+			<div class="card--img">
+				<img src="/assets/img/temp/temp4.jpg" alt="">
+			</div>
+			<div class="card__main">
+				<button class="mark">
+					<svg>
+						<use xlink:href="#star" />
+					</svg>
+				</button>
+				<div class="card__main--title">
+					Ультрасовременный коттедж
+				</div>
+				<div class="card__main--city">
+					г. Сочи
+				</div>
+				<div class="extra">
+					<div class="card__main--price">
+						32.0 млн.
+					</div>
+					<div class="card__main--desc">
+						Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+						Прилегающий
+						участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени, дорожки
+						вымощены брусчаткой, растут сосны.
+					</div>
+					<div class="detail__note card__note">
+						<input type="checkbox" hidden id="note-33"
+							onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+						<label for="note-33">
+							<span class="show">Оставить заметку</span>
+							<span class="hide">Закрыть</span>
+						</label>
+						<form action="#">
+							<div class="detail__note--textarea">
+								<textarea></textarea>
+								<div>
+									<input class="detail__note--btn" type="reset" value="Удалить">
+									<input class="detail__note--btn" type="submit" value="Сохранить">
+								</div>
+							</div>
+						</form>
+					</div>
+					<a href="/detail.html" class="card__main--link link">
+						Перейти
+					</a>
+				</div>
+
+				<div class="info">
+
+					<div class="review">
+						<span>3000</span>
+						<svg>
+							<use xlink:href="#views" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card house">
+		<div class="card--wrap">
+			<div class="card--img">
+				<img src="/assets/img/temp/temp2.jpg" alt="">
+			</div>
+			<div class="card__main">
+				<button class="mark">
+					<svg>
+						<use xlink:href="#star" />
+					</svg>
+				</button>
+				<div class="card__main--title">
+					Hi-tech в Сочи
+				</div>
+				<div class="card__main--city">
+					г. Сочи
+				</div>
+				<div class="extra">
+					<div class="card__main--price">
+						32.0 млн.
+					</div>
+					<div class="card__main--desc">
+						Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+						Прилегающий
+						участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени, дорожки
+						вымощены брусчаткой, растут сосны.
+					</div>
+					<div class="detail__note card__note">
+						<input type="checkbox" hidden id="note-44"
+							onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+						<label for="note-44">
+							<span class="show">Оставить заметку</span>
+							<span class="hide">Закрыть</span>
+						</label>
+						<form action="#">
+							<div class="detail__note--textarea">
+								<textarea></textarea>
+								<div>
+									<input class="detail__note--btn" type="reset" value="Удалить">
+									<input class="detail__note--btn" type="submit" value="Сохранить">
+								</div>
+							</div>
+						</form>
+					</div>
+					<a href="/detail.html" class="card__main--link link">
+						Перейти
+					</a>
+				</div>
+
+				<div class="info">
+					<div class="square">
+						<span>654</span> м<sup>2</sup>
+					</div>
+					<div class="review">
+						<span>3000</span>
+						<svg>
+							<use xlink:href="#views" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
