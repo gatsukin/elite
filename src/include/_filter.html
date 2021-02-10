@@ -12,18 +12,21 @@
 				<div>
 					<input type="checkbox" hidden onchange="checkboxListener(this)" name="type" id="type1">
 					<label for="type1" class="filter--checkbox box">
+						<img src="/assets/img/icons/house.svg" alt="">
 						Дома
 					</label>
 				</div>
 				<div>
 					<input type="checkbox" hidden onchange="checkboxListener(this)" name="type" id="type2">
 					<label for="type2" class="filter--checkbox box">
+						<img src="/assets/img/icons/apartment.svg" alt="">
 						Квартиры
 					</label>
 				</div>
 				<div>
 					<input type="checkbox" hidden onchange="checkboxListener(this)" name="type" id="type3">
 					<label for="type3" class="filter--checkbox box">
+						<img src="/assets/img/icons/zemlya.svg" alt="">
 						Земельные
 						участки
 					</label>
@@ -31,6 +34,7 @@
 				<div>
 					<input type="checkbox" hidden onchange="checkboxListener(this)" name="type" id="type4">
 					<label for="type4" class="filter--checkbox box">
+						<img src="/assets/img/icons/commercial.svg" alt="">
 						Коммерческая недвижимость
 					</label>
 				</div>
@@ -63,9 +67,14 @@
 					<div id="sq"></div>
 				</div>
 			</div>
+			<div class="filter__checkbox-btn column" id="status">
+				<button type="submit" class="filter--checkbox submit">
+					Сохранить
+				</button>
+				<button type="submit" class="filter--checkbox submit">
+					Поиск
+				</button>
+			</div>
 		</div>
-		<button type="submit" class="filter--checkbox submit">
-			Сохранить поиск
-		</button>
 	</div>
 </form>

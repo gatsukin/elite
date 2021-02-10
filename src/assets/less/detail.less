@@ -381,71 +381,6 @@
             width: 100%;
         }
 
-        .detail__card {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
-            min-width: 290px;
-            max-width: 340px;
-            padding: 40px 25px;
-            border-radius: 15px;
-            background-color: @white;
-            box-shadow: 0px 4px 4px rgba(@black, .25);
-
-            &:not(.form) {
-                margin: 0 20px 0 0;
-            }
-
-            > div {
-                text-align: center;
-            }
-
-            &--image {
-                display: flex;
-                overflow: hidden;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                max-width: 210px;
-                margin-bottom: 18px;
-                border-radius: 100%;
-
-                img {
-                    width: 100%;
-
-                    object-fit: cover;
-                }
-            }
-
-            &--name {
-                margin: 18px 0 5px;
-                font: 1.2rem/115% @FFRBold;
-            }
-
-            &--post {
-                margin: 5px 0 15px;
-                font: .9rem/115% @FFRLight;
-            }
-
-            &--tel {
-                margin: 15px 0;
-                font: 1.2rem/115% @FFRRegular;
-            }
-
-            &--email, &--time {
-                font: .9rem/115% @FFRLight;
-            }
-
-            &--email {
-                margin: 15px 0 .45rem;
-            }
-
-            &--time {
-                margin-top: .45rem;
-            }
-        }
-
         @media screen and (max-width: 1024px) {
             flex-direction: column;
 
@@ -468,43 +403,6 @@
             &--wrap {
                 margin-bottom: 20px;
             }
-
-            .detail__card:not(.form) {
-                min-width: 200px;
-                padding: 20px 10px;
-
-                .detail__card {
-                    &--image {
-                        max-width: 90%;
-                        margin-bottom: 10px;
-                    }
-
-                    &--name {
-                        margin-top: 10px;
-                        font: 1rem/115% @FFRBold;
-                    }
-
-                    &--post {
-                        font: .8rem/115% @FFRLight;
-                    }
-
-                    &--tel {
-                        font: 1rem/115% @FFRRegular;
-                    }
-
-                    &--email, &--time {
-                        font: .8rem/115% @FFRLight;
-                    }
-                }
-
-                &:first-child {
-                    margin-right: 5px;
-                }
-
-                &:last-child {
-                    margin-left: 5px;
-                }
-            }
         }
 
         @media screen and (max-width: 475px) {
@@ -512,35 +410,6 @@
                 align-items: center;
                 flex-direction: column;
                 margin-bottom: 0;
-            }
-
-            .detail__card {
-                &:not(.form) {
-                    margin: 0 auto 20px !important;
-                }
-
-                &--image {
-                    max-width: 150px !important;
-                    margin-bottom: 10px;
-                }
-
-                &--name {
-                    margin: 10px 0 3px;
-                }
-
-                &--post {
-                    margin: 3px 0 7px;
-                }
-
-                &--tel {
-                    margin: 7px 0;
-                }
-
-                &.form {
-                    min-width: unset;
-                    max-width: 340px !important;
-                    margin: 0 auto;
-                }
             }
         }
     }
@@ -568,6 +437,147 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.detail__card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-width: 290px;
+    max-width: 340px;
+    padding: 40px 25px;
+    border-radius: 15px;
+    background-color: @white;
+    box-shadow: 0px 4px 4px rgba(@black, .25);
+
+    &.form {
+        input, textarea {
+            background-color: @whitegrey;
+        }
+    }
+
+    &:not(.form) {
+        margin: 0 20px 0 0;
+    }
+
+    > div {
+        text-align: center;
+    }
+
+    &--image {
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 210px;
+        margin-bottom: 18px;
+        border-radius: 100%;
+
+        img {
+            width: 100%;
+
+            object-fit: cover;
+        }
+    }
+
+    &--name {
+        margin: 18px 0 5px;
+        font: 1.2rem/115% @FFRBold;
+    }
+
+    &--post {
+        margin: 5px 0 15px;
+        font: .9rem/115% @FFRLight;
+    }
+
+    &--tel {
+        margin: 15px 0;
+        font: 1.2rem/115% @FFRRegular;
+    }
+
+    &--email, &--time {
+        font: .9rem/115% @FFRLight;
+    }
+
+    &--email {
+        margin: 15px 0 .45rem;
+    }
+
+    &--time {
+        margin-top: .45rem;
+    }
+}
+
+@media screen and (max-width: 665px) {
+    .detail__card:not(.form) {
+        min-width: 200px;
+        padding: 20px 10px;
+
+        .detail__card {
+            &--image {
+                max-width: 90%;
+                margin-bottom: 10px;
+            }
+
+            &--name {
+                margin-top: 10px;
+                font: 1rem/115% @FFRBold;
+            }
+
+            &--post {
+                font: .8rem/115% @FFRLight;
+            }
+
+            &--tel {
+                font: 1rem/115% @FFRRegular;
+            }
+
+            &--email, &--time {
+                font: .8rem/115% @FFRLight;
+            }
+        }
+
+        &:first-child {
+            margin-right: 5px;
+        }
+
+        &:last-child {
+            margin-left: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .detail__card {
+        &:not(.form) {
+            margin: 0 auto 20px !important;
+        }
+
+        &--image {
+            max-width: 150px !important;
+            margin-bottom: 10px;
+        }
+
+        &--name {
+            margin: 10px 0 3px;
+        }
+
+        &--post {
+            margin: 3px 0 7px;
+        }
+
+        &--tel {
+            margin: 7px 0;
+        }
+
+        &.form {
+            min-width: unset;
+            max-width: 340px !important;
+            margin: 0 auto;
         }
     }
 }

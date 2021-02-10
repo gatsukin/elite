@@ -1,8 +1,14 @@
 // Функция ymaps.ready() будет вызвана, когда
 // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-ymaps.ready(init);
+if (document.getElementById('map')) {
+  ymaps.ready(mapInit);
+}
 
-function init() {
+if (document.getElementById('posadMap')) {
+  ymaps.ready(posadMapInit);
+}
+
+function mapInit() {
   // Создание карты.
   var myMap = new ymaps.Map("map", {
     // Координаты центра карты.
@@ -171,4 +177,49 @@ function init() {
       }, 50);
     });
   }
+}
+
+
+function posadMapInit() {
+  // Создание карты.
+  var myMap = new ymaps.Map("posadMap", {
+      // Координаты центра карты.
+      // Порядок по умолчанию: «широта, долгота».
+      // Чтобы не определять координаты центра карты вручную,
+      // воспользуйтесь инструментом Определение координат.
+      center: [56.010563, 92.852572],
+      // Уровень масштабирования. Допустимые значения:
+      // от 0 (весь мир) до 19.
+      zoom: 5,
+      // Убираем все лишние кнопки
+      controls: [],
+    }),
+
+    // Создаём макет содержимого.
+    MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+      '<div>$[properties.iconContent]</div>'
+    ),
+
+    myPlacemarkWithContent = new ymaps.Placemark([56.010563, 92.852572], {
+      hintContent: 'Наш офис'
+    }, {
+      // Опции.
+      // Необходимо указать данный тип макета.
+      iconLayout: 'default#imageWithContent',
+      // Своё изображение иконки метки.
+      iconImageHref: '/assets/img/icons/map-point.svg',
+      // Размеры метки.
+      iconImageSize: [25, 25],
+      // Смещение левого верхнего угла иконки относительно
+      // её "ножки" (точки привязки).
+      iconImageOffset: [-12, -12],
+      // Смещение слоя с содержимым относительно слоя с картинкой.
+      iconContentOffset: [15, 15],
+      // Макет содержимого.
+      iconContentLayout: MyIconContentLayout
+    });
+
+  myMap.geoObjects
+    .add(myPlacemarkWithContent);
+
 }

@@ -9,7 +9,6 @@ if (document.getElementById('cookies')) {
 let burgerBtn = document.getElementById('burgerBtn')
 let burger = document.getElementById('burger')
 
-
 burgerBtn.addEventListener('click', function () {
   burger.classList.toggle('open');
   if (burger.classList.contains('open')) {
@@ -43,8 +42,9 @@ const headerMap = document.querySelector('.header__main--map')
 if (document.getElementById('map')) {
   header.classList.add("fixed");
   headerMap.style.display = "none"
-} else if (header.classList.contains('fixed')) {
-  header.classList.remove("fixed");
+} else if (document.getElementById('posad')) {
+  header.classList.add("fixed", "min-style");
+  headerMap.style.display = "none"
 }
 // Добавление маски телефона на карточку
 let telArr = document.querySelectorAll('.tel')

@@ -1,4 +1,8 @@
 .filter {
+    * {
+        user-select: none;
+    }
+
     .container {
         display: flex;
         flex-direction: row;
@@ -89,13 +93,19 @@
         // width: 100%;
         // max-width: 520px;
         flex-wrap: wrap;
-        justify-content: center;
-        max-width: calc((125px + 4px * 2) *2);
-        margin: 0 20px;
+        justify-content: space-between;
+        max-width: calc((140px + 4px * 2) *2);
+        margin: 0 10px;
+
+        .filter--checkbox {
+            width: 100%;
+            max-width: unset;
+            text-align: left;
+        }
 
         &:not(.column) {
             > div {
-                width: 50%;
+                width: 49%;
             }
         }
 
@@ -106,32 +116,40 @@
         &.column {
             flex-direction: column;
             margin-left: 0;
+
+            .filter--checkbox {
+                justify-content: center;
+            }
         }
 
         @media screen and (max-width: 1400px) and (min-width: 975px) {
-            margin: 0 5px;
+            margin: 0 8px;
         }
 
-        @media screen and (max-width: 974px) {
-            justify-content: center;
-            margin: 0 0 0 20px;
-        }
+        // @media screen and (max-width: 974px) {
+        //     justify-content: center;
+        //     margin: 0 0 0 20px;
+        // }
 
         @media screen and (max-width: 575px) {
             margin: 0;
+
+            &.column {
+                margin-left: 10px;
+            }
         }
 
-        @media screen and (max-width: 425px) {
+        @media screen and (max-width: 445px) {
             width: 100%;
             max-width: unset;
             margin: 0 auto;
 
             &.column {
                 flex-direction: row;
-                margin: 10px auto 0;
+                margin: 10px 0 0;
 
                 > div {
-                    width: 50%;
+                    width: 49%;
                 }
             }
         }
@@ -146,7 +164,12 @@
     input:checked {
         ~ .filter--checkbox {
             color: @greymain;
+            border: 1px solid rgba(@grey3, 10%);
             background-color: @white;
+
+            img {
+                opacity: 1;
+            }
 
             &:not(.submit) {
                 font-family: @FFRMedium;
@@ -160,22 +183,30 @@
 
     &--checkbox {
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         min-width: 115px;
         max-width: unset;
         max-width: 125px;
         min-height: 60px;
         max-height: 60px;
         margin: 0 2px;
-        padding: 10px;
+        padding: 10px 5px;
         cursor: pointer;
         transition: .3s;
         text-align: center;
         color: @grey2;
         border: 1px solid transparent;
         border-radius: 5px;
-        background-color: rgba(@white, 30%);
-        font: .7rem/115% @FFRRegular;
+        background-color: rgba(@grey3, 7%);
+        font: .65rem/115% @FFRRegular;
+
+        img {
+            max-width: 30px;
+            max-height: 30px;
+            margin-right: 5px;
+            transition: .3s;
+            opacity: .4;
+        }
 
         &:hover, &:focus {
             border: 1px solid rgba(@greymain, 15%);
@@ -183,14 +214,17 @@
 
         &.submit {
             max-width: unset;
+            margin-bottom: 5px;
+            text-align: center;
             color: @greymain;
+            border: 1px solid rgba(@grey3, 10%);
             background-color: @white;
-            font-size: 14px;
+            font-size: 13px;
 
             @media screen and (max-width: 974px) {
                 min-height: 40px;
-                margin: 10px 0;
-                border-radius: 15px;
+                margin: 10px 0 0;
+                border-radius: 5px;
             }
         }
 
@@ -199,7 +233,7 @@
             max-height: 50px;
         }
 
-        @media screen and (max-width: 425px) {
+        @media screen and (max-width: 445px) {
             max-width: unset;
         }
     }
