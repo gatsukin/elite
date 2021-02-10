@@ -6,9 +6,9 @@
     visibility: hidden;
     overflow: hidden;
     align-items: center;
-    max-height: 0;
-    padding: 0 30px;
+    padding: 23px 30px;
     transition: .3s ease-in-out;
+    transform: scale(.2) translateY(30vh);
     opacity: 0;
     border-radius: 15px;
     background-color: @white;
@@ -17,8 +17,7 @@
 
     &.open {
         visibility: visible;
-        max-height: 100px;
-        padding: 23px 30px;
+        transform: scale(1) translateY(0);
         opacity: 1;
     }
 
