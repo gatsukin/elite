@@ -39,7 +39,7 @@ toggleArr.forEach(el => {
 // Фиксированная шапка на странице карты
 const header = document.getElementById('header')
 const headerMap = document.querySelector('.header__main--map')
-if (document.getElementById('map')) {
+if (document.getElementById('mainMap')) {
   header.classList.add("fixed");
   headerMap.style.display = "none"
 } else if (document.getElementById('posad')) {

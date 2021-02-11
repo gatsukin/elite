@@ -1,0 +1,53 @@
+@media screen and (max-width: 768px) {
+
+    .dropdown-list {
+        label {
+            cursor: pointer;
+            padding: 20px 10px;
+            border-top: 1px solid @grey3;
+            display: flex;
+            position: relative;
+
+            h3,
+            h5 {
+                margin: 0;
+                font: .9rem/115% @FFRRegular;
+                text-transform: uppercase;
+                color: @grey3;
+            }
+
+            &:after {
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                right: 10px;
+                content: "";
+                transition: .2s;
+                background-image: url(/assets/img/icons/arrow-down.svg);
+                background-size: cover;
+            }
+        }
+
+        &--body {
+            max-height: 0;
+            transition: .5s;
+            overflow: hidden;
+            padding: 0 10px;
+        }
+
+        input:checked {
+            ~label {
+                &:after {
+                    transform: rotate(180deg);
+                }
+            }
+
+            ~.dropdown-list {
+                &--body {
+                    max-height: 800px;
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+}

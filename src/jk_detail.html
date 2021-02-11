@@ -7,6 +7,10 @@
 	<title>Elite Russia</title>
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="/assets/css/lightgallery.min.css">
+	<link href="/assets/css/fotorama.css" rel="stylesheet">
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=747b5c70-c476-46f9-96f3-fdd28ad707a4&lang=ru_RU">
+	</script>
+
 </head>
 
 <body>
@@ -20,6 +24,19 @@
 	@@include('include/_modal.html')
 	<!-- просмотр фоток -->
 	<script src="/assets/js/lightgallery.min.js"></script>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/fotorama.js"></script>
+	<script>
+		if (document.getElementsByClassName('fotorama')) {
+			$('.fotorama').fotorama({
+				allowfullscreen: true,
+				nav: 'thumbs',
+				fit: 'cover',
+			});
+		}
+
+	</script>
+
 	<!-- маска для полей ввода -->
 	<script src="/assets/js/imask.min.js"></script>
 	<!-- Фильтр select -->
@@ -31,7 +48,8 @@
 	<script src="/assets/js/grid.js"></script>
 	<!-- фикс плавного скрола в сафари -->
 	<script src="/assets/js/smoothscroll.min.js"></script>
-
+	<!-- скрипт карты -->
+	<script src="/assets/js/map.js"></script>
 
 </body>
 

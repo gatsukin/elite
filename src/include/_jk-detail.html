@@ -1,7 +1,7 @@
 <section class="detail">
 	<div class="container">
 		<h2 class="detail__title">
-			Двухуровневая квартира на Красной Армии.
+			Жилой комплекс PRIME PARK
 
 			<!-- Добавляется .saved , если добавлено в избранное  -->
 			<button class="mark">
@@ -11,9 +11,71 @@
 			</button>
 		</h2>
 		<h4>
-			г. Москва
+			г. Москва, Ленинградский пр-т 37
 		</h4>
 
+		<div class="detail__jk-image">
+			<div class="fotorama" data-fit="cover">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+				<img src="/assets/img/temp/jktemp.jpg">
+			</div>
+			<div class="detail__jk-info">
+				<div class="jk-map" id="jkMap"></div>
+				<table class="jk-table">
+					<tbody>
+						<tr>
+							<td>
+								Район:
+							</td>
+							<td>
+								Хорошевский
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Тип недвижимости:
+							</td>
+							<td>
+								Квартиры
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Готовность:
+							</td>
+							<td>
+								На выбор
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Срок сдачи:
+							</td>
+							<td>
+								3 кв 2021 - 3 кв 2023 г.
+
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="btn-style blue" onclick="openModal(offerModal)">
+					<svg>
+						<use xlink:href="#call-phone"></use>
+					</svg>
+					<span>Заказать звонок</span>
+				</div>
+			</div>
+		</div>
 
 		<div class="detail__price">
 			Стоимость:
@@ -22,49 +84,155 @@
 				Подписаться на изменение стоимости
 			</a>
 		</div>
-
-		<h3>
-			Планировки
-		</h3>
-		<div class="detail__plans">
-			<div class="detail__plans--gallery" id="lightgallery">
-				<a href="/assets/img/temp/plan.jpg" class="item ">
-					<img src="/assets/img/temp/plan.jpg" alt="">
-					<div class="item--title">
-						Однокомнатная.
-					</div>
-					<div class="item--sq">
-						45 кв.м.
-					</div>
-				</a>
-				<a href="/assets/img/temp/plan.jpg" class="item ">
-					<img src="/assets/img/temp/plan.jpg" alt="">
-					<div class="item--title">
-						Однокомнатная.
-					</div>
-					<div class="item--sq">
-						45 кв.м.
-					</div>
-				</a>
-				<a href="/assets/img/temp/plan.jpg" class="item ">
-					<img src="/assets/img/temp/plan.jpg" alt="">
-					<div class="item--title">
-						Однокомнатная.
-					</div>
-					<div class="item--sq">
-						45 кв.м.
-					</div>
-				</a>
-				<a href="/assets/img/temp/plan.jpg" class="item ">
-					<img src="/assets/img/temp/plan.jpg" alt="">
-					<div class="item--title">
-						Однокомнатная.
-					</div>
-					<div class="item--sq">
-						45 кв.м.
-					</div>
-				</a>
+		<div class="dropdown-list">
+			<input type="checkbox" hidden id="planbox">
+			<label for="planbox">
+				<h3>
+					Планировки
+				</h3>
+			</label>
+			<div class="detail__plans dropdown-list--body">
+				<div class="detail__plans--gallery" id="lightgallery">
+					<a href="/assets/img/temp/plan.jpg" class="item ">
+						<img src="/assets/img/temp/plan.jpg" alt="">
+						<div class="item--title">
+							Однокомнатная.
+						</div>
+						<div class="item--sq">
+							45 кв.м.
+						</div>
+					</a>
+					<a href="/assets/img/temp/plan.jpg" class="item ">
+						<img src="/assets/img/temp/plan.jpg" alt="">
+						<div class="item--title">
+							Однокомнатная.
+						</div>
+						<div class="item--sq">
+							45 кв.м.
+						</div>
+					</a>
+					<a href="/assets/img/temp/plan.jpg" class="item ">
+						<img src="/assets/img/temp/plan.jpg" alt="">
+						<div class="item--title">
+							Однокомнатная.
+						</div>
+						<div class="item--sq">
+							45 кв.м.
+						</div>
+					</a>
+					<a href="/assets/img/temp/plan.jpg" class="item ">
+						<img src="/assets/img/temp/plan.jpg" alt="">
+						<div class="item--title">
+							Однокомнатная.
+						</div>
+						<div class="item--sq">
+							45 кв.м.
+						</div>
+					</a>
+				</div>
 			</div>
+		</div>
+		<div class="detail__desc">
+			<div class="dropdown-list">
+				<input type="checkbox" hidden id="opibox">
+				<label for="opibox">
+					<h5>
+						ОПИСАНИЕ
+					</h5>
+				</label>
+
+				<p class="dropdown-list--body">
+					Жилой квартал «Prime Park» – проект мирового уровня, задающий новые стандарты качества жизни, именно
+					поэтому проект стал победителем в престижной премии European Property Awards Architecture 2018-2019:
+					лучший жилой высотный комплекс. Сегодня «Prime Park» один из самых перспективных элитных проектов в
+					Хорошевском районе Москвы, олицетворяющий высокий комфорт и функциональность. Архитектурная
+					концепция
+					квартала была разработана по индивидуальному проекту знаменитого зарубежного бюро Dyer. Фасады с
+					использованием натуральных материалов соответствуют самым высоким стандартам качества мировых
+					столиц:
+					Лондон, Нью-Йорк, Сингапур.
+				</p>
+			</div>
+
+			<div class="dropdown-list">
+				<input type="checkbox" hidden id="appartbox">
+				<label for="appartbox">
+					<h5>
+						КВАРТИРЫ
+					</h5>
+				</label>
+
+				<p class="dropdown-list--body">
+					Покупателям доступны комфортабельные квартиры, уютные дуплексы и просторные видовые пентхаусы.
+					Квартиры
+					премиального уровня включают отделку «white-box» или «под ключ». В проекте реализовано несколько
+					вариантов отделки и планировки для каждого формата жилья. Все варианты отделки разработаны
+					британским
+					бюро Dyer и итальянской студией Raboni Architetti. Во всех квартирах предусмотрены высокие
+					панорамные
+					окна, гардеробные помещения и изолированные спальни. Высота потолков в комнатах составляет не менее
+					3.1
+					м, из окон квартир открывается панорама Хорошевского района.
+				</p>
+			</div>
+
+			<div class="dropdown-list">
+				<input type="checkbox" hidden id="joinbox">
+				<label for="joinbox">
+					<h5>
+						ВХОДНЫЕ ГРУППЫ
+					</h5>
+				</label>
+
+				<p class="dropdown-list--body">
+					Входные группы всех секций выполнены в форме стеклянных атриумов. Внутри подъездов спроектированы
+					просторные вестибюли с высокими потолками и стойкой консьержа, а в местах общественного пользования
+					выполнена дизайнерская отделка с применением материалов премиум-класса.Техническое оснащение
+					включает
+					современные системы контроля доступа на входе, бесшумные скоростные лифты с интеллектуальным
+					управлением, противопожарные датчики тепла и дыма и камеры видеонаблюдения.
+				</p>
+			</div>
+
+
+			<div class="dropdown-list">
+				<input type="checkbox" hidden id="infstrucbox">
+				<label for="infstrucbox">
+					<h5>
+						ИНФРАСТРУКТУРА
+					</h5>
+				</label>
+
+				<p class="dropdown-list--body">
+					Инфраструктура жилого квартала позволяет резидентам проживать здесь на постоянной основе,
+					обеспечивая
+					реализацию всех необходимых благ для комфортной жизни: школа и детский сад, четыре парковых зоны,
+					фитнес-клуб с бассейном, рестораны и кафе, косметологический центр, салон красоты, супермаркет,
+					игровые
+					площадки, служба быта и многое другое.
+				</p>
+			</div>
+
+			<div class="dropdown-list">
+				<input type="checkbox" hidden id="locatbox">
+				<label for="locatbox">
+					<h5>
+						РАСПОЛОЖЕНИЕ
+					</h5>
+				</label>
+
+				<p class="dropdown-list--body">
+					Благодаря грамотному расположению, жилой квартал «Prime Park» обеспечивает своим резидентам шаговую
+					доступность до ключевых инфраструктурных объектов района, включая удобный выезд к Садовому Кольцу,
+					поэтому автомобилистам будет удобно добираться, как в центр, так и в область. До Красной площади
+					всего
+					4-5 км. В пешей досягаемости расположены станции метро "Аэропорт", "Петровский парк" и "Динамо".
+					Удобный
+					выезд к аэропорту "Шереметьево".
+				</p>
+			</div>
+
+			<a href="#" class="btn-style blue ">Получить консультацию специалиста</a>
 		</div>
 
 

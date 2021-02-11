@@ -72,7 +72,7 @@
             color: @black;
             font: .9rem/115% @FFRRegular;
 
-            + .form {
+            +.form {
                 margin-left: 40px;
             }
 
@@ -92,7 +92,7 @@
                 width: 100%;
             }
 
-            + .posad__info--text {
+            +.posad__info--text {
                 margin-top: calc(428px / 100 * 65 + 25px);
             }
         }
@@ -108,7 +108,7 @@
                 width: 300px;
                 height: 300px;
 
-                + .posad__info--text {
+                +.posad__info--text {
                     margin-top: calc(300px / 100 * 65 + 25px);
                 }
             }
@@ -128,13 +128,13 @@
             &--text {
                 width: 100%;
 
-                + .form {
+                +.form {
                     margin: 10px auto;
                 }
             }
 
             &--photo {
-                + .posad__info--text {
+                +.posad__info--text {
                     margin-top: 20px;
                 }
             }
@@ -171,10 +171,6 @@
         width: 100%;
         height: 380px;
         border-radius: 15px;
-
-        *[class*="-ground-pane"] {
-            filter: url(#mapFilter) brightness(1) grayscale(.53) contrast(1.35);
-        }
 
         @media screen and (max-width: 575px) {
             height: 250px;
