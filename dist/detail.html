@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Elite Russia</title>
 	<link rel="stylesheet" href="/assets/css/style.css">
-	<link rel="stylesheet" href="/assets/css/lightgallery.min.css">
+
+	<link rel="stylesheet" type="text/css" href="/assets/css/jquery.fancybox.min.css">
 </head>
 
 <body>
@@ -583,7 +584,7 @@
 							<div id="sq"></div>
 						</div>
 					</div>
-					<div class="filter__checkbox-btn column" id="status">
+					<div class="filter__checkbox-btn column" >
 						<button type="submit" class="filter--checkbox submit">
 							Сохранить
 						</button>
@@ -616,42 +617,42 @@
 				<div class="detail__image" id="lightgallery">
 					<div class="grid--row">
 						<div class="grid--column ">
-							<a href="/assets/img/temp/obj1.jpg" class="item ">
+							<a href="/assets/img/temp/obj1.jpg" class="item" data-fancybox="gallery">
 								<img src="/assets/img/temp/obj1.jpg" alt="">
 							</a>
 						</div>
 						<div class="grid--column">
 							<div class="grid--row">
-								<a href="/assets/img/temp/obj1.jpg" class="item ">
+								<a href="/assets/img/temp/obj1.jpg" class="item" data-fancybox="gallery">
 									<img src="/assets/img/temp/obj1.jpg" alt="">
 								</a>
-								<a href="/assets/img/temp/obj2.jpg" class="item ">
+								<a href="/assets/img/temp/obj2.jpg" class="item" data-fancybox="gallery">
 									<img src="/assets/img/temp/obj2.jpg" alt="">
 								</a>
 							</div>
 							<div class="grid--wrapper">
-								<a href="/assets/img/temp/obj1.jpg" class="item ">
+								<a href="/assets/img/temp/obj1.jpg" class="item" data-fancybox="gallery">
 									<img src="/assets/img/temp/obj1.jpg" alt="">
 								</a>
-								<a href="/assets/img/temp/obj1.jpg" class="item ">
+								<a href="/assets/img/temp/obj1.jpg" class="item" data-fancybox="gallery">
 									<img src="/assets/img/temp/obj1.jpg" alt="">
 								</a>
-								<a href="/assets/img/temp/obj1.jpg" class="item ">
+								<a href="/assets/img/temp/obj1.jpg" class="item" data-fancybox="gallery">
 									<img src="/assets/img/temp/obj1.jpg" alt="">
 								</a>
-								<a href="/assets/img/temp/obj1.jpg" class="item ">
+								<a href="/assets/img/temp/obj1.jpg" class="item" data-fancybox="gallery">
 									<img src="/assets/img/temp/obj1.jpg" alt="">
 								</a>
-								<a href="/assets/img/temp/obj1.jpg" class="item ">
+								<a href="/assets/img/temp/obj1.jpg" class="item" data-fancybox="gallery">
 									<img src="/assets/img/temp/obj1.jpg" alt="">
 								</a>
-								<a href="/assets/img/temp/obj1.jpg" class="item ">
+								<a href="/assets/img/temp/obj1.jpg" class="item" data-fancybox="gallery">
 									<img src="/assets/img/temp/obj1.jpg" alt="">
 								</a>
-								<a href="/assets/img/temp/obj1.jpg" class="item ">
+								<a href="/assets/img/temp/obj1.jpg" class="item" data-fancybox="gallery">
 									<img src="/assets/img/temp/obj1.jpg" alt="">
 								</a>
-								<a href="/assets/img/temp/obj1.jpg" class="item ">
+								<a href="/assets/img/temp/obj1.jpg" class="item" data-fancybox="gallery">
 									<img src="/assets/img/temp/obj1.jpg" alt="">
 								</a>
 							</div>
@@ -1436,7 +1437,8 @@
 	</div>
 
 	<!-- просмотр фоток -->
-	<script src="/assets/js/lightgallery.min.js"></script>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.fancybox.min.js"></script>
 	<!-- маска для полей ввода -->
 	<script src="/assets/js/imask.min.js"></script>
 	<!-- Фильтр select -->

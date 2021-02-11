@@ -324,86 +324,93 @@
             padding-right: 26%;
             position: relative;
 
-            .fotorama {
-                &__stage {
-                    border-radius: 15px;
-                    max-height: 600px !important;
-                }
+            .slider-for {
+                border-radius: 15px;
+                overflow: hidden;
+                margin-bottom: 10px;
+                max-height: 600px;
 
-                &__thumb-border {
-                    display: none;
-                }
+                a {
+                    width: 100%;
+                    height: 100%;
+                    max-height: 600px;
 
-                &__nav__shaft {
-                    margin-top: 5px;
-
-                    @media screen and (min-width: 576px) {
-                        display: flex;
-                        flex-wrap: wrap;
+                    img {
                         width: 100%;
+                        max-height: 600px;
+                        height: 100%;
+                        object-fit: cover;
                     }
+                }
+            }
 
-                    .fotorama__nav__frame {
-                        margin-bottom: 5px;
+            .slider-nav {
 
-                        &:nth-of-type(n+14) {
-                            display: none;
+
+                .slick {
+                    &-track {
+                        @media screen and (min-width: 576px) {
+                            position: unset;
+                            max-width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
                         }
                     }
+
+                    &-list {
+                        padding: 0 !important;
+                        width: 100%;
+                    }
                 }
 
-                &__nav__frame--thumb {
-                    width: calc(100% / 6 - 20px) !important;
-                    position: relative;
-                    height: 140px !important;
-                    border-radius: 15px;
+                .item {
+                    max-width: calc(100% / 6 - 10px) !important;
+                    height: 140px;
+                    margin: 5px;
+                    border-radius: 5px;
                     overflow: hidden;
+                    display: flex;
 
-                    @media screen and (max-width: 1500px) {
-                        height: 100px !important;
+                    @media screen and (max-width: 1400px) {
+                        height: 100px;
                     }
 
-                    @media screen and (max-width: 1073px) {
-                        width: calc(100% / 6 - 10px) !important;
+                    @media screen and (max-width: 575px) {
+                        min-width: 80px;
                     }
 
-                    @media screen and (max-width: 895px) {
-                        height: 80px !important;
+                    @media screen and (max-width: 425px) {
+                        height: 60px;
                     }
 
-                    @media screen and (max-width:576px) {
-                        min-width: 90px;
-                        max-width: 90px;
-                    }
+                    &.slick-current {
+                        position: relative;
 
-
-                    .fotorama__img {
-                        position: unset;
-                        object-fit: cover;
-                        width: 100% !important;
-                        height: 100% !important;
-                    }
-
-                    &.fotorama__active {
                         &::after {
-                            border-radius: 100%;
-                            position: absolute;
                             content: '';
-                            width: 20px;
-                            height: 20px;
-                            background-color: @white;
+                            position: absolute;
                             bottom: 10px;
                             right: 10px;
+                            width: 28px;
+                            height: 28px;
+                            background-color: @white;
+                            border-radius: 100%;
+                            box-shadow: 0 0 3px rgba(@black, 30%);
 
-                            @media screen and (max-width: 575px) {
+                            @media screen and (max-width: 975px) {
                                 width: 15px;
                                 height: 15px;
                             }
                         }
                     }
                 }
-            }
 
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
 
         &-info {
@@ -424,6 +431,7 @@
                 @media screen and (max-width: 1300px) {
                     height: 400px;
                 }
+
             }
 
             .jk-table {
@@ -478,6 +486,14 @@
                 .btn-style,
                 .jk-table {
                     display: none;
+                }
+            }
+        }
+
+        @media screen and (max-width: 455px) {
+            &-info {
+                .jk-map {
+                    height: 150px;
                 }
             }
         }

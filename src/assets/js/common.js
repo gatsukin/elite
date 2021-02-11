@@ -108,13 +108,6 @@ if (document.getElementById('scroll-top')) {
     })
   })
 }
-// Галлерея фотографий
-if (document.getElementById('lightgallery')) {
-  lightGallery(document.getElementById('lightgallery'), {
-    selector: '.item',
-    actualSize: false
-  });
-}
 
 if (document.getElementsByClassName('filter')) {
   let chkboxArr = document.querySelectorAll('#type input')
@@ -261,3 +254,40 @@ bookmarks.forEach(element => {
     }
   })
 });
+
+
+if (document.querySelector('.slider-for') && document.querySelector('.slider-nav')) {
+  $(document).ready(function () {
+    $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      fade: false,
+      asNavFor: '.slider-nav',
+      adaptiveHeight: true
+    });
+    $('.slider-nav').slick({
+      slidesToShow: 6,
+      centerMode: true,
+      arrows: false,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      dots: false,
+      infinite: false,
+      focusOnSelect: true,
+      useTransform: false,
+      useCSS: false,
+      speed: 0,
+      responsive: [{
+        breakpoint: 575,
+        settings: {
+          infinite: true,
+          speed: 300,
+          slidesToShow: 3,
+          useTransform: true,
+          useCSS: true,
+        }
+      }]
+    });
+  });
+}
