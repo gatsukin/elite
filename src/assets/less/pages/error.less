@@ -1,0 +1,58 @@
+.error {
+    min-height: 47vh;
+    padding: 20px 0;
+
+    &__text {
+        margin-top: 1rem;
+        color: @greymain;
+        font: 2.4rem/115% @FFRBold;
+    }
+
+    &__code {
+        margin-top: 2.4rem;
+        color: #A6A6A6;
+        font: 4.8rem/115% @FFRThin;
+
+        span {
+            font: 7.2rem/115% @FFRBoldItalic;
+        }
+    }
+
+    &__advice {
+        margin-top: 1.5rem;
+        color: #A6A6A6;
+        font: 1.2rem/115% @FFRRegular;
+    }
+
+    &__text, &__code, &__advice {
+        max-width: 950px;
+    }
+
+    @media screen and (max-width:1400px) {
+        &__text {
+            font-size: 1.5rem;
+        }
+
+        &__code {
+            font-size: 3rem;
+
+            span {
+                font-size: 6rem;
+            }
+        }
+
+        &__advice {
+            font-size: 1rem;
+        }
+    }
+
+    @media screen and (max-width:575px) {
+        &__text {
+            font-size: 1.25rem;
+        }
+
+        &__advice {
+            font-size: 1.15rem;
+        }
+    }
+}

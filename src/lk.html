@@ -4,30 +4,32 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ER | Карта</title>
+	<title>ER | Личный кабинет</title>
 	<link rel="stylesheet" href="/assets/css/style.css">
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=747b5c70-c476-46f9-96f3-fdd28ad707a4&lang=ru_RU">
-	</script>
 </head>
 
 <body>
-	@@include('include/_svg.html')
-	@@include('include/_header.html')
-	<main>
-		@@include('include/_map-page.html')
-	</main>
 
+	@@include('include/_svg.html')
+	@@include('include/_header-min.html')
+	<main>
+		@@include('include/_lk.html')
+	</main>
+	@@include('include/_scroll.html')
+	@@include('include/_footer.html')
 	@@include('include/_modal.html')
+	<!-- фикс скрола для сафари -->
+	<script src="/assets/js/smoothscroll.min.js"></script>
+	<!-- подключение сетки карточек -->
+	<script src="/assets/js/masonry.pkgd.min.js"></script>
+	<script src="/assets/js/grid.js"></script>
 	<!-- маска для полей ввода -->
 	<script src="/assets/js/imask.min.js"></script>
 	<!-- Фильтр select -->
 	<script src="/assets/js/virtual-select.min.js"></script>
 	<!-- общие скрипты -->
 	<script src="/assets/js/common.js"></script>
-	<!-- фикс скрола для сафари -->
-	<script src="/assets/js/smoothscroll.min.js"></script>
-	<!-- скрипт карты -->
-	<script src="/assets/js/map.js"></script>
+
 </body>
 
 </html>

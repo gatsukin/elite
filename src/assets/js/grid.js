@@ -24,6 +24,15 @@ if (document.getElementById('PreviouslyViewed')) {
     transitionDuration: '.2s',
   });
 }
+// Вы смотрели на детальной странице
+if (document.getElementById('lkGrid')) {
+  var lkGridMsnry = new Masonry('#lkGrid', {
+    itemSelector: '.card',
+    horizontalOrder: true,
+    transitionDuration: '.2s',
+  });
+}
+
 // Функция интервала с поддержкой определенных повторений
 function setIntervalX(callback, delay, repetitions) {
   var x = 0;
@@ -44,6 +53,9 @@ function gridFunc() {
   }
   if (document.getElementById('PreviouslyViewed')) {
     PreviouslyViewedMsnry.layout();
+  }
+  if (document.getElementById('lkGrid')) {
+    lkGridMsnry.layout();
   }
 }
 // Исправляем баги с grid сеткой при загрузке стилей
@@ -95,6 +107,9 @@ if (document.getElementById('OftenViewed')) {
 }
 if (document.getElementById('PreviouslyViewed')) {
   niceJoing('#PreviouslyViewed')
+}
+if (document.getElementById('lkGrid')) {
+  niceJoing('#lkGrid')
 }
 // Добавляем возможность открытия карточек посредством клика
 let cardMassive = document.querySelectorAll('.card')

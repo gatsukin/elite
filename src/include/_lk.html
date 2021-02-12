@@ -1,0 +1,746 @@
+<section class="lk">
+	<div class="container">
+		<h2>Личный кабинет</h2>
+		<div class="row column-md ">
+			<div class="lk__left-bar">
+				<div class="user-card">
+					<div class="user-card__img">
+						<img src="/assets/img/temp/person2.jpg" alt="">
+					</div>
+					<div class="user-card__name">
+						Иван Иванов
+					</div>
+					<label class="user-card__change-img link">
+						<input type="file" hidden>
+						Изменить фото
+					</label>
+					<div class="row center">
+						<input type="text" id="userTel" name="tel" value="+79233546214" class="user-card__input tel"
+							readonly>
+						<button onclick="editInfo(userTel)">
+							<svg>
+								<use xlink:href="#edit" />
+							</svg>
+						</button>
+
+					</div>
+					<div class="row center">
+						<input type="text" id="userEmail" name="email" value="pochta@yandex.ru" readonly
+							class="user-card__input">
+						<button onclick="editInfo(userEmail)">
+							<svg>
+								<use xlink:href="#edit" />
+							</svg>
+						</button>
+					</div>
+					<a href="#" class="user-card--logout">Выйти</a>
+				</div>
+				<div class="dropdown-list">
+					<input type="checkbox" id="subdrop" hidden>
+					<label for="subdrop" class="no-change">
+						<h3>Подписки</h3>
+					</label>
+					<div class="dropdown-list--body">
+						<div class="subscribe">
+							<!-- Карточка -->
+							<div class="subscribe block sub-card">
+								<div class="sub-card--text city">
+									Москва
+								</div>
+								<div class="sub-card--text">
+									Вся недвижимость
+								</div>
+								<div class="sub-card--text">
+									От 300 до 500 кв.м.
+								</div>
+								<div class="sub-card--active">
+									Активна
+								</div>
+								<button class="sub-card--btn">
+									Удалить
+								</button>
+							</div>
+
+							<!-- Поиск -->
+							<form class="subscribe block sub-search" id="subscribeFilter">
+								<div class="filter__select sub">
+									<div id="subscribeCity"></div>
+								</div>
+								<div class="filter__select sub">
+									<div id="subscribeType"></div>
+								</div>
+								<div class="sq-title">
+									Площадь
+								</div>
+								<div class="sq-input">
+									<input type="number" min="0" placeholder="от">
+									<input type="number" min="0" placeholder="до">
+								</div>
+								<button class="sub-card--btn">
+									Добавить
+								</button>
+							</form>
+
+							<button class="subscribe block button">
+								<span>+</span>
+								Добавить еще подписку
+							</button>
+
+						</div>
+					</div>
+				</div>
+				<div class="dropdown-list">
+					<input type="checkbox" id="savedrop" hidden>
+					<label for="savedrop" class="no-change">
+						<h3>Сохраненные поиски</h3>
+					</label>
+					<div class="dropdown-list--body">
+						<ul class="saved-search">
+
+							<li>
+								<span>
+									Дом для дочери
+								</span>
+								<button>
+									<svg>
+										<use xlink:href="#close" />
+									</svg>
+								</button>
+							</li>
+
+							<li>
+								<span>
+									Внуку дачу
+								</span>
+								<button>
+									<svg>
+										<use xlink:href="#close" />
+									</svg>
+								</button>
+							</li>
+
+							<li>
+								<span>
+									Будка для собаки
+								</span>
+								<button>
+									<svg>
+										<use xlink:href="#close" />
+									</svg>
+								</button>
+							</li>
+
+							<li>
+								<span>
+									Для попугая
+								</span>
+								<button>
+									<svg>
+										<use xlink:href="#close" />
+									</svg>
+								</button>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="lk__right-bar">
+				<div class="dropdown-list">
+					<input type="checkbox" id="filterlk" hidden>
+					<label for="filterlk" class="no-change">
+						<h3>Фильтр</h3>
+					</label>
+					<div class="dropdown-list--body">
+						<form action="#" class="filter">
+
+							<div class="filter__checkbox-btn column" style="margin: 0;">
+								<div>
+									<input type="checkbox" hidden onchange="" name="saler" id="all">
+									<label for="all" class="filter--checkbox box">
+										Все
+									</label>
+								</div>
+								<div>
+									<input type="checkbox" hidden onchange="" name="saler" id="older">
+									<label for="older" class="filter--checkbox box" style="text-align: center;">
+										Ранее
+										<br>
+										просмотренное
+									</label>
+								</div>
+							</div>
+							<div class="filter__checkbox-btn" id="type">
+								<div>
+									<input type="checkbox" hidden onchange="checkboxListener(this)" name="type"
+										id="type1">
+									<label for="type1" class="filter--checkbox box">
+										<img src="/assets/img/icons/house.svg" alt="">
+										Дома
+									</label>
+								</div>
+								<div>
+									<input type="checkbox" hidden onchange="checkboxListener(this)" name="type"
+										id="type2">
+									<label for="type2" class="filter--checkbox box">
+										<img src="/assets/img/icons/apartment.svg" alt="">
+										Квартиры
+									</label>
+								</div>
+								<div>
+									<input type="checkbox" hidden onchange="checkboxListener(this)" name="type"
+										id="type3">
+									<label for="type3" class="filter--checkbox box">
+										<img src="/assets/img/icons/zemlya.svg" alt="">
+										Земельные
+										участки
+									</label>
+								</div>
+								<div>
+									<input type="checkbox" hidden onchange="checkboxListener(this)" name="type"
+										id="type4">
+									<label for="type4" class="filter--checkbox box">
+										<img src="/assets/img/icons/commercial.svg" alt="">
+										Коммерческая недвижимость
+									</label>
+								</div>
+							</div>
+							<div class="filter__checkbox-btn column" id="status">
+								<div>
+									<input type="checkbox" hidden onchange="" name="saler" id="arenda">
+									<label for="arenda" class="filter--checkbox box">
+										Аренда
+									</label>
+								</div>
+								<div>
+									<input type="checkbox" hidden onchange="" name="saler" id="sale">
+									<label for="sale" class="filter--checkbox box">
+										Продажа
+									</label>
+								</div>
+							</div>
+							<div class="filter__select--wrap">
+								<div class="filter__select">
+									<div id="city"></div>
+								</div>
+
+								<div class="filter__select">
+									<div id="dist"></div>
+								</div>
+
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<div class="grid" id="lkGrid">
+					<!-- Инфа для бекендера -->
+					<!-- 1) .card - общий селектор карточки (без него сломается сетка) -->
+					<!-- 2) .house / .apartment / . quarter - селекторы для значка сверху -->
+					<!-- который показывает тип объявления -->
+					<!-- 3) селектор .noopen - для того, чтобы карточка не раскрывалась при клике -->
+					<!-- 4)   добавляется .saved к .mark , если карточку добавили в избранное -->
+					<!-- Карточки объектов -->
+					<div class="card house ">
+						<div class="card--wrap">
+							<div class="card--img">
+								<img src="/assets/img/temp/temp1.jpg" alt="">
+							</div>
+							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
+								<div class="card__main--title">
+									Ультрасовременный коттедж в стиле Hi-tech в Сочи
+								</div>
+								<div class="card__main--city">
+									г. Сочи
+								</div>
+								<div class="extra">
+									<div class="card__main--price">
+										32.0 млн.
+									</div>
+									<div class="card__main--desc">
+										Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+										Прилегающий
+										участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени,
+										дорожки
+										вымощены брусчаткой, растут сосны.
+									</div>
+									<div class="detail__note card__note">
+										<input type="checkbox" hidden id="note-1"
+											onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+										<label for="note-1">
+											<span class="show">Оставить заметку</span>
+											<span class="hide">Закрыть</span>
+										</label>
+										<form action="#">
+											<div class="detail__note--textarea">
+												<textarea></textarea>
+												<div>
+													<input class="detail__note--btn" type="reset" value="Удалить">
+													<input class="detail__note--btn" type="submit" value="Сохранить">
+												</div>
+											</div>
+										</form>
+									</div>
+									<a href="/detail.html" class="card__main--link link">
+										Перейти
+									</a>
+								</div>
+								<!-- <div class="card__main--note">
+									Оставить заметку
+								</div> -->
+								<div class="info">
+									<div class="square">
+										<span>654</span> м<sup>2</sup>
+									</div>
+									<div class="review">
+										<span>3000</span>
+										<svg>
+											<use xlink:href="#views" />
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card apartment">
+						<div class="card--wrap">
+							<div class="card--img">
+								<img src="/assets/img/temp/temp3.jpg" alt="">
+							</div>
+							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
+								<div class="card__main--title">
+									Ультрасовременный коттедж в стиле Hi-tech в Сочи
+								</div>
+								<div class="card__main--city">
+									г. Сочи
+								</div>
+								<div class="extra">
+									<div class="card__main--price">
+										32.0 млн.
+									</div>
+									<div class="card__main--desc">
+										Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+										Прилегающий
+										участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени,
+										дорожки
+										вымощены брусчаткой, растут сосны.
+									</div>
+									<div class="detail__note card__note">
+										<input type="checkbox" hidden id="note-2"
+											onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+										<label for="note-2">
+											<span class="show">Оставить заметку</span>
+											<span class="hide">Закрыть</span>
+										</label>
+										<form action="#">
+											<div class="detail__note--textarea">
+												<textarea></textarea>
+												<div>
+													<input class="detail__note--btn" type="reset" value="Удалить">
+													<input class="detail__note--btn" type="submit" value="Сохранить">
+												</div>
+											</div>
+										</form>
+									</div>
+									<a href="/detail.html" class="card__main--link link">
+										Перейти
+									</a>
+								</div>
+
+								<div class="info">
+									<div class="square">
+										<span>654</span> м<sup>2</sup>
+									</div>
+									<div class="review">
+										<span>3000</span>
+										<svg>
+											<use xlink:href="#views" />
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card quarter">
+						<div class="card--wrap">
+							<div class="card--img">
+								<img src="/assets/img/temp/temp4.jpg" alt="">
+							</div>
+							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
+								<div class="card__main--title">
+									Ультрасовременный коттедж
+								</div>
+								<div class="card__main--city">
+									г. Сочи
+								</div>
+								<div class="extra">
+									<div class="card__main--price">
+										32.0 млн.
+									</div>
+									<div class="card__main--desc">
+										Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+										Прилегающий
+										участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени,
+										дорожки
+										вымощены брусчаткой, растут сосны.
+									</div>
+									<div class="detail__note card__note">
+										<input type="checkbox" hidden id="note-3"
+											onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+										<label for="note-3">
+											<span class="show">Оставить заметку</span>
+											<span class="hide">Закрыть</span>
+										</label>
+										<form action="#">
+											<div class="detail__note--textarea">
+												<textarea></textarea>
+												<div>
+													<input class="detail__note--btn" type="reset" value="Удалить">
+													<input class="detail__note--btn" type="submit" value="Сохранить">
+												</div>
+											</div>
+										</form>
+									</div>
+									<a href="/detail.html" class="card__main--link link">
+										Перейти
+									</a>
+								</div>
+
+								<div class="info">
+
+									<div class="review">
+										<span>3000</span>
+										<svg>
+											<use xlink:href="#views" />
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card house">
+						<div class="card--wrap">
+							<div class="card--img">
+								<img src="/assets/img/temp/temp2.jpg" alt="">
+							</div>
+							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
+								<div class="card__main--title">
+									Hi-tech в Сочи
+								</div>
+								<div class="card__main--city">
+									г. Сочи
+								</div>
+								<div class="extra">
+									<div class="card__main--price">
+										32.0 млн.
+									</div>
+									<div class="card__main--desc">
+										Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+										Прилегающий
+										участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени,
+										дорожки
+										вымощены брусчаткой, растут сосны.
+									</div>
+									<div class="detail__note card__note">
+										<input type="checkbox" hidden id="note-4"
+											onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+										<label for="note-4">
+											<span class="show">Оставить заметку</span>
+											<span class="hide">Закрыть</span>
+										</label>
+										<form action="#">
+											<div class="detail__note--textarea">
+												<textarea></textarea>
+												<div>
+													<input class="detail__note--btn" type="reset" value="Удалить">
+													<input class="detail__note--btn" type="submit" value="Сохранить">
+												</div>
+											</div>
+										</form>
+									</div>
+									<a href="/detail.html" class="card__main--link link">
+										Перейти
+									</a>
+								</div>
+
+								<div class="info">
+									<div class="square">
+										<span>654</span> м<sup>2</sup>
+									</div>
+									<div class="review">
+										<span>3000</span>
+										<svg>
+											<use xlink:href="#views" />
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card apartment">
+						<div class="card--wrap">
+							<div class="card--img">
+								<img src="/assets/img/temp/temp1.jpg" alt="">
+							</div>
+							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
+								<div class="card__main--title">
+									Ультрасовременный коттедж в стиле Hi-tech в Сочи
+								</div>
+								<div class="card__main--city">
+									г. Сочи
+								</div>
+								<div class="extra">
+									<div class="card__main--price">
+										32.0 млн.
+									</div>
+									<div class="card__main--desc">
+										Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+										Прилегающий
+										участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени,
+										дорожки
+										вымощены брусчаткой, растут сосны.
+									</div>
+									<div class="detail__note card__note">
+										<input type="checkbox" hidden id="note-5"
+											onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+										<label for="note-5">
+											<span class="show">Оставить заметку</span>
+											<span class="hide">Закрыть</span>
+										</label>
+										<form action="#">
+											<div class="detail__note--textarea">
+												<textarea></textarea>
+												<div>
+													<input class="detail__note--btn" type="reset" value="Удалить">
+													<input class="detail__note--btn" type="submit" value="Сохранить">
+												</div>
+											</div>
+										</form>
+									</div>
+									<a href="/detail.html" class="card__main--link link">
+										Перейти
+									</a>
+								</div>
+
+								<div class="info">
+									<div class="square">
+										<span>654</span> м<sup>2</sup>
+									</div>
+									<div class="review">
+										<span>3000</span>
+										<svg>
+											<use xlink:href="#views" />
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card apartment">
+						<div class="card--wrap">
+							<div class="card--img">
+								<img src="/assets/img/temp/temp2.jpg" alt="">
+							</div>
+							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
+								<div class="card__main--title">
+									Ультрасовременный коттедж в стиле Hi-tech в Сочи
+								</div>
+								<div class="card__main--city">
+									г. Сочи
+								</div>
+								<div class="extra">
+									<div class="card__main--price">
+										32.0 млн.
+									</div>
+									<div class="card__main--desc">
+										Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+										Прилегающий
+										участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени,
+										дорожки
+										вымощены брусчаткой, растут сосны.
+									</div>
+									<div class="detail__note card__note">
+										<input type="checkbox" hidden id="note-6"
+											onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+										<label for="note-6">
+											<span class="show">Оставить заметку</span>
+											<span class="hide">Закрыть</span>
+										</label>
+										<form action="#">
+											<div class="detail__note--textarea">
+												<textarea></textarea>
+												<div>
+													<input class="detail__note--btn" type="reset" value="Удалить">
+													<input class="detail__note--btn" type="submit" value="Сохранить">
+												</div>
+											</div>
+										</form>
+									</div>
+									<a href="/detail.html" class="card__main--link link">
+										Перейти
+									</a>
+								</div>
+
+								<div class="info">
+									<div class="square">
+										<span>654</span> м<sup>2</sup>
+									</div>
+									<div class="review">
+										<span>3000</span>
+										<svg>
+											<use xlink:href="#views" />
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card house">
+						<div class="card--wrap">
+							<div class="card--img">
+								<img src="/assets/img/temp/temp2.jpg" alt="">
+							</div>
+							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
+								<div class="card__main--title">
+									Ультрасовременный коттедж в стиле Hi-tech в Сочи
+								</div>
+								<div class="card__main--city">
+									г. Сочи
+								</div>
+								<div class="extra">
+									<div class="card__main--price">
+										32.0 млн.
+									</div>
+									<div class="card__main--desc">
+										Продаётся усадьба, что называется, «с размахом», расположенная на ст. Минино.
+										Прилегающий
+										участок земли 50 соток. На территории красивый ландшафтный дизайн: много зелени,
+										дорожки
+										вымощены брусчаткой, растут сосны.
+									</div>
+									<div class="detail__note card__note">
+										<input type="checkbox" hidden id="note-7"
+											onchange="setIntervalX(function () {gridFunc()}, 100, 3);">
+										<label for="note-7">
+											<span class="show">Оставить заметку</span>
+											<span class="hide">Закрыть</span>
+										</label>
+										<form action="#">
+											<div class="detail__note--textarea">
+												<textarea></textarea>
+												<div>
+													<input class="detail__note--btn" type="reset" value="Удалить">
+													<input class="detail__note--btn" type="submit" value="Сохранить">
+												</div>
+											</div>
+										</form>
+									</div>
+									<a href="/detail.html" class="card__main--link link">
+										Перейти
+									</a>
+								</div>
+
+								<div class="info">
+									<div class="square">
+										<span>654</span> м<sup>2</sup>
+									</div>
+									<div class="review">
+										<span>3000</span>
+										<svg>
+											<use xlink:href="#views" />
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Жилой квартал -->
+					<div class="card nonopen quarter">
+						<div class="card--wrap">
+							<div class="card--img">
+								<img src="/assets/img/temp/temp4.jpg" alt="">
+							</div>
+							<div class="card__main">
+								<button class="mark">
+									<svg>
+										<use xlink:href="#star" />
+									</svg>
+								</button>
+								<div class="card__main--title">
+									Жилой квартал «Prime Park»
+								</div>
+								<div class="card__main--city">
+									г. Москва
+								</div>
+
+								<div class="card__main--desc">
+									Жилой квартал «Prime Park» – проект мирового уровня, задающий новые стандарты
+									качества
+									жизни, именно поэтому проект стал победителем в престижной премии European Property
+									Awards Architecture 2018-2019: лучший жилой высотный комплекс.
+								</div>
+
+								<div class="card__main--map">
+									<!-- масштаб проставляется после z, -->
+									<!-- координаты проставляются после ll -->
+									<!-- Подробнее https://yandex.com/dev/maps/staticapi/ -->
+									<img src="https://static-maps.yandex.ru/1.x/?lang=en_US&ll=32.810152,39.889847&spn=0.016457,0.00619&l=map&size=450,450"
+										alt="">
+								</div>
+								<a href="/jk_detail.html" class="card__main--link link">
+									Перейти
+								</a>
+
+								<div class="info">
+									<div class="review">
+										<span>3000</span>
+										<svg>
+											<use xlink:href="#views" />
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>

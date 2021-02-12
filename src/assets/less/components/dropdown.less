@@ -1,26 +1,27 @@
 @media screen and (max-width: 768px) {
-
     .dropdown-list {
-        label {
-            cursor: pointer;
-            padding: 20px 10px;
-            border-top: 1px solid @grey3;
-            display: flex;
+        > label {
             position: relative;
+            display: flex;
+            padding: 20px 10px;
+            cursor: pointer;
+            border-top: 1px solid @grey3;
 
-            h3,
-            h5 {
-                margin: 0;
-                font: .9rem/115% @FFRRegular;
-                text-transform: uppercase;
-                color: @grey3;
+            &:not(.no-change) {
+                h3, h5 {
+                    margin: 0;
+                    text-transform: uppercase;
+                    color: @grey3;
+                    font: .9rem/115% @FFRRegular;
+                }
             }
 
             &:after {
                 position: absolute;
+                top: calc(50% - 15px / 2);
+                right: 10px;
                 width: 15px;
                 height: 15px;
-                right: 10px;
                 content: "";
                 transition: .2s;
                 background-image: url(/assets/img/icons/arrow-down.svg);
@@ -29,20 +30,20 @@
         }
 
         &--body {
-            max-height: 0;
-            transition: .5s;
             overflow: hidden;
+            max-height: 0;
             padding: 0 10px;
+            transition: .5s;
         }
 
         input:checked {
-            ~label {
+            ~ label {
                 &:after {
                     transform: rotate(180deg);
                 }
             }
 
-            ~.dropdown-list {
+            ~ .dropdown-list {
                 &--body {
                     max-height: 800px;
                     padding-bottom: 20px;

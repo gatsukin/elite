@@ -43,7 +43,7 @@ if (document.getElementById('mainMap')) {
   header.classList.add("fixed");
   headerMap.style.display = "none"
 } else if (document.getElementById('posad')) {
-  header.classList.add("fixed", "min-style");
+  header.classList.add("fixed");
   headerMap.style.display = "none"
 }
 // Добавление маски телефона на карточку
@@ -149,6 +149,19 @@ if (document.getElementsByClassName('filter')) {
       value: 'etc'
     }
   ];
+  let typeOpt = [{
+      label: 'Квартира',
+      value: 'app'
+    },
+    {
+      label: 'Дом',
+      value: 'house'
+    },
+    {
+      label: 'Another one',
+      value: 'etc'
+    }
+  ];
   let costOpt = [{
       label: '1млн. - 10млн.',
       value: '12'
@@ -232,6 +245,18 @@ if (document.getElementsByClassName('filter')) {
     placeholder: 'Площадь',
     search: false
   });
+  if (document.getElementById('subscribeFilter')) {
+    VirtualSelect.init({
+      ele: '#subscribeCity',
+      options: cityOpt,
+      placeholder: 'Город'
+    });
+    VirtualSelect.init({
+      ele: '#subscribeType',
+      options: typeOpt,
+      placeholder: 'Тип'
+    });
+  }
 
   // https://sa-si-dev.github.io/virtual-select/#/methods
   // ПОЛУЧЕНИЕ ИНФОРМАЦИИ ИЗ СЕЛЕКТОВ
@@ -290,4 +315,9 @@ if (document.querySelector('.slider-for') && document.querySelector('.slider-nav
       }]
     });
   });
+}
+
+
+function editInfo(id) {
+  id.readOnly = !id.readOnly
 }
