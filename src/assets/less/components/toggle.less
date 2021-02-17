@@ -1,0 +1,53 @@
+.toggle {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    padding: 9px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    background: @grey5;
+    box-shadow: 0px 4px 4px rgba(@black, .25);
+
+    span {
+        display: inline-flex;
+        margin-right: 10px;
+        color: @white;
+    }
+
+    .toggle-item {
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+        transition: all .3s ease;
+        transform-origin: 20% center;
+        border-radius: 50px;
+        background: @grey4;
+        box-shadow: 0px 4px 6px rgba(@black, .12), inset 0px 4px 4px rgba(@black, .25);
+
+        &::before {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 20px;
+            height: 20px;
+            content: "";
+            transition: .3s ease-in-out;
+            border: none;
+            border-radius: 100%;
+            background: @white;
+            box-shadow: 0px 4px 4px rgba(@black, .25);
+        }
+    }
+
+    &.true {
+        .toggle-item {
+            background: @green;
+
+            &::before {
+                left: 73px;
+            }
+        }
+    }
+}

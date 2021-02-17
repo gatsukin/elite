@@ -40,7 +40,7 @@ toggleArr.forEach(el => {
 const header = document.getElementById('header')
 const headerMap = document.querySelector('.header__main--map')
 if (document.getElementById('mainMap')) {
-  header.classList.add("fixed");
+  header.classList.add("fixed", "map");
   headerMap.style.display = "none"
 } else if (document.getElementById('posad')) {
   header.classList.add("fixed");
