@@ -30,6 +30,37 @@
 	<!-- общие скрипты -->
 	<script src="/assets/js/common.js"></script>
 
+	<script>
+		function getSearchParameters() {
+			var prmstr = window.location.search.substr(1);
+			return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+		}
+
+		function transformToAssocArray(prmstr) {
+			var params = {};
+			var prmarr = prmstr.split("&");
+			for (var i = 0; i < prmarr.length; i++) {
+				var tmparr = prmarr[i].split("=");
+				params[tmparr[0]] = tmparr[1];
+			}
+
+			for (const i in params) {
+				if (Object.hasOwnProperty.call(params, i)) {
+					let val = params[i]
+					let el = document.querySelector(`input[name="${i}"][value="${params[i]}"]`)
+					console.log('*****');
+					// el.checked
+					console.log(el)
+				}
+			}
+
+			return params;
+		}
+
+		var params = getSearchParameters();
+
+	</script>
+
 </body>
 
 </html>

@@ -217,6 +217,23 @@ if (document.getElementsByClassName('filter')) {
       value: 'etc'
     }
   ];
+  let sortBy = [{
+      label: 'По популярности',
+      value: 'byCost'
+    },
+    {
+      label: 'Сначала дорогие',
+      value: 'Moscow'
+    },
+    {
+      label: 'Сначала дешевые',
+      value: 'Saratov'
+    },
+    {
+      label: 'По названию',
+      value: 'etc'
+    }
+  ];
 
   // Инициализация выпадашек
   VirtualSelect.init({
@@ -244,6 +261,13 @@ if (document.getElementsByClassName('filter')) {
     multiple: true,
     placeholder: 'Площадь',
     search: false
+  });
+  VirtualSelect.init({
+    ele: '#sotring',
+    options: sortBy,
+    placeholder: 'Сортировка',
+    search: false,
+    hideClearButton: true
   });
   if (document.getElementById('subscribeFilter')) {
     VirtualSelect.init({

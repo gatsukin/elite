@@ -1,3 +1,5 @@
+const viewToggle = document.getElementById('viewType')
+let viewToggleEvent = ['load', 'DOMContentLoaded']
 // Добавление grid сетки библеотекой Masonry
 // https://masonry.desandro.com/
 // На главной
@@ -7,6 +9,36 @@ if (document.getElementById('IndexGrid')) {
     horizontalOrder: true,
     transitionDuration: '.2s',
   });
+
+  // Toggle view
+  let iGrid = document.getElementById('IndexGrid')
+  let iWrap = document.getElementById('IndexWrap')
+
+  let toggleClasses = function () {
+    console.log(viewToggle.checked);
+    if (viewToggle.checked) {
+      iGrid.classList.remove('grid')
+      iGrid.classList.add('list')
+      iWrap.classList.add('list-wrap')
+      IndexGridMsnry.destroy();
+    } else {
+      iGrid.classList.add('grid')
+      iGrid.classList.remove('list')
+      iWrap.classList.remove('list-wrap')
+      new Masonry('#IndexGrid', {
+        itemSelector: '.card',
+        horizontalOrder: true,
+        transitionDuration: '.2s',
+      });
+    }
+  }
+  for (let i = 0; i < viewToggleEvent.length; i++) {
+    const event = viewToggleEvent[i];
+
+
+    window.addEventListener(event, toggleClasses)
+    viewToggle.addEventListener('change', toggleClasses)
+  }
 }
 // Часто просматривают на детальной странице
 if (document.getElementById('OftenViewed')) {
@@ -33,6 +65,8 @@ if (document.getElementById('lkGrid')) {
   });
 }
 
+
+
 // Функция интервала с поддержкой определенных повторений
 function setIntervalX(callback, delay, repetitions) {
   var x = 0;
@@ -45,7 +79,7 @@ function setIntervalX(callback, delay, repetitions) {
 };
 // Функция инициализации на страницах
 function gridFunc() {
-  if (document.getElementById('IndexGrid')) {
+  if (document.getElementById('IndexGrid') && !viewToggle.checked) {
     IndexGridMsnry.layout();
   }
   if (document.getElementById('OftenViewed')) {
@@ -69,6 +103,13 @@ for (let i = 0; i < pageEvents.length; i++) {
     }, 300, 3);
   })
 }
+
+viewToggle.addEventListener('change', function () {
+  gridFunc()
+  setIntervalX(function () {
+    gridFunc()
+  }, 300, 3);
+})
 // скрол до элемента
 function niceJoing(selection) {
   var events = ['load', 'scroll', 'resize']
@@ -99,7 +140,7 @@ function niceJoing(selection) {
   }
 }
 // ДОПОЛНИТЕЛЬНЫЙ ФИКС карточек
-if (document.getElementById('IndexGrid')) {
+if (document.getElementById('IndexGrid') && !viewToggle.checked) {
   niceJoing('#IndexGrid')
 }
 if (document.getElementById('OftenViewed')) {
