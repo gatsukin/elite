@@ -15,7 +15,6 @@ if (document.getElementById('IndexGrid')) {
   let iWrap = document.getElementById('IndexWrap')
 
   let toggleClasses = function () {
-    console.log(viewToggle.checked);
     if (viewToggle.checked) {
       iGrid.classList.remove('grid')
       iGrid.classList.add('list')
@@ -34,7 +33,6 @@ if (document.getElementById('IndexGrid')) {
   }
   for (let i = 0; i < viewToggleEvent.length; i++) {
     const event = viewToggleEvent[i];
-
 
     window.addEventListener(event, toggleClasses)
     viewToggle.addEventListener('change', toggleClasses)
